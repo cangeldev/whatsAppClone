@@ -8,7 +8,8 @@
                 ],
                 "alias": {
                     "components": "./src/components",
-                    "container": "./src/container"
+                    "assets": "./src/assets",
+                    "screens": "./src/screens"
                 }
             }
         ]

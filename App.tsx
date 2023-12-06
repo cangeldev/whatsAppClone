@@ -1,10 +1,11 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import { Container } from 'container/container'
+import { HomeScreen } from 'screens/index'
+
 
 const App = () => {
   return (
-    <Container />
+    <HomeScreen />
   )
 }
 
