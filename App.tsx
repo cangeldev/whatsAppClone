@@ -1,11 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import { Container } from 'container/container'
 
 const App = () => {
   return (
-    <View>
-      <Text>App</Text>
-    </View>
+    <Container />
   )
 }
 
