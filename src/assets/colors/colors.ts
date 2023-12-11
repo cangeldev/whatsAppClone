@@ -4,4 +4,5 @@ export default {
     red: "#FF0000",
     orange: "#f99935",
     whatsAppGreen: "#008069",
+    grey: "#808080",
 }
