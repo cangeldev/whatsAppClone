@@ -6,6 +6,7 @@ import style from './style'
 import { CustomHeader } from 'components'
 import { Container } from 'container/container'
 import colors from 'assets/colors/colors'
+import { ChatsScreen } from 'screens/chatsScreen/chatsScreen'
 
 export const HomeScreen = () => {
 
@@ -47,7 +48,7 @@ export const HomeScreen = () => {
                 onIndexChange={setIndex}
                 renderScene={SceneMap({
                     first: Container,
-                    second: Container,
+                    second: ChatsScreen,
                     third: Container,
                     fourth: Container
                 })}
