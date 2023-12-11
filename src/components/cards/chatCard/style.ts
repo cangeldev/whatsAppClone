@@ -5,7 +5,7 @@ export default StyleSheet.create({
     container: {
         paddingHorizontal: 12,
         flexDirection: "row",
-        marginBottom: 25
+        marginBottom: 24
     },
     image: {
         width: 48,

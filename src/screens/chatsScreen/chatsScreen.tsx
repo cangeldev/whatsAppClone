@@ -3,25 +3,12 @@ import React from 'react'
 import style from './style'
 import { ChatCard } from 'components/cards'
 import Icon from 'react-native-vector-icons/FontAwesome6'
+import { CustomButton } from 'components'
 
 export const ChatsScreen = () => {
     return (
         <View style={style.container}>
             <ScrollView>
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
                 <ChatCard />
                 <ChatCard />
                 <ChatCard />
@@ -52,6 +39,9 @@ export const ChatsScreen = () => {
                     </Text>
                 </View>
             </ScrollView>
+            <View style={style.buttonView}>
+                <CustomButton iconName='comment' />
+            </View>
         </View>
     )
 }

@@ -5,8 +5,7 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: colors.white,
-        paddingTop: 22,
-        paddingBottom: 50
+        paddingTop: 22
     },
     text: {
         fontWeight: "bold",
@@ -23,15 +22,22 @@ export default StyleSheet.create({
     infoView: {
         alignSelf: "center",
         flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
+        marginBottom: 50
     },
     icon: {
-        fontSize: 12, marginRight: 6
+        fontSize: 12,
+        marginRight: 6
     },
     infoText: {
         fontSize: 12
     },
     innerInfoText: {
         color: colors.whatsAppGreen
+    },
+    buttonView: {
+        position: "absolute",
+        right: 18,
+        bottom: 18
     }
 })
