@@ -8,6 +8,7 @@ import { Container } from 'container/container'
 import colors from 'assets/colors/colors'
 import { ChatsScreen } from 'screens/chatsScreen/chatsScreen'
 import { StatusScreen } from 'screens/statusScreen/statusScreen'
+import { CallsScreen } from 'screens/callsScreen/callsScreen'
 
 export const HomeScreen = () => {
 
@@ -23,7 +24,7 @@ export const HomeScreen = () => {
         }
     }
 
-    const [index, setIndex] = useState(2)
+    const [index, setIndex] = useState(3)
     const [routes] = React.useState([
         { key: 'first' },
         { key: 'second', title: 'Sohbetler' },
@@ -51,7 +52,7 @@ export const HomeScreen = () => {
                     first: Container,
                     second: ChatsScreen,
                     third: StatusScreen,
-                    fourth: Container
+                    fourth: CallsScreen
                 })}
             />
         </View>
