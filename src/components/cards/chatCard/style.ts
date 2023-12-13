@@ -11,7 +11,6 @@ export default StyleSheet.create({
         width: 48,
         height: 48,
         borderRadius: 25,
-        backgroundColor: colors.whatsAppGreen,
         marginRight: 10
     },
     infoView: {
