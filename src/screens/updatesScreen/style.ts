@@ -15,7 +15,7 @@ export default StyleSheet.create({
     },
     headerViewText: {
         fontSize: 20,
-        fontWeight: "700",
+        fontWeight: "600",
         color: colors.black
     },
     statusView: {

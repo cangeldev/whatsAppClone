@@ -5,6 +5,7 @@ import IconA from 'react-native-vector-icons/AntDesign'
 import style from './style'
 import { example } from 'assets'
 import { CustomButton } from 'components'
+import { ChannelCard } from 'components/cards'
 
 export const UpdatesScreen = () => {
     return (
@@ -56,6 +57,11 @@ export const UpdatesScreen = () => {
             </View>
             <View style={style.buttonView}>
                 <CustomButton iconName='camera-alt' />
+            </View>
+            {/* Güncelle ileride - gecici denemelik */}
+            <View style={{ flexDirection: "row", marginHorizontal: 20, marginTop: 15 }}>     
+                <ChannelCard />
+                <ChannelCard />
             </View>
         </View>
     )
