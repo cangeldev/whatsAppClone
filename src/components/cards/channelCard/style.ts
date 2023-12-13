@@ -6,7 +6,7 @@ export default StyleSheet.create({
         paddingVertical: 15,
         borderWidth: 0.8,
         borderColor: "#d3d3d3",
-        borderRadius: 15,
+        borderRadius: 12,
         marginRight: 10,
         alignItems: "center"
     },

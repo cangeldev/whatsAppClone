@@ -7,7 +7,7 @@ import { CustomHeader } from 'components'
 import { Container } from 'container/container'
 import colors from 'assets/colors/colors'
 import { ChatsScreen } from 'screens/chatsScreen/chatsScreen'
-import { UpdatesScreen } from 'screens/updatesScreen/updatesScreen'
+import { StatusScreen } from 'screens/statusScreen/statusScreen'
 
 export const HomeScreen = () => {
 
@@ -50,7 +50,7 @@ export const HomeScreen = () => {
                 renderScene={SceneMap({
                     first: Container,
                     second: ChatsScreen,
-                    third: UpdatesScreen,
+                    third: StatusScreen,
                     fourth: Container
                 })}
             />

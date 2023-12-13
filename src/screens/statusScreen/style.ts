@@ -55,13 +55,35 @@ export default StyleSheet.create({
         borderBottomWidth: 0.6,
         borderBottomColor: "#dddddd"
     },
-    channelView:{
-        marginHorizontal:20,
-        marginVertical:10
+    text: {
+        marginHorizontal: 20,
+        marginVertical: 10,
+        lineHeight: 20
     },
     buttonView: {
         position: "absolute",
         right: 18,
         bottom: 18
+    },
+    buttonText: {
+        color: colors.white,
+        backgroundColor: colors.whatsAppGreen,
+        paddingHorizontal: 25,
+        paddingVertical: 10,
+        borderRadius: 25,
+        fontWeight: "700",
+        margin: 20,
+        alignSelf: "flex-start"
+    },
+    icon: {
+        position: "absolute",
+        fontSize: 24,
+        color: colors.whatsAppGreen,
+        backgroundColor: "#e0fef2",
+        padding: 8,
+        right: 25,
+        bottom: 95,
+        borderRadius: 10,
+        elevation: 4
     }
 })

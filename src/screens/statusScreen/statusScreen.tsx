@@ -1,13 +1,14 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import Icon from 'react-native-vector-icons/Entypo'
 import IconA from 'react-native-vector-icons/AntDesign'
+import IconM from 'react-native-vector-icons/MaterialCommunityIcons'
 import style from './style'
 import { example } from 'assets'
 import { CustomButton } from 'components'
 import { ChannelCard } from 'components/cards'
 
-export const UpdatesScreen = () => {
+export const StatusScreen = () => {
     return (
         <View style={style.container}>
             <View style={style.headerView}>
@@ -49,20 +50,27 @@ export const UpdatesScreen = () => {
                     size={24}
                 />
             </View>
-            <View style={style.channelView}>
-                <Text>
-                    İlginizi çeken konulardaki son gelişmelerden haberdar olun.
-                    Takip edebileceğiniz kanalları aşağıda bulabilirsiniz.
-                </Text>
-            </View>
+            <Text style={style.text}>
+                İlginizi çeken konulardaki son gelişmelerden haberdar olun.
+                Takip edebileceğiniz kanalları aşağıda bulabilirsiniz.
+            </Text>
             <View style={style.buttonView}>
                 <CustomButton iconName='camera-alt' />
             </View>
             {/* Güncelle ileride - gecici denemelik */}
-            <View style={{ flexDirection: "row", marginHorizontal: 20, marginTop: 15 }}>     
+            <View style={{ flexDirection: "row", marginHorizontal: 20, marginVertical: 10 }}>
                 <ChannelCard />
                 <ChannelCard />
             </View>
+            <TouchableOpacity>
+                <Text style={style.buttonText}>
+                    Daha fazlasını keşfet
+                </Text>
+            </TouchableOpacity>
+            <IconM
+                name={"pencil"}
+                style={style.icon}
+            />
         </View>
     )
 }
