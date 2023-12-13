@@ -7,6 +7,7 @@ import { CustomHeader } from 'components'
 import { Container } from 'container/container'
 import colors from 'assets/colors/colors'
 import { ChatsScreen } from 'screens/chatsScreen/chatsScreen'
+import { UpdatesScreen } from 'screens/updatesScreen/updatesScreen'
 
 export const HomeScreen = () => {
 
@@ -22,7 +23,7 @@ export const HomeScreen = () => {
         }
     }
 
-    const [index, setIndex] = useState(1)
+    const [index, setIndex] = useState(2)
     const [routes] = React.useState([
         { key: 'first' },
         { key: 'second', title: 'Sohbetler' },
@@ -49,7 +50,7 @@ export const HomeScreen = () => {
                 renderScene={SceneMap({
                     first: Container,
                     second: ChatsScreen,
-                    third: Container,
+                    third: UpdatesScreen,
                     fourth: Container
                 })}
             />

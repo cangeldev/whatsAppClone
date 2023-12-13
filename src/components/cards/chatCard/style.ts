@@ -29,7 +29,7 @@ export default StyleSheet.create({
     },
     date: {
         fontSize: 12,
-        paddingRight: 3
+        paddingRight: 5
     },
     message: {
         fontWeight: "600"
