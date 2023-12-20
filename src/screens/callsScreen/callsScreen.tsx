@@ -4,6 +4,7 @@ import style from './style'
 import Icon from 'react-native-vector-icons/Ionicons'
 import IconF from 'react-native-vector-icons/FontAwesome6'
 import { CustomButton } from 'components'
+import { CallCard } from 'components/cards'
 
 export const CallsScreen = () => {
     return (
@@ -25,8 +26,10 @@ export const CallsScreen = () => {
             <Text style={style.title}>
                 En son
             </Text>
-            <View style={style.callListView}>
-
+            {/* temize geçir kaldır ileride  */}
+            <View >
+                <CallCard />
+                <CallCard />
             </View>
             <View style={style.divider} />
             <View style={style.infoView}>

@@ -59,13 +59,9 @@ export default StyleSheet.create({
         bottom: 18
     },
     title: {
-       marginLeft:20,
-       color:colors.black,
-       fontWeight:"600",
-       fontSize:17
-    },
-    callListView: {
-
+        marginLeft: 20,
+        color: colors.black,
+        fontWeight: "600",
+        fontSize: 16
     }
-
 })
