@@ -26,5 +26,17 @@ export default StyleSheet.create({
         marginLeft: 25,
         marginRight: 22,
         color: colors.white
+    },
+    optionText: {
+        fontSize: 16,
+        color: colors.black,
+        marginBottom: 15
+    },
+    optionsContainerStyle: {
+        marginTop: 40,
+        marginLeft: 5,
+        borderRadius: 10,
+        paddingHorizontal: 10,
+        paddingTop: 15
     }
 })
