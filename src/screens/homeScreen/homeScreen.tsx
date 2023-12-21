@@ -4,7 +4,6 @@ import { TabView, SceneMap, TabBar } from 'react-native-tab-view'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import style from './style'
 import { CustomHeader } from 'components'
-import { Container } from 'container/container'
 import colors from 'assets/colors/colors'
 import { ChatsScreen } from 'screens/chatsScreen/chatsScreen'
 import { StatusScreen } from 'screens/statusScreen/statusScreen'
@@ -49,7 +48,7 @@ export const HomeScreen = () => {
                 navigationState={{ index, routes }}
                 onIndexChange={setIndex}
                 renderScene={SceneMap({
-                    first: Container,
+                    first: ChatsScreen,
                     second: ChatsScreen,
                     third: StatusScreen,
                     fourth: CallsScreen
