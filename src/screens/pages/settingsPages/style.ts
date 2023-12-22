@@ -38,4 +38,8 @@ export default StyleSheet.create({
         borderBottomWidth: 0.6,
         borderBottomColor: "#dddddd"
     },
+    settingsView: {
+        marginVertical: 15,
+        marginHorizontal: 15
+    }
 })
