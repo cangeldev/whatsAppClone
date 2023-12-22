@@ -6,10 +6,12 @@ import IconF from 'react-native-vector-icons/Feather'
 import IconE from 'react-native-vector-icons/Entypo'
 import IconFO from 'react-native-vector-icons/Fontisto'
 import { Menu, MenuOptions, MenuOption, MenuTrigger } from 'react-native-popup-menu'
+import { useNavigation } from '@react-navigation/native'
 
 export const CustomHeader = () => {
+    const navigation = useNavigation<any>()
     const onOptionSelect = (value: any) => {
-        console.log('Seçilen değer:', value);
+        navigation.navigate(value)
     }
     return (
         <View style={style.container}>
@@ -47,7 +49,7 @@ export const CustomHeader = () => {
                         <MenuOption onSelect={() => onOptionSelect('Seçenek 2')} text="Yeni toplu mesaj" />
                         <MenuOption onSelect={() => onOptionSelect('Seçenek 3')} text="Bağlı cihazlar" />
                         <MenuOption onSelect={() => onOptionSelect('Seçenek 4')} text="Yıldızlı mesajlar" />
-                        <MenuOption onSelect={() => onOptionSelect('Seçenek 5')} text="Ayarlar" />
+                        <MenuOption onSelect={() => onOptionSelect('SettingsPages')} text="Ayarlar" />
                     </MenuOptions>
                 </Menu>
             </View>

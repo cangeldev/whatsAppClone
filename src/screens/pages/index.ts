@@ -1,0 +1,1 @@
+export { SettingsPages } from "./settingsPages/settingsPages"
