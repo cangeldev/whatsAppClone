@@ -4,13 +4,14 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import style from './style'
 
 interface IButtonIcon {
-    icon: string
+    icon: string,
+    onPress?: () => void
 }
 
-export const IconButton: FC<IButtonIcon> = ({ icon }) => {
+export const IconButton: FC<IButtonIcon> = ({ icon, onPress }) => {
     return (
         <Icon
-            onPress={() => console.log("first")}
+            onPress={onPress}
             name={icon}
             style={style.icon}
         />

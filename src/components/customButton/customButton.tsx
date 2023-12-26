@@ -5,13 +5,14 @@ import IconM from 'react-native-vector-icons/MaterialIcons'
 
 interface ICustomButton {
     iconName: string
+    onPress?: () => void
 }
 
-export const CustomButton: FC<ICustomButton> = ({ iconName }) => {
+export const CustomButton: FC<ICustomButton> = ({ iconName, onPress }) => {
     return (
         <TouchableOpacity
             activeOpacity={0.7}
-            onPress={() => console.log("first")}
+            onPress={onPress}
             style={style.container}>
             <IconM
                 name={iconName}

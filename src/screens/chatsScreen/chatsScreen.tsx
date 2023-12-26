@@ -4,8 +4,15 @@ import style from './style'
 import { ChatCard } from 'components/cards'
 import Icon from 'react-native-vector-icons/FontAwesome6'
 import { CustomButton } from 'components'
+import { useNavigation } from '@react-navigation/native'
 
 export const ChatsScreen = () => {
+
+    const navigation = useNavigation<any>()
+    const toogleButton = () => {
+        console.log("first")
+    }
+
     return (
         <View style={style.container}>
             <ScrollView>
@@ -40,7 +47,10 @@ export const ChatsScreen = () => {
                 </View>
             </ScrollView>
             <View style={style.buttonView}>
-                <CustomButton iconName='comment' />
+                <CustomButton
+                    iconName='comment'
+                    onPress={toogleButton}
+                />
             </View>
         </View>
     )

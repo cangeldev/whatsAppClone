@@ -3,16 +3,24 @@ import React, { useState } from 'react'
 import style from './style'
 import { example } from 'assets'
 import { ChatModal } from 'components/modals'
+import { useNavigation } from '@react-navigation/native'
 
 export const ChatCard = () => {
     const [chatModal, setChatModal] = useState(false)
+    const navigation = useNavigation<any>()
+
+    const toogleButton = () => {
+        navigation.navigate("MessagePages")
+    }
 
     const toggleChatModal = () => {
         setChatModal(!chatModal)
     }
 
     return (
-        <View style={style.chatContainer}>
+        <Pressable
+            onPress={toogleButton}
+            style={style.chatContainer}>
             <ChatModal
                 visibleModal={chatModal}
                 closeModal={toggleChatModal}
@@ -36,6 +44,6 @@ export const ChatCard = () => {
                     C
                 </Text>
             </View>
-        </View>
+        </Pressable>
     )
 }

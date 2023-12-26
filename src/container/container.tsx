@@ -2,7 +2,7 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
 import { HomeScreen } from 'screens'
-import { SettingsPages } from 'screens/pages'
+import { MessagePages, SettingsPages } from 'screens/pages'
 import colors from 'assets/colors/colors'
 import Icon from 'react-native-vector-icons/Fontisto'
 
@@ -10,11 +10,16 @@ export const Container = () => {
     const Stack = createStackNavigator()
     return (
         <NavigationContainer independent={true}>
-            <Stack.Navigator initialRouteName='SettingsPages' >
+            <Stack.Navigator initialRouteName='HomeScreen' >
                 <Stack.Screen
                     options={{ headerShown: false }}
                     name='HomeScreen'
                     component={HomeScreen}
+                />
+                <Stack.Screen
+                    options={{ headerShown: false }}
+                    name='MessagePages'
+                    component={MessagePages}
                 />
                 <Stack.Screen
                     name='SettingsPages'
