@@ -5,4 +5,6 @@ export default {
     orange: "#f99935",
     whatsAppGreen: "#008069",
     grey: "#808080",
+    lightGray: "#d3d3d3",
+    lightGreen: "#e0fef2"
 }

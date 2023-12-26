@@ -24,24 +24,24 @@ export const ChatModal: FC<IChatModal> = ({ visibleModal, closeModal }) => {
         >
             <TouchableOpacity
                 onPressOut={closeModal}
-                style={style.container}
+                style={style.modalBackground}
             >
                 <TouchableWithoutFeedback>
-                    <View style={style.innerContainer}>
+                    <View style={style.modalContent}>
                         <Image
                             source={example}
                             style={style.image}
                         />
-                        <Text style={style.name} >
+                        <Text style={style.nameContainer} >
                             Babam
                         </Text>
-                        <View style={style.divider} />
+                        <View style={style.dividerLine} />
                         <FlatList
                             horizontal
                             data={iconButtonList}
                             renderItem={renderItem}
-                            style={style.flatlist}
-                            contentContainerStyle={style.contentContainerStyle}
+                            style={style.iconList}
+                            contentContainerStyle={style.iconListContainer}
                         />
                     </View>
                 </TouchableWithoutFeedback>

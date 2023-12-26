@@ -9,16 +9,16 @@ export default StyleSheet.create({
         paddingBottom: 25,
         paddingHorizontal: 10
     },
-    textView: {
-        marginHorizontal: 20,
+    textContainer: {
+        marginLeft: 20,
         justifyContent: "center"
     },
-    image: {
+    icon: {
         width: 22,
         height: 22,
         tintColor: "#84979e"
     },
-    title: {
+    titleText: {
         color: colors.black
     }
 })

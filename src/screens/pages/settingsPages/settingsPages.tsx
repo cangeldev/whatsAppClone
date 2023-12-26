@@ -12,8 +12,8 @@ export const SettingsPages = () => {
 
     const render = ({ item }: any) =>
         <SettingsMenuCard
-            image={item.image}
-            text={item.text}
+            icon={item.image}
+            description={item.text}
             title={item.title}
         />
 
@@ -22,13 +22,13 @@ export const SettingsPages = () => {
             <StatusBar
                 backgroundColor={colors.whatsAppGreen}
             />
-            <View style={style.headerView}>
+            <View style={style.headerContainer}>
                 <Image
                     source={example}
-                    style={style.image}
+                    style={style.profileImage}
                 />
-                <View style={style.textView}>
-                    <Text style={style.name}>
+                <View style={style.textContainer}>
+                    <Text style={style.nameText}>
                         Can GEL
                     </Text>
                     <Text>
@@ -36,22 +36,23 @@ export const SettingsPages = () => {
                     </Text>
                 </View>
 
-                <View style={style.iconView}>
+                <View style={style.iconContainer}>
                     <IconF
                         name={"qrcode"}
-                        style={style.icon}
+                        style={style.iconStyle}
                     />
                     <IconE
                         name={"downcircleo"}
-                        style={style.icon}
+                        style={style.iconStyle}
                     />
                 </View>
             </View>
-            <View style={style.divider} />
-            <View style={style.settingsView}>
+            <View style={style.dividerLine} />
+            <View style={style.settingsContainer}>
                 <FlatList
                     data={settingsList}
                     renderItem={render}
+                    keyExtractor={(item, index) => index.toString()}
                 />
             </View>
         </View>

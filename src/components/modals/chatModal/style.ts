@@ -1,12 +1,12 @@
-import colors from "assets/colors/colors"
-import { StyleSheet } from "react-native"
+import colors from "assets/colors/colors";
+import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-    container: {
+    modalBackground: {
         flex: 1,
         backgroundColor: 'rgba(0, 0, 0, 0.5)'
     },
-    innerContainer: {
+    modalContent: {
         backgroundColor: colors.white,
         marginHorizontal: 70,
         marginTop: 130
@@ -16,11 +16,11 @@ export default StyleSheet.create({
         height: 260,
         resizeMode: "stretch"
     },
-    divider: {
+    dividerLine: {
         borderBottomWidth: 0.2,
         borderBottomColor: "#dddddd"
     },
-    name: {
+    nameContainer: {
         color: 'white',
         backgroundColor: 'rgba(0, 0, 0, 0.2)',
         paddingHorizontal: 10,
@@ -29,11 +29,11 @@ export default StyleSheet.create({
         position: "absolute",
         width: "100%"
     },
-    flatlist: {
+    iconList: {
         paddingVertical: 10
     },
-    contentContainerStyle: {
+    iconListContainer: {
         flexGrow: 1,
         justifyContent: "space-around"
     }
-})
+});

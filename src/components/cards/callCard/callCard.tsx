@@ -25,11 +25,11 @@ export const CallCard = () => {
                     style={style.image}
                 />
             </Pressable>
-            <View style={style.textView}>
-                <Text style={style.textViewTitle}>
+            <View style={style.infoContainer}>
+                <Text style={style.titleText}>
                     Kırıklar
                 </Text>
-                <View style={style.dateView}>
+                <View style={style.dateInfoContainer}>
                     <IconF
                         name={"arrow-bottom-left"}
                         size={16}
@@ -42,7 +42,7 @@ export const CallCard = () => {
             </View>
             <Icon
                 name={"call"}
-                style={style.icon}
+                style={style.callIcon}
             />
         </View>
     )

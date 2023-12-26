@@ -7,24 +7,24 @@ import IconA from 'react-native-vector-icons/AntDesign'
 
 export const ChannelCard = () => {
     return (
-        <View style={style.container}>
+        <View style={style.channelCardContainer}>
             <View>
                 <Image
                     source={example}
-                    style={style.image}
+                    style={style.channelCardImage}
                 />
-                <View style={style.iconView}>
+                <View style={style.iconContainer}>
                     <IconA
                         name={"checkcircle"}
-                        style={style.imageIcon}
+                        style={style.channelCardIcon}
                     />
                 </View>
             </View>
-            <Text numberOfLines={1} style={style.title}>
+            <Text numberOfLines={1} style={style.channelCardTitle}>
                 SURVİVOR TÜRKİYE
             </Text>
             <TouchableOpacity>
-                <Text style={style.buttonText}>
+                <Text style={style.followButton}>
                     Takip et
                 </Text>
             </TouchableOpacity>

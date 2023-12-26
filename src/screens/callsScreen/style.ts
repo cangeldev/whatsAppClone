@@ -2,12 +2,11 @@ import colors from "assets/colors/colors"
 import { StyleSheet } from "react-native"
 
 export default StyleSheet.create({
-    container: {
+    mainContainer: {
         flex: 1,
-        backgroundColor: colors.white,
-
+        backgroundColor: colors.white
     },
-    headerView: {
+    headerSection: {
         paddingHorizontal: 16,
         paddingVertical: 22,
         flexDirection: "row"
@@ -19,41 +18,41 @@ export default StyleSheet.create({
         backgroundColor: colors.whatsAppGreen,
         borderRadius: 25
     },
-    headerViewTitle: {
+    headerTitle: {
         fontWeight: "600",
         color: colors.black,
         fontSize: 16,
         paddingLeft: 15
     },
-    headerViewText: {
+    headerDescription: {
         paddingLeft: 15,
         fontWeight: "500"
     },
-    headerInnerView: {
+    headerInnerSection: {
         justifyContent: "space-around"
     },
-    divider: {
+    sectionDivider: {
         marginVertical: 15,
         borderBottomWidth: 0.2,
         borderBottomColor: "#dddddd"
     },
-    infoView: {
+    infoSection: {
         alignSelf: "center",
         flexDirection: "row",
         alignItems: "center",
         marginBottom: 50
     },
-    icon: {
+    infoIcon: {
         fontSize: 12,
         marginRight: 6
     },
     infoText: {
         fontSize: 12
     },
-    innerInfoText: {
+    innerInfoTextHighlight: {
         color: colors.whatsAppGreen
     },
-    buttonView: {
+    floatingButtonSection: {
         position: "absolute",
         right: 18,
         bottom: 18

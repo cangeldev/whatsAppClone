@@ -3,25 +3,25 @@ import React, { FC } from 'react'
 import style from './style'
 
 interface ISettingsMenuCard {
-    image: Image
-    title: string,
-    text: string
+    icon: Image
+    title: string
+    description: string
 }
 
-export const SettingsMenuCard: FC<ISettingsMenuCard> = ({ image, title, text }) => {
+export const SettingsMenuCard: FC<ISettingsMenuCard> = ({ icon, title, description }) => {
 
     return (
         <View style={style.container}>
             <Image
-                source={image as any}
-                style={style.image}
+                source={icon as any}
+                style={style.icon}
             />
-            <View style={style.textView}>
-                <Text style={style.title}>
+            <View style={style.textContainer}>
+                <Text style={style.titleText}>
                     {title}
                 </Text>
                 <Text>
-                    {text}
+                    {description}
                 </Text>
             </View>
         </View>

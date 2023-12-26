@@ -6,10 +6,9 @@ export default StyleSheet.create({
         backgroundColor: colors.whatsAppGreen,
         padding: 16,
         borderRadius: 14
-
     },
     icon: {
         fontSize: 24,
         color: colors.white
-    },
+    }
 })

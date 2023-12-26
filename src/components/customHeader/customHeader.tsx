@@ -1,55 +1,59 @@
-import { View, Text, StatusBar, TouchableWithoutFeedback } from 'react-native'
 import React from 'react'
-import style from './style'
-import colors from 'assets/colors/colors'
+import { View, Text, StatusBar, TouchableWithoutFeedback } from 'react-native'
+import { Menu, MenuOptions, MenuOption, MenuTrigger } from 'react-native-popup-menu'
+import { useNavigation } from '@react-navigation/native'
 import IconF from 'react-native-vector-icons/Feather'
 import IconE from 'react-native-vector-icons/Entypo'
 import IconFO from 'react-native-vector-icons/Fontisto'
-import { Menu, MenuOptions, MenuOption, MenuTrigger } from 'react-native-popup-menu'
-import { useNavigation } from '@react-navigation/native'
+import style from './style'
+import colors from 'assets/colors/colors'
 
 export const CustomHeader = () => {
     const navigation = useNavigation<any>()
     const onOptionSelect = (value: any) => {
         navigation.navigate(value)
     }
+    const renderMenuOption = (value: any, text: any) => (
+        <MenuOption onSelect={() => onOptionSelect(value)} text={text} />
+    );
     return (
-        <View style={style.container}>
+        <View style={style.headerContainer}>
             <StatusBar
                 backgroundColor={colors.whatsAppGreen}
                 barStyle={'light-content'}
             />
-            <Text style={style.title}>
+            <Text style={style.headerTitle}>
                 WhatsApp
             </Text>
             <View style={style.iconContainer}>
                 <IconF
                     name={"camera"}
-                    style={style.icon}
+                    style={style.headerIcon}
                 />
                 <IconFO
                     name={"search"}
-                    style={style.iconMiddle}
+                    style={style.middleIcon}
                 />
                 <Menu>
                     <MenuTrigger
                         customStyles={{ TriggerTouchableComponent: TouchableWithoutFeedback }}>
                         <IconE
                             name={"dots-three-vertical"}
-                            style={style.icon}
+                            style={style.headerIcon}
                         />
                     </MenuTrigger>
                     <MenuOptions
                         customStyles={{
-                            optionText: style.optionText,
+                            optionText: style.menuOptionText,
                             OptionTouchableComponent: TouchableWithoutFeedback
                         }}
-                        optionsContainerStyle={style.optionsContainerStyle}>
-                        <MenuOption onSelect={() => onOptionSelect('Seçenek 1')} text="Yeni grup" />
-                        <MenuOption onSelect={() => onOptionSelect('Seçenek 2')} text="Yeni toplu mesaj" />
-                        <MenuOption onSelect={() => onOptionSelect('Seçenek 3')} text="Bağlı cihazlar" />
-                        <MenuOption onSelect={() => onOptionSelect('Seçenek 4')} text="Yıldızlı mesajlar" />
-                        <MenuOption onSelect={() => onOptionSelect('SettingsPages')} text="Ayarlar" />
+                        optionsContainerStyle={style.menuOptionsContainer}
+                    >
+                        {renderMenuOption('Seçenek 1', 'Yeni grup')}
+                        {renderMenuOption('Seçenek 2', 'Yeni toplu mesaj')}
+                        {renderMenuOption('Seçenek 3', 'Bağlı cihazlar')}
+                        {renderMenuOption('Seçenek 4', 'Yıldızlı mesajlar')}
+                        {renderMenuOption('SettingsPages', 'Ayarlar')}
                     </MenuOptions>
                 </Menu>
             </View>

@@ -2,13 +2,14 @@ import colors from "assets/colors/colors"
 import { StyleSheet } from "react-native"
 
 export default StyleSheet.create({
-    container: {
+
+    headerContainer: {
         backgroundColor: colors.whatsAppGreen,
         flexDirection: "row",
         justifyContent: "space-between",
         padding: 10
     },
-    title: {
+    headerTitle: {
         fontSize: 23,
         marginLeft: 7,
         color: colors.white
@@ -17,22 +18,22 @@ export default StyleSheet.create({
         flexDirection: "row",
         alignItems: "center"
     },
-    icon: {
+    headerIcon: {
         fontSize: 20,
         color: colors.white
     },
-    iconMiddle: {
+    middleIcon: {
         fontSize: 20,
         marginLeft: 25,
         marginRight: 22,
         color: colors.white
     },
-    optionText: {
+    menuOptionText: {
         fontSize: 16,
         color: colors.black,
         marginBottom: 15
     },
-    optionsContainerStyle: {
+    menuOptionsContainer: {
         marginTop: 40,
         marginLeft: 5,
         borderRadius: 10,

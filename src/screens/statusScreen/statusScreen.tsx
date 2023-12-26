@@ -11,8 +11,8 @@ import { ChannelCard } from 'components/cards'
 export const StatusScreen = () => {
     return (
         <View style={style.container}>
-            <View style={style.headerView}>
-                <Text style={style.headerViewText}>
+            <View style={style.headerContainer}>
+                <Text style={style.headerText}>
                     Durum
                 </Text>
                 <Icon
@@ -20,29 +20,29 @@ export const StatusScreen = () => {
                     size={20}
                 />
             </View>
-            <View style={style.statusView}>
-                <View style={style.imageView}>
+            <View style={style.statusSection}>
+                <View style={style.userImageContainer}>
                     <Image
                         source={example}
-                        style={style.image}
+                        style={style.userImage}
                     />
                     <IconA
                         name={"pluscircle"}
-                        style={style.imageIcon}
+                        style={style.plusIcon}
                     />
                 </View>
                 <View>
-                    <Text style={style.statusViewTitle}>
+                    <Text style={style.statusTitle}>
                         Durumum
                     </Text>
-                    <Text style={style.statusViewText}>
+                    <Text style={style.statusDescription}>
                         Durum güncellemesi eklemek için dokunun
                     </Text>
                 </View>
             </View>
-            <View style={style.divider} />
-            <View style={style.headerView}>
-                <Text style={style.headerViewText}>
+            <View style={style.dividerLine} />
+            <View style={style.headerContainer}>
+                <Text style={style.headerText}>
                     Kanallar
                 </Text>
                 <Icon
@@ -50,26 +50,25 @@ export const StatusScreen = () => {
                     size={24}
                 />
             </View>
-            <Text style={style.text}>
+            <Text style={style.informationText}>
                 İlginizi çeken konulardaki son gelişmelerden haberdar olun.
                 Takip edebileceğiniz kanalları aşağıda bulabilirsiniz.
             </Text>
-            <View style={style.buttonView}>
+            <View style={style.addButtonContainer}>
                 <CustomButton iconName='camera-alt' />
             </View>
-            {/* Güncelle ileride - gecici denemelik */}
-            <View style={{ flexDirection: "row", marginHorizontal: 20, marginVertical: 10 }}>
+            <View style={style.channelCardsContainer}>
                 <ChannelCard />
                 <ChannelCard />
             </View>
             <TouchableOpacity>
-                <Text style={style.buttonText}>
+                <Text style={style.exploreButtonText}>
                     Daha fazlasını keşfet
                 </Text>
             </TouchableOpacity>
             <IconM
                 name={"pencil"}
-                style={style.icon}
+                style={style.editIcon}
             />
         </View>
     )

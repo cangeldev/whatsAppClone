@@ -10,7 +10,7 @@ export const Container = () => {
     const Stack = createStackNavigator()
     return (
         <NavigationContainer independent={true}>
-            <Stack.Navigator initialRouteName='SettingsPages' >
+            <Stack.Navigator initialRouteName='HomeScreen' >
                 <Stack.Screen
                     options={{ headerShown: false }}
                     name='HomeScreen'

@@ -5,14 +5,14 @@ import { example } from 'assets'
 import { ChatModal } from 'components/modals'
 
 export const ChatCard = () => {
-
     const [chatModal, setChatModal] = useState(false)
+
     const toggleChatModal = () => {
         setChatModal(!chatModal)
     }
 
     return (
-        <View style={style.container}>
+        <View style={style.chatContainer}>
             <ChatModal
                 visibleModal={chatModal}
                 closeModal={toggleChatModal}
@@ -20,19 +20,19 @@ export const ChatCard = () => {
             <Pressable onPress={toggleChatModal}>
                 <Image
                     source={example}
-                    style={style.image}
+                    style={style.chatImage}
                 />
             </Pressable>
-            <View style={style.infoView}>
-                <View style={style.innerContainer}>
-                    <Text style={style.name}>
+            <View style={style.chatInfoView}>
+                <View style={style.chatInfoInner}>
+                    <Text style={style.chatName}>
                         Can
                     </Text>
-                    <Text style={style.date}>
+                    <Text style={style.chatDate}>
                         12:58
                     </Text>
                 </View>
-                <Text style={style.message}>
+                <Text style={style.chatMessage}>
                     C
                 </Text>
             </View>

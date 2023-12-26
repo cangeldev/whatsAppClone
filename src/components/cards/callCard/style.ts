@@ -8,10 +8,10 @@ export default StyleSheet.create({
         flexDirection: "row",
         alignItems: "center"
     },
-    textView: {
+    infoContainer: {
         flex: 1,
     },
-    textViewTitle: {
+    titleText: {
         color: colors.red,
         fontSize: 17,
     },
@@ -21,11 +21,11 @@ export default StyleSheet.create({
         borderRadius: 25,
         marginRight: 10
     },
-    icon: {
+    callIcon: {
         fontSize: 22,
         color: colors.whatsAppGreen
     },
-    dateView: {
+    dateInfoContainer: {
         alignItems: "center",
         flexDirection: "row"
     }

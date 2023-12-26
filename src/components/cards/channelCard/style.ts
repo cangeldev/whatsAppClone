@@ -1,45 +1,49 @@
 import colors from "assets/colors/colors"
 import { StyleSheet } from "react-native"
 
+const ICON_SIZE = 22;
+const BUTTON_RADIUS = 15;
+const BORDER_WIDTH = 0.8;
+
 export default StyleSheet.create({
-    container: {
+    channelCardContainer: {
         paddingVertical: 15,
-        borderWidth: 0.8,
-        borderColor: "#d3d3d3",
-        borderRadius: 12,
+        borderWidth: BORDER_WIDTH,
+        borderColor: colors.lightGray,
+        borderRadius: BUTTON_RADIUS * 1.5,
         marginRight: 10,
         alignItems: "center"
     },
-    image: {
+    channelCardImage: {
         width: 60,
         height: 60
     },
-    title: {
+    channelCardTitle: {
         color: colors.black,
         fontSize: 15,
         marginVertical: 10,
         width: 110,
         marginHorizontal: 10
     },
-    iconView: {
+    iconContainer: {
         position: "absolute",
         right: 0,
         bottom: 0,
         padding: 2,
         backgroundColor: colors.white,
-        borderRadius: 25
+        borderRadius: ICON_SIZE * 1.5
     },
-    imageIcon: {
-        fontSize: 22,
+    channelCardIcon: {
+        fontSize: ICON_SIZE,
         color: colors.whatsAppGreen,
-        borderRadius: 25
+        borderRadius: ICON_SIZE * 1.5
     },
-    buttonText: {
+    followButton: {
         color: colors.whatsAppGreen,
-        backgroundColor: "#e0fef2",
+        backgroundColor: colors.lightGreen,
         paddingHorizontal: 25,
         paddingVertical: 6,
-        borderRadius: 15,
+        borderRadius: BUTTON_RADIUS,
         fontWeight: "700"
     }
 })

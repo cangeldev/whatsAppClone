@@ -8,17 +8,17 @@ import { CallCard } from 'components/cards'
 
 export const CallsScreen = () => {
     return (
-        <View style={style.container}>
-            <View style={style.headerView}>
+        <View style={style.mainContainer}>
+            <View style={style.headerSection}>
                 <Icon
                     name={"link"}
                     style={style.linkIcon}
                 />
-                <View style={style.headerInnerView}>
-                    <Text style={style.headerViewTitle}>
+                <View style={style.headerInnerSection}>
+                    <Text style={style.headerTitle}>
                         Arama bağlantısı oluştur
                     </Text>
-                    <Text style={style.headerViewText}>
+                    <Text style={style.headerDescription}>
                         WhatsApp aramanız için bağlantı paylaşın
                     </Text>
                 </View>
@@ -31,20 +31,20 @@ export const CallsScreen = () => {
                 <CallCard />
                 <CallCard />
             </View>
-            <View style={style.divider} />
-            <View style={style.infoView}>
+            <View style={style.sectionDivider} />
+            <View style={style.infoSection}>
                 <IconF
                     name={"lock"}
-                    style={style.icon}
+                    style={style.infoIcon}
                 />
                 <Text style={style.infoText}>
                     Kişisel aramalarınız
-                    <Text style={style.innerInfoText}>
+                    <Text style={style.innerInfoTextHighlight}>
                         {" "}uçtan uca şifrelidir
                     </Text>
                 </Text>
             </View>
-            <View style={style.buttonView}>
+            <View style={style.floatingButtonSection}>
                 <CustomButton iconName='add-ic-call' />
             </View>
         </View>

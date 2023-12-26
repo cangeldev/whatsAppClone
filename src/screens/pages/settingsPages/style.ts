@@ -6,39 +6,39 @@ export default StyleSheet.create({
         flex: 1,
         backgroundColor: colors.white
     },
-    headerView: {
+    headerContainer: {
         flexDirection: "row",
         paddingHorizontal: 17,
         paddingVertical: 10
     },
-    image: {
+    profileImage: {
         width: 60,
         height: 60
     },
-    textView: {
+    textContainer: {
         marginLeft: 15,
         justifyContent: "center",
         flex: 1
     },
-    name: {
+    nameText: {
         fontSize: 20,
         color: colors.black
     },
-    iconView: {
+    iconContainer: {
         flexDirection: "row",
         alignItems: "center"
     },
-    icon: {
+    iconStyle: {
         fontSize: 24,
         marginLeft: 15,
         color: colors.whatsAppGreen
     },
-    divider: {
+    dividerLine: {
         marginTop: 15,
         borderBottomWidth: 0.6,
         borderBottomColor: "#dddddd"
     },
-    settingsView: {
+    settingsContainer: {
         marginVertical: 15,
         marginHorizontal: 15
     }
