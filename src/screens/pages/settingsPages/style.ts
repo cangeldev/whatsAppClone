@@ -41,5 +41,27 @@ export default StyleSheet.create({
     settingsContainer: {
         marginVertical: 15,
         marginHorizontal: 15
+    },
+    description: {
+        alignSelf: "center",
+        marginBottom: 7,
+        marginTop: 20,
+        fontSize: 15
+    },
+    title: {
+        marginLeft: 5,
+        color: colors.black,
+        fontWeight: "600",
+        fontSize: 16
+    },
+    titleView: {
+        alignSelf: "center",
+        flexDirection: "row",
+        alignItems: "center",
+        marginBottom: 20
+    },
+    metaImage: {
+        width: 18,
+        height: 18
     }
 })

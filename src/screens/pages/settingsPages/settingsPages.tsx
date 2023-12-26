@@ -1,11 +1,11 @@
-import { View, Text, Image, StatusBar, FlatList } from 'react-native'
+import { View, Text, Image, StatusBar, FlatList, ScrollView } from 'react-native'
 import React from 'react'
 import style from './style'
-import { example } from 'assets'
+import { example, group, meta } from 'assets'
 import IconF from 'react-native-vector-icons/FontAwesome'
 import IconE from 'react-native-vector-icons/AntDesign'
 import colors from 'assets/colors/colors'
-import { SettingsMenuCard } from 'components/cards'
+import { SettingsCard, SettingsMenuCard } from 'components/cards'
 import { settingsList } from 'utils/helper'
 
 export const SettingsPages = () => {
@@ -18,7 +18,7 @@ export const SettingsPages = () => {
         />
 
     return (
-        <View style={style.container}>
+        <ScrollView style={style.container}>
             <StatusBar
                 backgroundColor={colors.whatsAppGreen}
             />
@@ -50,11 +50,28 @@ export const SettingsPages = () => {
             <View style={style.dividerLine} />
             <View style={style.settingsContainer}>
                 <FlatList
+                    scrollEnabled={false}
                     data={settingsList}
                     renderItem={render}
                     keyExtractor={(item, index) => index.toString()}
                 />
+                <SettingsCard
+                    icon={group}
+                    title='Arkadaşları davet edin'
+                />
             </View>
-        </View>
+            <Text style={style.description}>
+                from
+            </Text>
+            <View style={style.titleView}>
+            <Image
+                    source={meta}
+                    style={style.metaImage}
+                />
+                <Text style={style.title}>
+                    Meta
+                </Text>
+            </View>
+        </ScrollView>
     )
 }
