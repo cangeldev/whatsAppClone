@@ -19,7 +19,7 @@ export const iconButtonList = [
     {
         id: 4,
         iconName: "alert-circle-outline",
-        navigatePage: "MessagePages"
+        navigatePage: "ProfileInfoPages"
     }
 ]
 
