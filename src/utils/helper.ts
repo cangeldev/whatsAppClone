@@ -23,6 +23,26 @@ export const iconButtonList = [
     }
 ]
 
+export const profileInfoList = [
+    {
+        id: 1,
+        iconName: "comment-text",
+        name: "Mesaj"
+    },
+    {
+        id: 2,
+        iconName: "phone",
+        name: "Sesli"
+    },
+    {
+        id: 3,
+        iconName: "video",
+        name: "Görüntülü"
+    },
+
+]
+
+
 export const settingsList = [
     {
         id: 1,

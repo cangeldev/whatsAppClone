@@ -4,7 +4,11 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: colors.white
+    },
+    headerContainer: {
+        backgroundColor: colors.white,
+        paddingBottom: 15,
+        elevation:1
     },
     headerIconContainer: {
         flexDirection: "row",
@@ -13,19 +17,31 @@ export default StyleSheet.create({
     },
     backIcon: {
         fontSize: 24,
-        color: colors.grey
+        color: colors.red
     },
     ProfileImage: {
-        width: 100,
-        height: 100
+        width: 120,
+        height: 120
     },
     profileContainer: {
         alignItems: "center"
     },
     profileName: {
-        color: colors.black,
-        fontWeight: "500",
+        color: colors.red,
+        fontSize: 23,
+        marginTop: 8,
+        marginBottom: 5,
+    },
+    profileNumber: {
         fontSize: 17,
-        marginVertical: 5
+    },
+    listContainer: {
+        marginTop: 5,
+        paddingHorizontal:5
+    },
+    contentContainerStyle: {
+        flexGrow: 1,
+        justifyContent: "space-around",
+        paddingHorizontal: 5
     }
 })
