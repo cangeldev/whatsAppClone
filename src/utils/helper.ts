@@ -3,19 +3,23 @@ import { bell, comment, face, key, loading, lock, question, web } from "assets"
 export const iconButtonList = [
     {
         id: 1,
-        iconName: "android-messages"
+        iconName: "android-messages",
+        navigatePage: "MessagePages"
     },
     {
         id: 2,
-        iconName: "phone"
+        iconName: "phone",
+        navigatePage: "MessagePages"
     },
     {
         id: 3,
-        iconName: "video"
+        iconName: "video",
+        navigatePage: "MessagePages"
     },
     {
         id: 4,
-        iconName: "alert-circle-outline"
+        iconName: "alert-circle-outline",
+        navigatePage: "MessagePages"
     }
 ]
 

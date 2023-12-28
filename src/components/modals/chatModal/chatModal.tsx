@@ -12,7 +12,11 @@ interface IChatModal {
 
 export const ChatModal: FC<IChatModal> = ({ visibleModal, closeModal }) => {
 
-    const renderItem = ({ item }: any) => <IconButton icon={item.iconName} />
+    const renderItem = ({ item }: any) =>
+        <IconButton
+            icon={item.iconName}
+            navigatePage={item.navigatePage}
+        />
 
     return (
         <Modal

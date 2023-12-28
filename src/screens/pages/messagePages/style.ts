@@ -41,7 +41,7 @@ export default StyleSheet.create({
         position: "absolute",
         bottom: 5,
         flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
     },
     inputIcon: {
         fontSize: 21,
@@ -52,7 +52,7 @@ export default StyleSheet.create({
         width: 20,
         height: 20,
         tintColor: colors.grey,
-        marginRight: 12
+        marginRight: 20
     },
     microphoneIcon: {
         fontSize: 20,
@@ -62,6 +62,15 @@ export default StyleSheet.create({
         borderRadius: 50,
         marginHorizontal: 5,
         paddingHorizontal: 15
+    },
+    sendIcon: {
+        fontSize: 20,
+        color: colors.white,
+        backgroundColor: colors.whatsAppGreen,
+        padding: 12,
+        borderRadius: 50,
+        marginHorizontal: 5,
+        paddingHorizontal: 12
     },
     inputEmojiIcon: {
         fontSize: 25,
@@ -83,5 +92,8 @@ export default StyleSheet.create({
         flexDirection: "row",
         position: "absolute",
         right: 45
+    },
+    contentView:{
+       marginBottom:58 
     }
 })
