@@ -54,6 +54,14 @@ export const ProfileInfoPages = () => {
                     />
                 </View>
             </View>
+            <View style={style.statusContainer}>
+                <Text style={style.statusText}>
+                    Uyuyor
+                </Text>
+                <Text style={style.statusDate}>
+                    5 Ocak 2021
+                </Text>
+            </View>
         </View>
     )
 }
