@@ -8,6 +8,12 @@ export default StyleSheet.create({
     },
     headerContainer: {
         paddingVertical: 10
-
+    },
+    title: {
+        marginLeft: 15,
+        fontWeight: "600"
+    },
+    contentView: {
+        paddingTop: 20
     }
 })

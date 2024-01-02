@@ -16,19 +16,21 @@ export const ChatsScreen = () => {
     return (
         <View style={style.container}>
             <ScrollView>
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
-                <ChatCard />
+                <ChatCard status='date' />
+                <ChatCard status='date' />
+                <ChatCard status='date' />
+                <ChatCard status='date' />
+                <ChatCard status='date' />
+                <ChatCard status='date' />
+                <ChatCard status='date' />
+                <ChatCard status='date' />
+                <ChatCard status='date' />
+                <ChatCard status='date' />
+                <ChatCard status='date' />
+                <ChatCard status='date' />
+                <ChatCard status='date' />
+                <ChatCard status='date' />
+                <ChatCard status='date' />
                 <Text style={style.text}>
                     Daha fazla seçenek için istediğiniz sohbeti basılı tutun
                 </Text>

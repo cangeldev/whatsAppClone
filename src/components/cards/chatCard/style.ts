@@ -1,7 +1,7 @@
 import colors from "assets/colors/colors"
 import { StyleSheet } from "react-native"
 
-const BORDER_RADIUS = 25;
+const BORDER_RADIUS = 25
 
 export default StyleSheet.create({
     chatContainer: {
@@ -35,5 +35,11 @@ export default StyleSheet.create({
     },
     chatMessage: {
         fontWeight: "600"
+    },
+    chatInvite: {
+        color: colors.whatsAppGreen,
+        fontSize: 16,
+        fontWeight: "600",
+        marginRight: 15
     }
 })

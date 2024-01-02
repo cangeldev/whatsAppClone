@@ -1,8 +1,8 @@
-import { View, Text, FlatList } from 'react-native'
+import { View, Text, FlatList, ScrollView } from 'react-native'
 import React from 'react'
 import style from './style'
 import { useNavigation } from '@react-navigation/native'
-import { AddContactsCard } from 'components/cards'
+import { AddContactsCard, ChatCard } from 'components/cards'
 import { iconaddContactList } from 'utils/helper'
 
 export const ContactsPages = () => {
@@ -14,13 +14,33 @@ export const ContactsPages = () => {
             />
 
     return (
-        <View style={style.container}>
+        <ScrollView style={style.container}>
             <View style={style.headerContainer}>
                 <FlatList
+                    scrollEnabled={false}
                     data={iconaddContactList}
                     renderItem={addContact}
                 />
             </View>
-        </View>
+            <Text style={style.title}>
+                WhatsApp'taki kişiler
+            </Text>
+            <View style={style.contentView}>
+                <ChatCard />
+                <ChatCard />
+                <ChatCard />
+                <ChatCard />
+                <ChatCard />
+                <ChatCard />
+            </View>
+            <Text style={style.title}>
+                WhatsApp'a davet et
+            </Text>
+            <View style={style.contentView}>
+                <ChatCard status='addContact' />
+                <ChatCard status='addContact' />
+                <ChatCard status='addContact' />
+            </View>
+        </ScrollView>
     )
 }

@@ -1,11 +1,14 @@
 import { View, Text, Image, Pressable } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState, FC } from 'react'
 import style from './style'
 import { example } from 'assets'
 import { ChatModal } from 'components/modals'
 import { useNavigation } from '@react-navigation/native'
 
-export const ChatCard = () => {
+interface IChatCard {
+    status?: string
+}
+export const ChatCard: FC<IChatCard> = ({ status }) => {
     const [chatModal, setChatModal] = useState(false)
     const navigation = useNavigation<any>()
 
@@ -36,9 +39,15 @@ export const ChatCard = () => {
                     <Text style={style.chatName}>
                         Can
                     </Text>
-                    <Text style={style.chatDate}>
-                        12:58
-                    </Text>
+                    {
+                        status === "date" ?
+                            <Text style={style.chatDate}>
+                                12:58
+                            </Text> : status == "addContact" ?
+                                <Text style={style.chatInvite}>
+                                    Davet et
+                                </Text> : null
+                    }
                 </View>
                 <Text style={style.chatMessage}>
                     C
