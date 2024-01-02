@@ -23,7 +23,7 @@ export const HomeScreen = () => {
         }
     }
 
-    const [index, setIndex] = useState(3)
+    const [index, setIndex] = useState(1)
     const [routes] = React.useState([
         { key: 'first' },
         { key: 'second', title: 'Sohbetler' },

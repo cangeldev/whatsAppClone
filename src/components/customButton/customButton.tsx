@@ -11,7 +11,7 @@ interface ICustomButton {
 export const CustomButton: FC<ICustomButton> = ({ iconName, onPress }) => {
     return (
         <TouchableOpacity
-            activeOpacity={0.7}
+            activeOpacity={0.8}
             onPress={onPress}
             style={style.container}>
             <IconM

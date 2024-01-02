@@ -23,6 +23,24 @@ export const iconButtonList = [
     }
 ]
 
+export const iconaddContactList = [
+    {
+        id: 1,
+        iconName: "account-multiple",
+        title: "Yeni grup"
+    },
+    {
+        id: 2,
+        iconName: "account-plus",
+        title: "Yeni kişi"
+    },
+    {
+        id: 3,
+        iconName: "account-group",
+        title: "Yeni topluluk"
+    }
+]
+
 export const profileInfoList = [
     {
         id: 1,

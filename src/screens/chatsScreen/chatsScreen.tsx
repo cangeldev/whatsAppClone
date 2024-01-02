@@ -10,7 +10,7 @@ export const ChatsScreen = () => {
 
     const navigation = useNavigation<any>()
     const toogleButton = () => {
-        console.log("first")
+        navigation.navigate("ContactsPages")
     }
 
     return (
