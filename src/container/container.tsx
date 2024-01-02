@@ -9,8 +9,8 @@ import Icon from 'react-native-vector-icons/Fontisto'
 export const Container = () => {
     const Stack = createStackNavigator()
     return (
-        <NavigationContainer independent={true}>
-            <Stack.Navigator initialRouteName='ProfileInfoPages' >
+        <NavigationContainer>
+            <Stack.Navigator initialRouteName='HomeScreen' >
                 <Stack.Screen
                     options={{ headerShown: false }}
                     name='HomeScreen'

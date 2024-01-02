@@ -8,7 +8,7 @@ export default StyleSheet.create({
         borderColor: "#f5f5f5",
         alignItems: "center",
         paddingVertical: 13,
-        width: 113,
+        width: 113
     },
     title: {
         color: colors.black,

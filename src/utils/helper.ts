@@ -1,4 +1,4 @@
-import { bell, comment, face, key, loading, lock, question, web } from "assets"
+import { bell, comment, example, face, key, loading, lock, music, photo, privates, question, time, web } from "assets"
 
 export const iconButtonList = [
     {
@@ -41,7 +41,48 @@ export const profileInfoList = [
     },
 
 ]
+export const profileSettingList = [
+    {
+        id: 1,
+        iconName: bell,
+        title: "Bildirimleri sessize al",
+        switchStatus: true
+    },
+    {
+        id: 2,
+        iconName: music,
+        title: "Özel bildirimler",
+        switchStatus: false
+    },
+    {
+        id: 3,
+        iconName: photo,
+        title: "Medya görünürlüğü",
+        switchStatus: false
+    },
+    {
+        id: 4,
+        iconName: lock,
+        title: "Şifreleme",
+        description: "Mesajlar ve aramalar uçtan uca şifrelidir. doğrulamak için dokunun.",
+        switchStatus: false
+    },
+    {
+        id: 5,
+        iconName: time,
+        title: "Süreli Mesajlar",
+        description: "Kapalı",
+        switchStatus: false
+    },
+    {
+        id: 6,
+        iconName: privates,
+        title: "Sohbet kilidi",
+        description: "Bu sohbeti bu cihazda kilitleyin ve gizleyin.",
+        switchStatus: true
+    },
 
+]
 
 export const settingsList = [
     {

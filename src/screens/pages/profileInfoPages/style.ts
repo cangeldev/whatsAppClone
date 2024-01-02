@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
     container: {
-        flex: 1,
+        flex: 1
     },
     headerContainer: {
         backgroundColor: colors.white,
@@ -29,27 +29,16 @@ export default StyleSheet.create({
     profileName: {
         color: colors.black,
         fontSize: 23,
-        marginTop: 8,
-        marginBottom: 5,
+        marginVertical: 7
     },
     profileNumber: {
-        fontSize: 17,
-    },
-    listContainer: {
-        marginTop: 5,
-        paddingHorizontal: 5
+        fontSize: 17
     },
     contentContainerStyle: {
         flexGrow: 1,
         justifyContent: "space-around",
-        paddingHorizontal: 5
-    },
-    statusContainer: {
-        backgroundColor: colors.white,
-        paddingHorizontal: 15,
-        marginVertical: 10,
-        paddingVertical: 13,
-        elevation: 1
+        paddingHorizontal: 5,
+        marginTop: 5
     },
     statusText: {
         marginTop: 5,
@@ -58,5 +47,11 @@ export default StyleSheet.create({
     },
     statusDate: {
         fontSize: 15
+    },
+    settingsContainer: {
+        marginTop: 10,
+        backgroundColor: colors.white,
+        padding: 10,
+        elevation: 1
     }
 })
