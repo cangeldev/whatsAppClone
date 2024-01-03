@@ -1,5 +1,5 @@
 import { View, Text, StatusBar, Image, ImageBackground, TextInput, ScrollView } from 'react-native'
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import style from './style'
 import colors from 'assets/colors/colors'
 import IconF from 'react-native-vector-icons/FontAwesome5'
@@ -8,16 +8,17 @@ import IconE from 'react-native-vector-icons/Entypo'
 import IconI from 'react-native-vector-icons/Ionicons'
 import { attach, example, messageBackground } from 'assets'
 import { useNavigation } from '@react-navigation/native'
+import { MessageBoxCard } from 'components/cards'
 
 export const MessagePages = () => {
     const [message, SetMessage] = useState("")
     const navigation = useNavigation()
+    const scrollViewRef = useRef<ScrollView>(null)
 
     return (
         <ImageBackground
             source={messageBackground}
             style={style.container}>
-
             <View style={style.headerContainer}>
                 <IconM
                     name={"arrow-back"}
@@ -50,127 +51,30 @@ export const MessagePages = () => {
                     />
                 </View>
             </View >
-            <ScrollView style={style.contentView}>
-
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-                <Text>
-                    ContentView
-                </Text>
-
-
+            <ScrollView onContentSizeChange={() => scrollViewRef.current?.scrollToEnd()}
+                ref={scrollViewRef} style={style.contentView}>
+                <MessageBoxCard info='to' />
+                <MessageBoxCard info='from' />
+                <MessageBoxCard info='to' />
+                <MessageBoxCard info='from' />
+                <MessageBoxCard info='to' />
+                <MessageBoxCard info='from' />
+                <MessageBoxCard info='to' />
+                <MessageBoxCard info='to' />
+                <MessageBoxCard info='from' />
+                <MessageBoxCard info='to' />
+                <MessageBoxCard info='from' />
+                <MessageBoxCard info='from' />
+                <MessageBoxCard info='to' />
+                <MessageBoxCard info='from' />
+                <MessageBoxCard info='to' />
+                <MessageBoxCard info='from' />
+                <MessageBoxCard info='to' />
+                <MessageBoxCard info='from' />
+                <MessageBoxCard info='to' />
+                <MessageBoxCard info='from' />
+                <MessageBoxCard info='to' />
+                <MessageBoxCard info='from' />
             </ScrollView>
             <View style={style.inputContainer}>
                 <TextInput
@@ -208,7 +112,6 @@ export const MessagePages = () => {
                     />
                 }
             </View>
-
         </ImageBackground>
     )
 }
