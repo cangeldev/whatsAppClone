@@ -21,9 +21,7 @@ export default StyleSheet.create({
         marginTop: 8,
         fontSize: 16
     },
-    icon: {
-        fontSize: 24,
-        color: colors.white,
+    button: {
         backgroundColor: colors.whatsAppGreen,
         padding: 15,
         borderRadius: 30,

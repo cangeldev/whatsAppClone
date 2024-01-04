@@ -1,10 +1,11 @@
 import { View, Text, ScrollView } from 'react-native'
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import style from './style'
 import { ChatCard } from 'components/cards'
 import Icon from 'react-native-vector-icons/FontAwesome6'
 import { CustomButton } from 'components'
 import { useNavigation } from '@react-navigation/native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export const ChatsScreen = () => {
 
@@ -12,10 +13,32 @@ export const ChatsScreen = () => {
     const toogleButton = () => {
         navigation.navigate("ContactsPages")
     }
+    const [language, setLanguage] = useState('')
+    useEffect(() => {
+        getLanguage()
+    }, [])
 
+    const getLanguage = async () => {
+        try {
+            const language = await AsyncStorage.getItem('language')
+            if (language !== null) {
+                setLanguage(language)
+                console.log('Kullanıcı adı:', language)
+            } else {
+                console.log('Kullanıcı adı bulunamadı.')
+            }
+        } catch (error) {
+            console.error('Kullanıcı adını alma hatası:', error)
+        }
+    }
     return (
         <View style={style.container}>
             <ScrollView>
+                <Text>
+                    {
+                        language
+                    }
+                </Text>
                 <ChatCard status='date' />
                 <ChatCard status='date' />
                 <ChatCard status='date' />
