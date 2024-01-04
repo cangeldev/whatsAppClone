@@ -1,4 +1,5 @@
 import { bell, comment, example, face, key, loading, lock, music, photo, privates, question, time, web } from "assets"
+import { RadioButtonProps } from "react-native-radio-buttons-group"
 
 export const iconButtonList = [
     {
@@ -59,6 +60,7 @@ export const profileInfoList = [
     },
 
 ]
+
 export const profileSettingList = [
     {
         id: 1,
@@ -151,4 +153,129 @@ export const settingsList = [
         title: "Yardım",
         text: "Yardım merkezi, bize ulaşın, gizlilik ilkesi"
     }
+]
+
+export const radioButtons: RadioButtonProps[] = [
+    {
+        id: '1',
+        label: 'Türkçe   -   (Cihaz dili)',
+        value: 'turkce',
+        size: 20,
+        borderColor: "#008069",
+        color: "#008069",
+        labelStyle: {
+            color: "black"
+
+        }
+    },
+    {
+        id: '2',
+        label: 'English   -   İngilizce',
+        value: 'ingilizce',
+        size: 20,
+        borderColor: "#008069",
+        color: "#008069",
+        labelStyle: {
+            color: "black"
+        }
+    },
+    {
+        id: '3',
+        label: 'Русский   -   Rusça',
+        value: 'rusca',
+        size: 20,
+        borderColor: "#008069",
+        color: "#008069",
+        labelStyle: {
+            color: "black"
+        }
+    },
+    {
+        id: '4',
+        label: 'Azərbaycan dili   -   Azerbaycan dili',
+        value: 'azerbaycan',
+        size: 20,
+        borderColor: "#008069",
+        color: "#008069",
+        labelStyle: {
+            color: "black"
+        }
+    },
+    {
+        id: '5',
+        label: 'Deutsch   -   Almanca',
+        value: 'almanca',
+        size: 20,
+        borderColor: "#008069",
+        color: "#008069",
+        labelStyle: {
+            color: "black"
+        }
+    },
+    {
+        id: '6',
+        label: 'Français   -   Fransızca',
+        value: 'fransızca',
+        size: 20,
+        borderColor: "#008069",
+        color: "#008069",
+        labelStyle: {
+            color: "black"
+        }
+    },
+    {
+        id: '7',
+        label: '日本語   -   Japonca',
+        value: 'japonca',
+        size: 20,
+        borderColor: "#008069",
+        color: "#008069",
+        labelStyle: {
+            color: "black"
+        }
+    },
+    {
+        id: '8',
+        label: 'Polski   -   Lehçe',
+        value: 'lehce',
+        size: 20,
+        borderColor: "#008069",
+        color: "#008069",
+        labelStyle: {
+            color: "black"
+        }
+    },
+    {
+        id: '9',
+        label: 'Dansk   -   Danca',
+        value: 'danca',
+        size: 20,
+        borderColor: "#008069",
+        color: "#008069",
+        labelStyle: {
+            color: "black"
+        }
+    },
+    {
+        id: '10',
+        label: 'Hrvatski   -   Hırvatça',
+        value: 'hırvatca',
+        size: 20,
+        borderColor: "#008069",
+        color: "#008069",
+        labelStyle: {
+            color: "black"
+        }
+    },
+    {
+        id: '11',
+        label: 'Shqip   -   Arnavutça',
+        value: 'arnavutça',
+        size: 20,
+        borderColor: "#008069",
+        color: "#008069",
+        labelStyle: {
+            color: "black"
+        }
+    },
 ]
