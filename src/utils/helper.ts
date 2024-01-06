@@ -159,7 +159,7 @@ export const radioButtons: RadioButtonProps[] = [
     {
         id: '1',
         label: 'Türkçe   -   (Cihaz dili)',
-        value: 'turkce',
+        value: 'tr',
         size: 20,
         borderColor: "#008069",
         color: "#008069",
@@ -171,7 +171,7 @@ export const radioButtons: RadioButtonProps[] = [
     {
         id: '2',
         label: 'English   -   İngilizce',
-        value: 'ingilizce',
+        value: 'en',
         size: 20,
         borderColor: "#008069",
         color: "#008069",

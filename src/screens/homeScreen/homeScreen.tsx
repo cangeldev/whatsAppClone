@@ -1,5 +1,5 @@
-import { View } from 'react-native'
 import React, { useState } from 'react'
+import { View } from 'react-native'
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import style from './style'
@@ -8,8 +8,12 @@ import colors from 'assets/colors/colors'
 import { ChatsScreen } from 'screens/chatsScreen/chatsScreen'
 import { StatusScreen } from 'screens/statusScreen/statusScreen'
 import { CallsScreen } from 'screens/callsScreen/callsScreen'
+import { useTranslation } from 'react-i18next'
 
 export const HomeScreen = () => {
+
+    const { t } = useTranslation()
+    const [index, setIndex] = useState(1)
 
     const renderIcon = ({ route, focused }: any) => {
         if (route.key === 'first') {
@@ -23,13 +27,12 @@ export const HomeScreen = () => {
         }
     }
 
-    const [index, setIndex] = useState(1)
-    const [routes] = React.useState([
+    const routes = [
         { key: 'first' },
-        { key: 'second', title: 'Sohbetler' },
-        { key: 'third', title: 'Güncellemeler' },
-        { key: 'fourth', title: 'Aramalar' }
-    ])
+        { key: 'second', title: t('chats') },
+        { key: 'third', title: t('status') },
+        { key: 'fourth', title: t('calls') },
+    ]
 
     return (
         <View style={style.container}>
