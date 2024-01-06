@@ -1,4 +1,4 @@
-import { bell, comment, example, face, key, loading, lock, music, photo, privates, question, time, web } from "assets"
+import { bell, comment, face, key, loading, lock, music, photo, privates, question, time, web } from "assets"
 import { RadioButtonProps } from "react-native-radio-buttons-group"
 
 export const iconButtonList = [
@@ -28,17 +28,17 @@ export const iconaddContactList = [
     {
         id: 1,
         iconName: "account-multiple",
-        title: "Yeni grup"
+        title: "newGroup"
     },
     {
         id: 2,
         iconName: "account-plus",
-        title: "Yeni kişi"
+        title: "newContact"
     },
     {
         id: 3,
         iconName: "account-group",
-        title: "Yeni topluluk"
+        title: "newCommunity"
     }
 ]
 
@@ -46,17 +46,17 @@ export const profileInfoList = [
     {
         id: 1,
         iconName: "comment-text",
-        name: "Mesaj"
+        name: "message"
     },
     {
         id: 2,
         iconName: "phone",
-        name: "Sesli"
+        name: "audio"
     },
     {
         id: 3,
         iconName: "video",
-        name: "Görüntülü"
+        name: "video"
     },
 
 ]
@@ -65,93 +65,92 @@ export const profileSettingList = [
     {
         id: 1,
         iconName: bell,
-        title: "Bildirimleri sessize al",
+        title: "muteNotifications",
         switchStatus: true
     },
     {
         id: 2,
         iconName: music,
-        title: "Özel bildirimler",
+        title: "customNotifications",
         switchStatus: false
     },
     {
         id: 3,
         iconName: photo,
-        title: "Medya görünürlüğü",
+        title: "mediaVisibilitiy",
         switchStatus: false
     },
     {
         id: 4,
         iconName: lock,
-        title: "Şifreleme",
-        description: "Mesajlar ve aramalar uçtan uca şifrelidir. doğrulamak için dokunun.",
+        title: "encrypion",
+        description: "encrypionText",
         switchStatus: false
     },
     {
         id: 5,
         iconName: time,
-        title: "Süreli Mesajlar",
-        description: "Kapalı",
+        title: "disapperingMessages",
+        description: "disapperingMessagesText",
         switchStatus: false
     },
     {
         id: 6,
         iconName: privates,
-        title: "Sohbet kilidi",
-        description: "Bu sohbeti bu cihazda kilitleyin ve gizleyin.",
+        title: "chatLock",
+        description: "chatLockText",
         switchStatus: true
     },
-
 ]
 
 export const settingsList = [
     {
         id: 1,
         image: key,
-        title: "Hesap",
-        text: "Güvenlik bildirimleri, numara değiştirme"
+        title: "account",
+        text: "accountText"
     },
     {
         id: 2,
         image: lock,
-        title: "Gizlilik",
-        text: "Kişileri engelleme, süreli mesajlar"
+        title: "privacy",
+        text: "privacyText"
     },
     {
         id: 3,
         image: face,
-        title: "Avatar",
-        text: "Oluşturma, düzenleme, profil fotoğrafı"
+        title: "avatar",
+        text: "avatarText"
     },
     {
         id: 4,
         image: comment,
-        title: "Sohbetler",
-        text: "Tema, duvar kağıtları, sohbet geçmişi"
+        title: "chats",
+        text: "chatsText"
     },
     {
         id: 5,
         image: bell,
-        title: "Bildirimler",
-        text: "Mesaj, grup ve arama sesleri"
+        title: "notifications",
+        text: "notificationsText"
     },
     {
         id: 6,
         image: loading,
-        title: "Depolama ve veriler",
-        text: "Ağ kullanımı, otomatik indirme"
+        title: "storageAndData",
+        text: "storageAndDataText"
     },
     {
         id: 7,
         image: web,
-        title: "Uygulama dili",
-        text: "Türkçe(cihaz dili)"
+        title: "appLanguage",
+        text: "appLanguageText"
     },
     {
         id: 8,
         image: question,
-        title: "Yardım",
-        text: "Yardım merkezi, bize ulaşın, gizlilik ilkesi"
+        title: "help",
+        text: "helpText"
     }
 ]
 

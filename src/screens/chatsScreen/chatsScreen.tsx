@@ -5,9 +5,11 @@ import { ChatCard } from 'components/cards'
 import Icon from 'react-native-vector-icons/FontAwesome6'
 import { CustomButton } from 'components'
 import { useNavigation } from '@react-navigation/native'
+import { useTranslation } from 'react-i18next'
 
 export const ChatsScreen = () => {
 
+    const { t } = useTranslation()
     const navigation = useNavigation<any>()
     const toogleButton = () => {
         navigation.navigate("ContactsPages")
@@ -32,7 +34,7 @@ export const ChatsScreen = () => {
                 <ChatCard status='date' />
                 <ChatCard status='date' />
                 <Text style={style.text}>
-                    Daha fazla seçenek için istediğiniz sohbeti basılı tutun
+                    {t("ChatscreenTextOne")}
                 </Text>
                 <View style={style.divider} />
                 <View style={style.infoView}>
@@ -41,9 +43,9 @@ export const ChatsScreen = () => {
                         style={style.icon}
                     />
                     <Text style={style.infoText}>
-                        Kişisel mesajlarınız
+                        {t("infoTextOne")}
                         <Text style={style.innerInfoText}>
-                            {" "}uçtan uca şifrelidir
+                            {" "}{t("infoTextTwo")}
                         </Text>
                     </Text>
                 </View>

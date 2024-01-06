@@ -7,14 +7,16 @@ import IconE from 'react-native-vector-icons/AntDesign'
 import colors from 'assets/colors/colors'
 import { SettingsCard, SettingsMenuCard } from 'components/cards'
 import { settingsList } from 'utils/helper'
+import { useTranslation } from 'react-i18next'
 
 export const SettingsPages = () => {
 
+    const { t } = useTranslation()
     const render = ({ item }: any) =>
         <SettingsMenuCard
             icon={item.image}
-            description={item.text}
-            title={item.title}
+            description={t(item.text)}
+            title={t(item.title)}
         />
 
     return (
@@ -57,14 +59,14 @@ export const SettingsPages = () => {
                 />
                 <SettingsCard
                     icon={group}
-                    title='Arkadaşları davet edin'
+                    title={t("inviteAFriend")}
                 />
             </View>
             <Text style={style.description}>
                 from
             </Text>
             <View style={style.titleView}>
-            <Image
+                <Image
                     source={meta}
                     style={style.metaImage}
                 />

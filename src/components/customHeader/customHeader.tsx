@@ -7,15 +7,22 @@ import IconE from 'react-native-vector-icons/Entypo'
 import IconFO from 'react-native-vector-icons/Fontisto'
 import style from './style'
 import colors from 'assets/colors/colors'
+import { useTranslation } from 'react-i18next'
 
 export const CustomHeader = () => {
+
+    const { t } = useTranslation()
     const navigation = useNavigation<any>()
     const onOptionSelect = (value: any) => {
         navigation.navigate(value)
     }
     const renderMenuOption = (value: any, text: any) => (
-        <MenuOption onSelect={() => onOptionSelect(value)} text={text} />
-    );
+        <MenuOption
+            onSelect={() => onOptionSelect(value)}
+            text={text}
+        />
+    )
+
     return (
         <View style={style.headerContainer}>
             <StatusBar
@@ -47,13 +54,12 @@ export const CustomHeader = () => {
                             optionText: style.menuOptionText,
                             OptionTouchableComponent: TouchableWithoutFeedback
                         }}
-                        optionsContainerStyle={style.menuOptionsContainer}
-                    >
-                        {renderMenuOption('Seçenek 1', 'Yeni grup')}
-                        {renderMenuOption('Seçenek 2', 'Yeni toplu mesaj')}
-                        {renderMenuOption('Seçenek 3', 'Bağlı cihazlar')}
-                        {renderMenuOption('Seçenek 4', 'Yıldızlı mesajlar')}
-                        {renderMenuOption('SettingsPages', 'Ayarlar')}
+                        optionsContainerStyle={style.menuOptionsContainer}>
+                        {renderMenuOption('Seçenek 1', t('newGroup'))}
+                        {renderMenuOption('Seçenek 2', t('newBroadcast'))}
+                        {renderMenuOption('Seçenek 3', t('linkedDevices'))}
+                        {renderMenuOption('Seçenek 4', t('starredMessages'))}
+                        {renderMenuOption('SettingsPages', t('settings'))}
                     </MenuOptions>
                 </Menu>
             </View>

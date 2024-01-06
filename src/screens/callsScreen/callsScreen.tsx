@@ -5,8 +5,11 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import IconF from 'react-native-vector-icons/FontAwesome6'
 import { CustomButton } from 'components'
 import { CallCard } from 'components/cards'
+import { useTranslation } from 'react-i18next'
 
 export const CallsScreen = () => {
+
+    const { t } = useTranslation()
     return (
         <View style={style.mainContainer}>
             <View style={style.headerSection}>
@@ -16,15 +19,15 @@ export const CallsScreen = () => {
                 />
                 <View style={style.headerInnerSection}>
                     <Text style={style.headerTitle}>
-                        Arama bağlantısı oluştur
+                        {t("callScreentextOne")}
                     </Text>
                     <Text style={style.headerDescription}>
-                        WhatsApp aramanız için bağlantı paylaşın
+                        {t("callScreentextTwo")}
                     </Text>
                 </View>
             </View>
             <Text style={style.title}>
-                En son
+                {t("recent")}
             </Text>
             {/* temize geçir kaldır ileride  */}
             <View >
@@ -38,9 +41,9 @@ export const CallsScreen = () => {
                     style={style.infoIcon}
                 />
                 <Text style={style.infoText}>
-                    Kişisel aramalarınız
+                    {t("infoTextOne")}
                     <Text style={style.innerInfoTextHighlight}>
-                        {" "}uçtan uca şifrelidir
+                        {""} {t("infoTextTwo")}
                     </Text>
                 </Text>
             </View>

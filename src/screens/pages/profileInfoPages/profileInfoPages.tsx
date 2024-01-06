@@ -9,23 +9,25 @@ import { example, negative, noEntry } from 'assets'
 import { ProfileInfoCard, ProfileSettingsCard } from 'components/cards'
 import { FlatList } from 'react-native-gesture-handler'
 import { profileInfoList, profileSettingList } from 'utils/helper'
+import { useTranslation } from 'react-i18next'
 
 export const ProfileInfoPages = () => {
-    const navigation = useNavigation()
 
+    const navigation = useNavigation()
+    const { t } = useTranslation()
     const renderProfileInfo =
         ({ item }: any) =>
             <ProfileInfoCard
                 iconName={item.iconName}
-                title={item.name}
+                title={t(item.name)}
             />
 
     const renderProfileSetting =
         ({ item }: any) =>
             <ProfileSettingsCard
-                title={item.title}
+                title={t(item.title)}
                 icon={item.iconName}
-                description={item.description}
+                description={t(item.description)}
                 switchStatus={item.switchStatus}
             />
 
@@ -93,12 +95,12 @@ export const ProfileInfoPages = () => {
             <View style={[style.settingsContainer, { marginBottom: 10 }]}>
                 <ProfileSettingsCard
                     icon={noEntry}
-                    title='Can kişisini engelle'
+                    title={t("block")}
                     red={true}
                 />
                 <ProfileSettingsCard
                     icon={negative}
-                    title='Can kişisini şikayet et'
+                    title={t("report")}
                     red={true}
                 />
             </View>

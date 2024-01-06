@@ -3,9 +3,10 @@ import React from 'react'
 import style from './style'
 import { example } from 'assets'
 import IconA from 'react-native-vector-icons/AntDesign'
-
+import { useTranslation } from 'react-i18next'
 
 export const ChannelCard = () => {
+    const { t } = useTranslation()
     return (
         <View style={style.channelCardContainer}>
             <View>
@@ -25,7 +26,7 @@ export const ChannelCard = () => {
             </Text>
             <TouchableOpacity>
                 <Text style={style.followButton}>
-                    Takip et
+                    {t("follow")}
                 </Text>
             </TouchableOpacity>
         </View>

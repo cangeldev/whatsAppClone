@@ -7,13 +7,16 @@ import style from './style'
 import { example } from 'assets'
 import { CustomButton } from 'components'
 import { ChannelCard } from 'components/cards'
+import { useTranslation } from 'react-i18next'
 
 export const StatusScreen = () => {
+
+    const { t } = useTranslation()
     return (
         <View style={style.container}>
             <View style={style.headerContainer}>
                 <Text style={style.headerText}>
-                    Durum
+                    {t("status")}
                 </Text>
                 <Icon
                     name={"dots-three-vertical"}
@@ -33,17 +36,17 @@ export const StatusScreen = () => {
                 </View>
                 <View>
                     <Text style={style.statusTitle}>
-                        Durumum
+                        {t("myStatus")}
                     </Text>
                     <Text style={style.statusDescription}>
-                        Durum güncellemesi eklemek için dokunun
+                        {t("statusScreenTextOne")}
                     </Text>
                 </View>
             </View>
             <View style={style.dividerLine} />
             <View style={style.headerContainer}>
                 <Text style={style.headerText}>
-                    Kanallar
+                    {t("channels")}
                 </Text>
                 <Icon
                     name={"plus"}
@@ -51,8 +54,7 @@ export const StatusScreen = () => {
                 />
             </View>
             <Text style={style.informationText}>
-                İlginizi çeken konulardaki son gelişmelerden haberdar olun.
-                Takip edebileceğiniz kanalları aşağıda bulabilirsiniz.
+                {t("statusScreenTextTwo")}
             </Text>
             <View style={style.addButtonContainer}>
                 <CustomButton iconName='camera-alt' />
@@ -63,7 +65,7 @@ export const StatusScreen = () => {
             </View>
             <TouchableOpacity>
                 <Text style={style.exploreButtonText}>
-                    Daha fazlasını keşfet
+                    {t("exploreMore")}
                 </Text>
             </TouchableOpacity>
             <IconM

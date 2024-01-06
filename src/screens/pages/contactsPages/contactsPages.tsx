@@ -4,13 +4,17 @@ import style from './style'
 import { useNavigation } from '@react-navigation/native'
 import { AddContactsCard, ChatCard } from 'components/cards'
 import { iconaddContactList } from 'utils/helper'
+import { useTranslation } from 'react-i18next'
 
 export const ContactsPages = () => {
 
+    const { t } = useTranslation()
     const navigation = useNavigation()
     const addContact =
         ({ item }: any) =>
-            <AddContactsCard icon={item.iconName} title={item.title}
+            <AddContactsCard
+                icon={item.iconName}
+                title={t(item.title)}
             />
 
     return (
@@ -23,7 +27,7 @@ export const ContactsPages = () => {
                 />
             </View>
             <Text style={style.title}>
-                WhatsApp'taki kişiler
+                {t("WhatsAppContacts")}
             </Text>
             <View style={style.contentView}>
                 <ChatCard />
@@ -34,7 +38,7 @@ export const ContactsPages = () => {
                 <ChatCard />
             </View>
             <Text style={style.title}>
-                WhatsApp'a davet et
+                {t("invitetoWhatsApp")}
             </Text>
             <View style={style.contentView}>
                 <ChatCard status='addContact' />

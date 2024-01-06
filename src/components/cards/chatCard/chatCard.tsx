@@ -4,6 +4,7 @@ import style from './style'
 import { example } from 'assets'
 import { ChatModal } from 'components/modals'
 import { useNavigation } from '@react-navigation/native'
+import { useTranslation } from 'react-i18next'
 
 interface IChatCard {
     status?: string
@@ -11,7 +12,7 @@ interface IChatCard {
 export const ChatCard: FC<IChatCard> = ({ status }) => {
     const [chatModal, setChatModal] = useState(false)
     const navigation = useNavigation<any>()
-
+    const { t } = useTranslation()
     const toogleButton = () => {
         navigation.navigate("MessagePages")
     }
@@ -45,7 +46,7 @@ export const ChatCard: FC<IChatCard> = ({ status }) => {
                                 12:58
                             </Text> : status == "addContact" ?
                                 <Text style={style.chatInvite}>
-                                    Davet et
+                                    {t("invite")}
                                 </Text> : null
                     }
                 </View>
