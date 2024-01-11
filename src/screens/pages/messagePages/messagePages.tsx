@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { View, Text, StatusBar, ImageBackground, ScrollView } from 'react-native'
+import { View, Text, StatusBar, ImageBackground, ScrollView, TouchableOpacity } from 'react-native'
 import style from './style'
 import colors from 'assets/colors/colors'
 import { example, messageBackground } from 'assets'//Images
@@ -16,8 +16,12 @@ import IconE from 'react-native-vector-icons/Entypo'
 
 export const MessagePages = () => {
 
-    const navigation = useNavigation()
+    const navigation = useNavigation<any>()
     const scrollViewRef = useRef<ScrollView>(null)
+
+    const goProfileInfo = () => {
+        navigation.navigate("ProfileInfoPages")
+    }
 
     return (
         <ImageBackground
@@ -38,9 +42,13 @@ export const MessagePages = () => {
                         image={example}
                     />
                 </View>
-                <Text style={style.headerTitle}>
-                    Can
-                </Text>
+                <TouchableOpacity
+                    onPress={goProfileInfo}
+                    style={style.headerTitleButton}>
+                    <Text style={style.headerTitle}>
+                        Can
+                    </Text>
+                </TouchableOpacity>
                 <View style={style.iconContainer}>
                     <IconF
                         name={"video"}

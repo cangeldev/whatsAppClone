@@ -1,15 +1,26 @@
 import React, { FC } from 'react'
-import { View, Text } from 'react-native'
+import { Text, TouchableOpacity } from 'react-native'
 import style from './style'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons' //Icons
+import { useNavigation } from '@react-navigation/native'
 
 interface IProfileInfoCard {
     title: string,
     iconName: string
+    navigatePage: string
 }
-export const ProfileInfoCard: FC<IProfileInfoCard> = ({ iconName, title }) => {
+
+export const ProfileInfoCard: FC<IProfileInfoCard> = ({ iconName, title, navigatePage }) => {
+    const navigation = useNavigation<any>()
+
+    const handleButton = () => {
+        navigation.navigate(navigatePage)
+    }
+
     return (
-        <View style={style.container}>
+        <TouchableOpacity
+            onPress={handleButton}
+            style={style.container}>
             <Icon
                 name={iconName}
                 style={style.icon}
@@ -17,6 +28,6 @@ export const ProfileInfoCard: FC<IProfileInfoCard> = ({ iconName, title }) => {
             <Text style={style.title}>
                 {title}
             </Text>
-        </View>
+        </TouchableOpacity>
     )
 }

@@ -21,6 +21,7 @@ export const ProfileInfoPages = () => {
             <ProfileInfoCard
                 iconName={item.iconName}
                 title={t(item.name)}
+                navigatePage={item.navigatePage}
             />
 
     const renderProfileSetting =

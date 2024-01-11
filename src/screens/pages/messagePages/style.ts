@@ -21,7 +21,11 @@ export default StyleSheet.create({
     headerTitle: {
         fontSize: 20,
         color: colors.white,
-        flex: 1
+    },
+    headerTitleButton: {
+        flex: 1,
+        justifyContent: "center",
+        paddingVertical: 5
     },
     iconContainer: {
         flexDirection: "row",

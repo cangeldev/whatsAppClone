@@ -46,17 +46,20 @@ export const profileInfoList = [
     {
         id: 1,
         iconName: "comment-text",
-        name: "message"
+        name: "message",
+        navigatePage: "MessagePages"
     },
     {
         id: 2,
         iconName: "phone",
-        name: "audio"
+        name: "audio",
+        navigatePage: "MessagePages"
     },
     {
         id: 3,
         iconName: "video",
-        name: "video"
+        name: "video",
+        navigatePage: "MessagePages"
     },
 
 ]
