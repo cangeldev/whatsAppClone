@@ -6,8 +6,7 @@ export default StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         paddingTop: 5,
-        paddingBottom: 25,
-        paddingHorizontal: 10
+        paddingBottom: 25
     },
     textContainer: {
         marginLeft: 20,

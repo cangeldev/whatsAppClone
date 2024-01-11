@@ -1,28 +1,32 @@
-import { View, Text, Pressable, Image } from 'react-native'
 import React, { useState } from 'react'
-import { example } from 'assets'
+import { View, Text, Pressable } from 'react-native'
 import style from './style'
+import { example } from 'assets'
+
+//Components
+import { ProfileImage } from '../profileImage/profileImage'
 import { ChatModal } from 'components/modals'
-import Icon from 'react-native-vector-icons/MaterialIcons'
+
+//Icons
+import IconM from 'react-native-vector-icons/MaterialIcons'
 import IconF from 'react-native-vector-icons/MaterialCommunityIcons'
 
 export const CallCard = () => {
 
-    const [chatModal, setChatModal] = useState(false)
+    const [chatModalVisible, setChatModalVisible] = useState(false)
     const toggleChatModal = () => {
-        setChatModal(!chatModal)
+        setChatModalVisible(!chatModalVisible)
     }
 
     return (
         <View style={style.container}>
             <ChatModal
-                visibleModal={chatModal}
+                visibleModal={chatModalVisible}
                 closeModal={toggleChatModal}
             />
-            <Pressable onPress={toggleChatModal}>
-                <Image
-                    source={example}
-                    style={style.image}
+            <Pressable onPress={toggleChatModal} style={style.image}>
+                <ProfileImage
+                    image={example}
                 />
             </Pressable>
             <View style={style.infoContainer}>
@@ -40,7 +44,7 @@ export const CallCard = () => {
                     </Text>
                 </View>
             </View>
-            <Icon
+            <IconM
                 name={"call"}
                 style={style.callIcon}
             />

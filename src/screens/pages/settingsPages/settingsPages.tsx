@@ -1,13 +1,15 @@
-import { View, Text, Image, StatusBar, FlatList, ScrollView } from 'react-native'
 import React from 'react'
+import { View, Text, Image, StatusBar, FlatList, ScrollView } from 'react-native'
 import style from './style'
 import { example, group, meta } from 'assets'
+import colors from 'assets/colors/colors'
+import { SettingsCard, SettingsMenuCard } from 'components/cards' //Components
+import { settingsList } from 'utils/helper'
+import { useTranslation } from 'react-i18next' //Multi Language
+
+//Icons
 import IconF from 'react-native-vector-icons/FontAwesome'
 import IconE from 'react-native-vector-icons/AntDesign'
-import colors from 'assets/colors/colors'
-import { SettingsCard, SettingsMenuCard } from 'components/cards'
-import { settingsList } from 'utils/helper'
-import { useTranslation } from 'react-i18next'
 
 export const SettingsPages = () => {
 
@@ -37,7 +39,6 @@ export const SettingsPages = () => {
                         Deneme Metni
                     </Text>
                 </View>
-
                 <View style={style.iconContainer}>
                     <IconF
                         name={"qrcode"}

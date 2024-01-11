@@ -1,16 +1,19 @@
-import colors from "assets/colors/colors";
-import { StyleSheet } from "react-native";
+import colors from "assets/colors/colors"
+import { StyleSheet, Dimensions } from "react-native"
+
+const windowWidth = Dimensions.get('window').width
+const windowHeight = Dimensions.get('window').height
 
 export default StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: colors.white
+        backgroundColor: colors.white,
+        paddingHorizontal: windowWidth * 0.04,
+        paddingVertical: windowHeight * 0.03
     },
     headerContainer: {
         flexDirection: "row",
         justifyContent: "space-between",
-        paddingHorizontal: 20,
-        paddingTop: 30,
         alignItems: "center"
     },
     headerText: {
@@ -20,16 +23,16 @@ export default StyleSheet.create({
     },
     statusSection: {
         marginTop: 20,
-        paddingHorizontal: 20,
         flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
+        justifyContent: "space-between"
     },
     userImageContainer: {
         alignSelf: "flex-start"
     },
     userImage: {
         width: 45,
-        height: 45
+        height: 45,
     },
     plusIcon: {
         position: "absolute",
@@ -41,22 +44,19 @@ export default StyleSheet.create({
         borderRadius: 25
     },
     statusTitle: {
-        marginHorizontal: 14,
         color: colors.black,
         fontWeight: "600",
         fontSize: 17
     },
     statusDescription: {
-        marginHorizontal: 14,
         fontSize: 15
     },
     dividerLine: {
-        marginTop: 15,
+        marginVertical: 15,
         borderBottomWidth: 0.6,
         borderBottomColor: "#dddddd"
     },
     informationText: {
-        marginHorizontal: 20,
         marginVertical: 10,
         lineHeight: 20
     },
@@ -68,11 +68,10 @@ export default StyleSheet.create({
     exploreButtonText: {
         color: colors.white,
         backgroundColor: colors.whatsAppGreen,
-        paddingHorizontal: 25,
-        paddingVertical: 10,
+        padding: 12,
         borderRadius: 25,
         fontWeight: "700",
-        margin: 20,
+        marginVertical: 15,
         alignSelf: "flex-start"
     },
     editIcon: {
@@ -87,8 +86,6 @@ export default StyleSheet.create({
         elevation: 4
     },
     channelCardsContainer: {
-        flexDirection: "row",
-        marginHorizontal: 20,
-        marginVertical: 10
+        flexDirection: "row"
     }
 })

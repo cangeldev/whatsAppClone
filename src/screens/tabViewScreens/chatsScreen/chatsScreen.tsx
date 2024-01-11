@@ -1,23 +1,26 @@
-import { View, Text, ScrollView } from 'react-native'
 import React from 'react'
+import { View, Text, ScrollView } from 'react-native'
 import style from './style'
+import { useNavigation } from '@react-navigation/native' //Navigation
+import { useTranslation } from 'react-i18next' //Multi Language
+import Icon from 'react-native-vector-icons/FontAwesome6' //Icons
+
+//Components
 import { ChatCard } from 'components/cards'
-import Icon from 'react-native-vector-icons/FontAwesome6'
 import { CustomButton } from 'components'
-import { useNavigation } from '@react-navigation/native'
-import { useTranslation } from 'react-i18next'
 
 export const ChatsScreen = () => {
 
     const { t } = useTranslation()
     const navigation = useNavigation<any>()
+
     const toogleButton = () => {
         navigation.navigate("ContactsPages")
     }
 
     return (
         <View style={style.container}>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <ChatCard status='date' />
                 <ChatCard status='date' />
                 <ChatCard status='date' />

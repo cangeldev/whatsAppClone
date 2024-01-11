@@ -1,18 +1,18 @@
 import React, { useState, useCallback } from 'react'
 import { View, Text, Image, StatusBar, TouchableOpacity } from 'react-native'
-import Icon from 'react-native-vector-icons/AntDesign'
-import { useNavigation } from '@react-navigation/native'
-import AsyncStorage from '@react-native-async-storage/async-storage'
-import RadioGroup from 'react-native-radio-buttons-group'
-import { welcomeImg } from 'assets'
 import style from './style'
+import { welcomeImg } from 'assets'
 import { radioButtons } from 'utils/helper'
-import i18n from 'utils/i18next'
+import i18n from 'utils/i18next'  //Multi Language
+import { useNavigation } from '@react-navigation/native' //Navigation
+import AsyncStorage from '@react-native-async-storage/async-storage' //AsyncStorage
+import RadioGroup from 'react-native-radio-buttons-group'
+import Icon from 'react-native-vector-icons/AntDesign' //Icons
 
 export const WelcomeScreen = () => {
+
     const navigation = useNavigation<any>()
     const [selectedId, setSelectedId] = useState("1")
-
 
     const handleButton = useCallback(async () => {
         try {
@@ -23,7 +23,7 @@ export const WelcomeScreen = () => {
         } catch (error) {
             console.error('Dil seçme kaydetme hatası:', error)
         }
-    }, [navigation, selectedId]);
+    }, [navigation, selectedId])
 
     const saveLanguage = async (language: any) => {
         try {

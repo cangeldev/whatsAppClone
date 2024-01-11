@@ -5,8 +5,7 @@ export default StyleSheet.create({
     container: {
         flexDirection: "row",
         alignItems: "center",
-        marginVertical: 10.5,
-        marginHorizontal: 15
+        marginVertical: 10
     },
     icon: {
         fontSize: 24,

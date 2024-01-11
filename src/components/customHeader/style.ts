@@ -11,7 +11,6 @@ export default StyleSheet.create({
     },
     headerTitle: {
         fontSize: 23,
-        marginLeft: 7,
         color: colors.white
     },
     iconContainer: {
@@ -24,8 +23,7 @@ export default StyleSheet.create({
     },
     middleIcon: {
         fontSize: 20,
-        marginLeft: 25,
-        marginRight: 22,
+        marginHorizontal: 25,
         color: colors.white
     },
     menuOptionText: {

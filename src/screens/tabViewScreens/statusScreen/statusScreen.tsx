@@ -1,13 +1,17 @@
-import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
-import Icon from 'react-native-vector-icons/Entypo'
-import IconA from 'react-native-vector-icons/AntDesign'
-import IconM from 'react-native-vector-icons/MaterialCommunityIcons'
+import { View, Text, TouchableOpacity } from 'react-native'
 import style from './style'
 import { example } from 'assets'
-import { CustomButton } from 'components'
-import { ChannelCard } from 'components/cards'
 import { useTranslation } from 'react-i18next'
+
+//Icons
+import IconE from 'react-native-vector-icons/Entypo'
+import IconA from 'react-native-vector-icons/AntDesign'
+import IconM from 'react-native-vector-icons/MaterialCommunityIcons'
+
+//Components
+import { CustomButton } from 'components'
+import { ChannelCard, ProfileImage } from 'components/cards'
 
 export const StatusScreen = () => {
 
@@ -18,17 +22,18 @@ export const StatusScreen = () => {
                 <Text style={style.headerText}>
                     {t("status")}
                 </Text>
-                <Icon
+                <IconE
                     name={"dots-three-vertical"}
                     size={20}
                 />
             </View>
             <View style={style.statusSection}>
                 <View style={style.userImageContainer}>
-                    <Image
-                        source={example}
-                        style={style.userImage}
-                    />
+                    <View style={style.userImage}>
+                        <ProfileImage
+                            image={example}
+                        />
+                    </View>
                     <IconA
                         name={"pluscircle"}
                         style={style.plusIcon}
@@ -48,7 +53,7 @@ export const StatusScreen = () => {
                 <Text style={style.headerText}>
                     {t("channels")}
                 </Text>
-                <Icon
+                <IconE
                     name={"plus"}
                     size={24}
                 />
@@ -57,7 +62,9 @@ export const StatusScreen = () => {
                 {t("statusScreenTextTwo")}
             </Text>
             <View style={style.addButtonContainer}>
-                <CustomButton iconName='camera-alt' />
+                <CustomButton
+                    iconName='camera-alt'
+                />
             </View>
             <View style={style.channelCardsContainer}>
                 <ChannelCard />

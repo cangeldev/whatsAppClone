@@ -1,14 +1,16 @@
-import { View, Text, StatusBar, Image, ImageBackground, TextInput, ScrollView } from 'react-native'
 import React, { useState, useRef } from 'react'
+import { View, Text, StatusBar, Image, ImageBackground, TextInput, ScrollView } from 'react-native'
 import style from './style'
 import colors from 'assets/colors/colors'
+import { attach, example, messageBackground } from 'assets'//Images
+import { useNavigation } from '@react-navigation/native' //Navigation
+import { MessageBoxCard, ProfileImage } from 'components/cards' //Components
+
+//Icons
 import IconF from 'react-native-vector-icons/FontAwesome5'
 import IconM from 'react-native-vector-icons/MaterialIcons'
 import IconE from 'react-native-vector-icons/Entypo'
 import IconI from 'react-native-vector-icons/Ionicons'
-import { attach, example, messageBackground } from 'assets'
-import { useNavigation } from '@react-navigation/native'
-import { MessageBoxCard } from 'components/cards'
 
 export const MessagePages = () => {
     const [message, SetMessage] = useState("")
@@ -29,10 +31,9 @@ export const MessagePages = () => {
                     backgroundColor={colors.whatsAppGreen}
                     barStyle={'light-content'}
                 />
-                <Image
-                    source={example}
-                    style={style.image}
-                />
+                <View style={style.image}>
+                    <ProfileImage image={example} />
+                </View>
                 <Text style={style.headerTitle}>
                     Can
                 </Text>

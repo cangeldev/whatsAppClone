@@ -1,14 +1,12 @@
 import React, { useState } from 'react'
 import { View } from 'react-native'
-import { TabView, SceneMap, TabBar } from 'react-native-tab-view'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import style from './style'
-import { CustomHeader } from 'components'
 import colors from 'assets/colors/colors'
-import { ChatsScreen } from 'screens/chatsScreen/chatsScreen'
-import { StatusScreen } from 'screens/statusScreen/statusScreen'
-import { CallsScreen } from 'screens/callsScreen/callsScreen'
-import { useTranslation } from 'react-i18next'
+import { TabView, SceneMap, TabBar } from 'react-native-tab-view' //Tabview
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons' //Icons
+import { CustomHeader } from 'components' // Components
+import { useTranslation } from 'react-i18next' // Multi Language
+import { CallsScreen, ChatsScreen, StatusScreen } from 'screens/tabViewScreens' //Pages
 
 export const HomeScreen = () => {
 

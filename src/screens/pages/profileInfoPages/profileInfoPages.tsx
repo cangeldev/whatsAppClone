@@ -1,15 +1,16 @@
-import { View, Text, StatusBar, Image, ScrollView } from 'react-native'
 import React from 'react'
+import { View, Text, StatusBar, ScrollView, FlatList } from 'react-native'
 import colors from 'assets/colors/colors'
 import style from './style'
-import { useNavigation } from '@react-navigation/native'
+import { example, negative, noEntry } from 'assets'
+import { profileInfoList, profileSettingList } from 'utils/helper'
+import { useNavigation } from '@react-navigation/native' //Navigation
+import { useTranslation } from 'react-i18next' //Multi Language
+import { ProfileImage, ProfileInfoCard, ProfileSettingsCard } from 'components/cards' //Components
+
+//Icons
 import IconM from 'react-native-vector-icons/MaterialIcons'
 import IconE from 'react-native-vector-icons/MaterialCommunityIcons'
-import { example, negative, noEntry } from 'assets'
-import { ProfileInfoCard, ProfileSettingsCard } from 'components/cards'
-import { FlatList } from 'react-native-gesture-handler'
-import { profileInfoList, profileSettingList } from 'utils/helper'
-import { useTranslation } from 'react-i18next'
 
 export const ProfileInfoPages = () => {
 
@@ -45,10 +46,11 @@ export const ProfileInfoPages = () => {
                         onPress={navigation.goBack}
                     />
                     <View style={style.profileContainer}>
-                        <Image
-                            source={example}
-                            style={style.ProfileImage}
-                        />
+                        <View style={style.ProfileImage}>
+                            <ProfileImage
+                                image={example}
+                            />
+                        </View>
                         <Text style={style.profileName}>
                             Can GEL
                         </Text>

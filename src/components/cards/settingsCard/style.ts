@@ -4,7 +4,6 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
     container: {
         flexDirection: "row",
-        paddingHorizontal: 10,
         alignItems:"center"
     },
     icon: {

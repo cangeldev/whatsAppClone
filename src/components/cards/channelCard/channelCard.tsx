@@ -1,19 +1,21 @@
-import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
+import { View, Text, TouchableOpacity } from 'react-native'
 import style from './style'
 import { example } from 'assets'
-import IconA from 'react-native-vector-icons/AntDesign'
-import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next' //Multi Language
+import IconA from 'react-native-vector-icons/AntDesign' //Icons
+import { ProfileImage } from '../profileImage/profileImage' //Components
 
 export const ChannelCard = () => {
     const { t } = useTranslation()
     return (
         <View style={style.channelCardContainer}>
             <View>
-                <Image
-                    source={example}
-                    style={style.channelCardImage}
-                />
+                <View style={style.channelCardImage}>
+                    <ProfileImage
+                        image={example}
+                    />
+                </View>
                 <View style={style.iconContainer}>
                     <IconA
                         name={"checkcircle"}
@@ -22,7 +24,7 @@ export const ChannelCard = () => {
                 </View>
             </View>
             <Text numberOfLines={1} style={style.channelCardTitle}>
-                SURVİVOR TÜRKİYE
+                Deneme kanalı
             </Text>
             <TouchableOpacity>
                 <Text style={style.followButton}>

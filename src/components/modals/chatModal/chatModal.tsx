@@ -1,9 +1,12 @@
-import { View, Text, Modal, Image, TouchableOpacity, TouchableWithoutFeedback, FlatList } from 'react-native'
 import React, { FC } from 'react'
+import { View, Text, Modal, TouchableOpacity, TouchableWithoutFeedback, FlatList } from 'react-native'
 import style from './style'
 import { example } from 'assets'
-import { IconButton } from 'components/iconButton/iconButton'
 import { iconButtonList } from 'utils/helper'
+
+//Components
+import { ProfileImage } from 'components/cards'
+import { IconButton } from 'components/iconButton/iconButton'
 
 interface IChatModal {
     visibleModal: boolean
@@ -32,10 +35,11 @@ export const ChatModal: FC<IChatModal> = ({ visibleModal, closeModal }) => {
             >
                 <TouchableWithoutFeedback>
                     <View style={style.modalContent}>
-                        <Image
-                            source={example}
-                            style={style.image}
-                        />
+                        <View style={style.image}>
+                            <ProfileImage
+                                image={example}
+                            />
+                        </View>
                         <Text style={style.nameContainer} >
                             Babam
                         </Text>

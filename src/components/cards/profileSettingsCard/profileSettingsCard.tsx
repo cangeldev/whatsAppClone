@@ -1,44 +1,52 @@
-import { View, Text, Image, Switch } from 'react-native'
 import React, { FC, useState } from 'react'
+import { View, Text, Image, Switch, ImageSourcePropType } from 'react-native'
 import style from './style'
 import colors from 'assets/colors/colors'
 
 interface IProfileSettingsCard {
-    icon: Image
+    icon: ImageSourcePropType
     title: string
     switchStatus?: boolean
     description?: string | null
     red?: boolean
 }
 
-export const ProfileSettingsCard: FC<IProfileSettingsCard> = ({ title, icon, switchStatus = false, description = null, red = false }) => {
+export const ProfileSettingsCard: FC<IProfileSettingsCard> = ({
+    icon,
+    title,
+    switchStatus = false,
+    description = null,
+    red = false
+}) => {
+    const [isEnabled, setIsEnabled] = useState(switchStatus)
 
-    const [isEnabled, setIsEnabled] = useState(false)
-    const toggleSwitch = () => setIsEnabled(previousState => !previousState)
+    const toggleSwitch = () => setIsEnabled(prevState => !prevState)
 
-    const switchStyle = isEnabled ? [style.switch, style.switchEnabled] : [style.switch, style.switchDisabled]
-    const switchTrackColor = isEnabled ? colors.whatsAppGreen : "#f1f2f6"
-    const switchThumbColor = isEnabled ? colors.white : '#83919a'
+    const switchStyle = {
+        ...style.switch,
+        ...(isEnabled ? style.switchEnabled : style.switchDisabled)
+    }
+
+    const iconStyle = red ? [style.icon, { tintColor: colors.red }] : style.icon
+    const titleStyle = red ? [style.titleText, { color: colors.red }] : style.titleText
 
     return (
         <View style={style.container}>
-            <Image
-                source={icon as any}
-                style={red ? [style.icon, { tintColor: colors.red }] : style.icon}
-            />
+            <Image source={icon} style={iconStyle} />
             <View style={{ flex: 1 }}>
-                <Text style={red ? [style.titleText, { color: colors.red }] : style.titleText}>
-                    {title}
-                </Text>
-                {description !== null && <Text>{description}</Text>}
+                <Text style={titleStyle}>{title}</Text>
+                {description !== null ? <Text>{description}</Text> : null}
             </View>
             {switchStatus && (
                 <View style={switchStyle}>
                     <Switch
                         onValueChange={toggleSwitch}
                         value={isEnabled}
-                        thumbColor={switchThumbColor}
-                        trackColor={{ false: "#f1f2f6", true: switchTrackColor }}
+                        thumbColor={isEnabled ? colors.white : '#83919a'}
+                        trackColor={{
+                            false: '#f1f2f6',
+                            true: isEnabled ? colors.whatsAppGreen : '#f1f2f6'
+                        }}
                     />
                 </View>
             )}

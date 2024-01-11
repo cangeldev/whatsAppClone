@@ -1,7 +1,7 @@
-import { TouchableOpacity } from 'react-native'
 import React, { FC } from 'react'
+import { TouchableOpacity } from 'react-native'
 import style from './style'
-import IconM from 'react-native-vector-icons/MaterialIcons'
+import IconM from 'react-native-vector-icons/MaterialIcons' //Icons
 
 interface ICustomButton {
     iconName: string

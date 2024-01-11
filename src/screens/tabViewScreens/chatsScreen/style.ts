@@ -1,17 +1,19 @@
 import colors from "assets/colors/colors"
-import { StyleSheet } from "react-native"
+import { StyleSheet, Dimensions } from "react-native"
+
+const windowWidth = Dimensions.get('window').width
+const windowHeight = Dimensions.get('window').height
 
 export default StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: colors.white,
-        paddingTop: 22
+        paddingHorizontal: windowWidth * 0.04
     },
     text: {
         fontWeight: "bold",
         alignSelf: "center",
         fontSize: 12,
-        marginTop: 15,
         color: colors.grey
     },
     divider: {
@@ -22,8 +24,7 @@ export default StyleSheet.create({
     infoView: {
         alignSelf: "center",
         flexDirection: "row",
-        alignItems: "center",
-        marginBottom: 50
+        alignItems: "center"
     },
     icon: {
         fontSize: 12,

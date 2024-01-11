@@ -1,9 +1,11 @@
 import colors from "assets/colors/colors"
-import { StyleSheet } from "react-native"
+import { StyleSheet,Dimensions } from "react-native"
 
-const ICON_SIZE = 22;
-const BUTTON_RADIUS = 15;
-const BORDER_WIDTH = 0.8;
+const ICON_SIZE = 22
+const BUTTON_RADIUS = 15
+const BORDER_WIDTH = 0.8
+const windowWidth = Dimensions.get('window').width
+const windowHeight = Dimensions.get('window').height
 
 export default StyleSheet.create({
     channelCardContainer: {
@@ -12,7 +14,8 @@ export default StyleSheet.create({
         borderColor: colors.lightGray,
         borderRadius: BUTTON_RADIUS * 1.5,
         marginRight: 10,
-        alignItems: "center"
+        alignItems: "center",
+        width:windowWidth*0.33
     },
     channelCardImage: {
         width: 60,
@@ -21,9 +24,7 @@ export default StyleSheet.create({
     channelCardTitle: {
         color: colors.black,
         fontSize: 15,
-        marginVertical: 10,
-        width: 110,
-        marginHorizontal: 10
+        marginVertical: 10
     },
     iconContainer: {
         position: "absolute",

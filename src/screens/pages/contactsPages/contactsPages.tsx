@@ -1,10 +1,10 @@
-import { View, Text, FlatList, ScrollView } from 'react-native'
 import React from 'react'
+import { View, Text, FlatList, ScrollView } from 'react-native'
 import style from './style'
-import { useNavigation } from '@react-navigation/native'
-import { AddContactsCard, ChatCard } from 'components/cards'
 import { iconaddContactList } from 'utils/helper'
-import { useTranslation } from 'react-i18next'
+import { useNavigation } from '@react-navigation/native' //Navigation
+import { AddContactsCard, ChatCard } from 'components/cards' //Components
+import { useTranslation } from 'react-i18next' //Multi Language
 
 export const ContactsPages = () => {
 

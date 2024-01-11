@@ -41,7 +41,7 @@ export default StyleSheet.create({
         position: "absolute",
         bottom: 5,
         flexDirection: "row",
-        alignItems: "center",
+        alignItems: "center"
     },
     inputIcon: {
         fontSize: 21,

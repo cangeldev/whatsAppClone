@@ -4,16 +4,12 @@ import colors from "assets/colors/colors";
 export default StyleSheet.create({
     container: {
         flexDirection: "row",
-        paddingHorizontal: 10,
-        alignItems: "center",
-        paddingVertical: 10
+        padding: 10
     },
     icon: {
         width: 20,
         height: 20,
-        tintColor: "#84979e",
-        alignSelf: "flex-start",
-        marginTop: 5,
+        tintColor: "#84979e",      
         marginRight: 20
     },
     titleText: {

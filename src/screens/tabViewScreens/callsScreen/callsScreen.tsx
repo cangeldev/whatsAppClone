@@ -1,19 +1,24 @@
-import { View, Text } from 'react-native'
 import React from 'react'
+import { View, Text } from 'react-native'
 import style from './style'
-import Icon from 'react-native-vector-icons/Ionicons'
+import { useTranslation } from 'react-i18next' //Multi Language
+
+//Icons
+import IconI from 'react-native-vector-icons/Ionicons'
 import IconF from 'react-native-vector-icons/FontAwesome6'
+
+//Components
 import { CustomButton } from 'components'
 import { CallCard } from 'components/cards'
-import { useTranslation } from 'react-i18next'
 
 export const CallsScreen = () => {
 
     const { t } = useTranslation()
+
     return (
         <View style={style.mainContainer}>
             <View style={style.headerSection}>
-                <Icon
+                <IconI
                     name={"link"}
                     style={style.linkIcon}
                 />
@@ -29,8 +34,7 @@ export const CallsScreen = () => {
             <Text style={style.title}>
                 {t("recent")}
             </Text>
-            {/* temize geçir kaldır ileride  */}
-            <View >
+            <View>
                 <CallCard />
                 <CallCard />
             </View>

@@ -1,24 +1,30 @@
-import { View, Text, Image, Pressable } from 'react-native'
 import React, { useState, FC } from 'react'
+import { View, Text, Pressable } from 'react-native'
 import style from './style'
 import { example } from 'assets'
+import { useNavigation } from '@react-navigation/native' //Navigation
+import { useTranslation } from 'react-i18next' //Multi Language
+
+//Components
 import { ChatModal } from 'components/modals'
-import { useNavigation } from '@react-navigation/native'
-import { useTranslation } from 'react-i18next'
+import { ProfileImage } from '../profileImage/profileImage'
 
 interface IChatCard {
     status?: string
 }
+
 export const ChatCard: FC<IChatCard> = ({ status }) => {
-    const [chatModal, setChatModal] = useState(false)
+
+    const [chatModalVisible, setChatModalVisible] = useState(false)
     const navigation = useNavigation<any>()
     const { t } = useTranslation()
+
     const toogleButton = () => {
         navigation.navigate("MessagePages")
     }
 
     const toggleChatModal = () => {
-        setChatModal(!chatModal)
+        setChatModalVisible(!chatModalVisible)
     }
 
     return (
@@ -26,13 +32,12 @@ export const ChatCard: FC<IChatCard> = ({ status }) => {
             onPress={toogleButton}
             style={style.chatContainer}>
             <ChatModal
-                visibleModal={chatModal}
+                visibleModal={chatModalVisible}
                 closeModal={toggleChatModal}
             />
-            <Pressable onPress={toggleChatModal}>
-                <Image
-                    source={example}
-                    style={style.chatImage}
+            <Pressable onPress={toggleChatModal} style={style.chatImage}>
+                <ProfileImage
+                    image={example}
                 />
             </Pressable>
             <View style={style.chatInfoView}>

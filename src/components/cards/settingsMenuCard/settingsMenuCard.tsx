@@ -1,5 +1,5 @@
-import { View, Text, Image } from 'react-native'
 import React, { FC } from 'react'
+import { View, Text, Image } from 'react-native'
 import style from './style'
 
 interface ISettingsMenuCard {

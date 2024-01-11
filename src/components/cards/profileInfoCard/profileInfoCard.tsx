@@ -1,7 +1,7 @@
-import { View, Text } from 'react-native'
 import React, { FC } from 'react'
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import { View, Text } from 'react-native'
 import style from './style'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons' //Icons
 
 interface IProfileInfoCard {
     title: string,

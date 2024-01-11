@@ -5,7 +5,6 @@ import style from './style'
 interface ISettingsMenuCard {
     icon: Image
     title: string
-
 }
 
 export const SettingsCard: FC<ISettingsMenuCard> = ({ icon, title }) => {

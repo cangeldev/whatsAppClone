@@ -5,9 +5,8 @@ const BORDER_RADIUS = 25
 
 export default StyleSheet.create({
     chatContainer: {
-        paddingHorizontal: 12,
         flexDirection: "row",
-        marginBottom: 24
+        marginVertical: 12
     },
     chatImage: {
         width: 48,
@@ -30,8 +29,7 @@ export default StyleSheet.create({
         fontSize: 16
     },
     chatDate: {
-        fontSize: 12,
-        paddingRight: 5
+        fontSize: 12
     },
     chatMessage: {
         fontWeight: "600"

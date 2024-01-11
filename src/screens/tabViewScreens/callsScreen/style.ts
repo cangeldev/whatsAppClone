@@ -4,32 +4,31 @@ import { StyleSheet } from "react-native"
 export default StyleSheet.create({
     mainContainer: {
         flex: 1,
-        backgroundColor: colors.white
+        backgroundColor: colors.white,
+        marginHorizontal: 15
     },
     headerSection: {
-        paddingHorizontal: 16,
         paddingVertical: 22,
         flexDirection: "row"
     },
     linkIcon: {
         fontSize: 28,
+        borderRadius: 25,
         color: colors.white,
         padding: 10,
-        backgroundColor: colors.whatsAppGreen,
-        borderRadius: 25
+        backgroundColor: colors.whatsAppGreen
     },
     headerTitle: {
         fontWeight: "600",
         color: colors.black,
-        fontSize: 16,
-        paddingLeft: 15
+        fontSize: 16
     },
     headerDescription: {
-        paddingLeft: 15,
         fontWeight: "500"
     },
     headerInnerSection: {
-        justifyContent: "space-around"
+        justifyContent: "space-around",
+        paddingLeft: 15
     },
     sectionDivider: {
         marginVertical: 15,
@@ -39,8 +38,7 @@ export default StyleSheet.create({
     infoSection: {
         alignSelf: "center",
         flexDirection: "row",
-        alignItems: "center",
-        marginBottom: 50
+        alignItems: "center"
     },
     infoIcon: {
         fontSize: 12,
@@ -54,11 +52,10 @@ export default StyleSheet.create({
     },
     floatingButtonSection: {
         position: "absolute",
-        right: 18,
-        bottom: 18
+        right: 5,
+        bottom: 10
     },
     title: {
-        marginLeft: 20,
         color: colors.black,
         fontWeight: "600",
         fontSize: 16

@@ -1,15 +1,16 @@
-import colors from "assets/colors/colors";
-import { StyleSheet } from "react-native";
+import colors from "assets/colors/colors"
+import { StyleSheet } from "react-native"
 
 export default StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: colors.white
+        backgroundColor: colors.white,
+        paddingHorizontal:10
     },
     headerContainer: {
         flexDirection: "row",
-        paddingHorizontal: 17,
-        paddingVertical: 10
+        paddingVertical: 10,
+        marginHorizontal:7
     },
     profileImage: {
         width: 60,
