@@ -1,4 +1,4 @@
-import { bell, comment, face, key, loading, lock, music, photo, privates, question, time, web } from "assets"
+import { addUser, bell, cellPhone, comment, document, dots, email, face, key, loading, lock, music, photo, privates, question, shield, time, trash, userKey, web } from "assets"
 import { RadioButtonProps } from "react-native-radio-buttons-group"
 
 export const iconButtonList = [
@@ -111,7 +111,8 @@ export const settingsList = [
         id: 1,
         image: key,
         title: "account",
-        text: "accountText"
+        text: "accountText",
+        navigationPage: "SettingsAccountPage"
     },
     {
         id: 2,
@@ -154,6 +155,49 @@ export const settingsList = [
         image: question,
         title: "help",
         text: "helpText"
+    }
+]
+
+export const settingsAccountList = [
+    {
+        id: 1,
+        image: shield,
+        title: "securityNotifications"
+    },
+    {
+        id: 2,
+        image: userKey,
+        title: "passkeys"
+    },
+    {
+        id: 3,
+        image: email,
+        title: "emailAdress"
+    },
+    {
+        id: 4,
+        image: dots,
+        title: "twoVerification"
+    },
+    {
+        id: 5,
+        image: document,
+        title: "changeNumber"
+    },
+    {
+        id: 6,
+        image: cellPhone,
+        title: "requestInfo"
+    },
+    {
+        id: 7,
+        image: addUser,
+        title: "addAccount"
+    },
+    {
+        id: 8,
+        image: trash,
+        title: "deleteAccount"
     }
 ]
 

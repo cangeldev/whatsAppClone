@@ -1,17 +1,27 @@
 import React from 'react'
 import { Text, View } from 'react-native'
+import style from './style'
+import colors from 'assets/colors/colors'
+import { useTranslation } from 'react-i18next' //Multi Language
+
+//Navigation
 import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
+
+//Pages
 import { HomeScreen, WelcomeScreen } from 'screens'
-import { ContactsPages, MessagePages, ProfileInfoPages, SettingsPages } from 'screens/pages'
-import colors from 'assets/colors/colors'
-import Icon from 'react-native-vector-icons/Fontisto'
+import { ContactsPage, MessagePage, ProfileInfoPage, SettingsPages } from 'screens/pages'
+import { SettingsAccountPage } from 'screens/pages/settingsPages/settingsInnerPages'
+
+//Icons
+import IconF from 'react-native-vector-icons/Fontisto'
 import IconE from 'react-native-vector-icons/Entypo'
-import style from './style'
 
 
 export const Container = () => {
     const Stack = createStackNavigator()
+    const { t } = useTranslation()
+
     return (
         <NavigationContainer>
             <Stack.Navigator
@@ -28,20 +38,24 @@ export const Container = () => {
                 />
                 <Stack.Screen
                     name='MessagePages'
-                    component={MessagePages}
+                    component={MessagePage}
+                />
+                <Stack.Screen
+                    name='SettingsPageStack'
+                    component={SettingsPageStack}
                 />
                 <Stack.Screen
                     name='ProfileInfoPages'
-                    component={ProfileInfoPages}
+                    component={ProfileInfoPage}
                 />
                 <Stack.Screen
                     name='ContactsPages'
-                    component={ContactsPages}
+                    component={ContactsPage}
                     options={{
                         headerShown: true,
                         headerRight: () => (
                             <View style={style.contactsPagesContainer}>
-                                <Icon
+                                <IconF
                                     name={"search"}
                                     style={style.contactsPagesIcon}
                                 />
@@ -64,31 +78,48 @@ export const Container = () => {
                                     </Text>
                                 </Text>
                             </View>)
-                    }}
-                />
-                <Stack.Screen
-                    name='SettingsPages'
-                    component={SettingsPages}
-                    options={{
-                        headerShown: true,
-                        headerRight: () => (
-                            <Icon
-                                name={"search"}
-                                style={style.contactsPagesIcon}
-                            />
-                        ),
-                        headerStyle: {
-                            backgroundColor: colors.whatsAppGreen
-                        },
-                        headerTintColor: colors.white,
-                        headerTitle: "Ayarlar",
-                        headerTitleStyle: {
-                            color: colors.white,
-                            fontSize: 23
-                        }
-                    }}
-                />
+                    }} />
             </Stack.Navigator>
         </NavigationContainer>
     )
+}
+
+function SettingsPageStack() {
+    const settingsNavigator = createStackNavigator()
+    const { t } = useTranslation()
+    return (
+        <settingsNavigator.Navigator screenOptions={{
+            headerTitleStyle: style.settingsNavigatorTitleStyle
+        }}>
+            <settingsNavigator.Screen
+                name='SettingsPages'
+                component={SettingsPages}
+                options={{
+                    headerRight: () => (
+                        <IconF
+                            name={"search"}
+                            style={style.contactsPagesIcon}
+                        />
+                    ),
+                    headerStyle: {
+                        backgroundColor: colors.whatsAppGreen
+                    },
+                    headerTintColor: colors.white,
+                    headerTitle: t("settings")
+                }}
+            />
+            <settingsNavigator.Screen
+                name='SettingsAccountPage'
+                component={SettingsAccountPage}
+                options={{
+                    headerStyle: {
+                        backgroundColor: colors.whatsAppGreen
+                    },
+                    headerTintColor: colors.white,
+                    headerTitle: t("account")
+                }}
+            />
+        </settingsNavigator.Navigator>
+    )
+
 }

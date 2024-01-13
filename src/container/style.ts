@@ -15,4 +15,9 @@ export default StyleSheet.create({
         fontSize: 15,
         marginLeft: -15
     },
+    settingsNavigatorTitleStyle:{
+        color: colors.white,
+        fontSize: 23,
+        marginLeft: -15
+    }
 })

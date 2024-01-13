@@ -4,7 +4,7 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
     container: {
         flexDirection: "row",
-        alignItems:"center"
+        alignItems: "center"
     },
     icon: {
         width: 22,
@@ -14,5 +14,6 @@ export default StyleSheet.create({
     titleText: {
         color: colors.black,
         marginLeft: 20,
+        fontSize: 16
     }
 })

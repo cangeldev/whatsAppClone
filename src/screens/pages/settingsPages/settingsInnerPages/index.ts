@@ -1,0 +1,1 @@
+export { SettingsAccountPage } from "./settingsAccountPage/settingsAccountPage"

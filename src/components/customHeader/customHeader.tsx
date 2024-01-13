@@ -61,7 +61,7 @@ export const CustomHeader = () => {
                         {renderMenuOption('Seçenek 2', t('newBroadcast'))}
                         {renderMenuOption('Seçenek 3', t('linkedDevices'))}
                         {renderMenuOption('Seçenek 4', t('starredMessages'))}
-                        {renderMenuOption('SettingsPages', t('settings'))}
+                        {renderMenuOption('SettingsPageStack', t('settings'))}
                     </MenuOptions>
                 </Menu>
             </View>

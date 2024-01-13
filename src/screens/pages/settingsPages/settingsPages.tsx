@@ -19,6 +19,7 @@ export const SettingsPages = () => {
             icon={item.image}
             description={t(item.text)}
             title={t(item.title)}
+            navigationPage={item.navigationPage}
         />
 
     return (

@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native' //Navigation
 import { AddContactsCard, ChatCard } from 'components/cards' //Components
 import { useTranslation } from 'react-i18next' //Multi Language
 
-export const ContactsPages = () => {
+export const ContactsPage = () => {
 
     const { t } = useTranslation()
     const navigation = useNavigation()

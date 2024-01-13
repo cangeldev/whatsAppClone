@@ -1,4 +1,4 @@
 export { SettingsPages } from "./settingsPages/settingsPages"
-export { MessagePages } from "./messagePages/messagePages"
-export { ProfileInfoPages } from "./profileInfoPages/profileInfoPages"
-export { ContactsPages } from "./contactsPages/contactsPages"
+export { MessagePage } from "./messagePage/messagePage"
+export { ProfileInfoPage } from "./profileInfoPage/profileInfoPage"
+export { ContactsPage } from "./contactsPage/contactsPage"

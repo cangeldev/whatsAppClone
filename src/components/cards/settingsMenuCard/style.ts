@@ -18,6 +18,7 @@ export default StyleSheet.create({
         tintColor: "#84979e"
     },
     titleText: {
-        color: colors.black
+        color: colors.black,
+        fontSize: 16
     }
 })

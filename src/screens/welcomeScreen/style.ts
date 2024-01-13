@@ -26,12 +26,12 @@ export default StyleSheet.create({
         padding: 15,
         borderRadius: 30,
         position: "absolute",
-        bottom: 10,
-        right: 10
+        bottom: 12,
+        right: 12
     },
     containerStyle: {
         alignItems: "flex-start",
-        marginTop: 50,
+        marginTop: 75,
         marginLeft: 15
     }
 })

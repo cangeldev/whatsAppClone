@@ -14,7 +14,7 @@ import IconF from 'react-native-vector-icons/FontAwesome5'
 import IconM from 'react-native-vector-icons/MaterialIcons'
 import IconE from 'react-native-vector-icons/Entypo'
 
-export const MessagePages = () => {
+export const MessagePage = () => {
 
     const navigation = useNavigation<any>()
     const scrollViewRef = useRef<ScrollView>(null)

@@ -12,7 +12,7 @@ import { ProfileImage, ProfileInfoCard, ProfileSettingsCard } from 'components/c
 import IconM from 'react-native-vector-icons/MaterialIcons'
 import IconE from 'react-native-vector-icons/MaterialCommunityIcons'
 
-export const ProfileInfoPages = () => {
+export const ProfileInfoPage = () => {
 
     const navigation = useNavigation()
     const { t } = useTranslation()
