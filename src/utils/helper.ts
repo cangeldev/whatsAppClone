@@ -1,4 +1,4 @@
-import { addUser, bell, cellPhone, comment, document, dots, email, face, key, loading, lock, music, photo, privates, question, shield, time, trash, userKey, web } from "assets"
+import { addUser, bell, cellPhone, comment, document, dots, email, face, key, loading, lock, mackolik, music, onedio, photo, privates, question, shield, spor, time, trash, userKey, web, whatsApp } from "assets"
 import { RadioButtonProps } from "react-native-radio-buttons-group"
 
 export const iconButtonList = [
@@ -23,7 +23,28 @@ export const iconButtonList = [
         navigatePage: "ProfileInfoPages"
     }
 ]
-
+export const channelsList = [
+    {
+        id: 1,
+        image: whatsApp,
+        title: "WhatsApp"
+    },
+    {
+        id: 2,
+        image: spor,
+        title: "SPOR"
+    },
+    {
+        id: 3,
+        image: onedio,
+        title: "Onedio"
+    },
+    {
+        id: 4,
+        image: mackolik,
+        title: "Mackolik"
+    }
+]
 export const iconaddContactList = [
     {
         id: 1,

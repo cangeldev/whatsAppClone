@@ -86,6 +86,6 @@ export default StyleSheet.create({
         elevation: 4
     },
     channelCardsContainer: {
-        flexDirection: "row"
+        marginRight: -15
     }
 })

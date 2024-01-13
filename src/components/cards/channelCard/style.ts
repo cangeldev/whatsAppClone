@@ -1,5 +1,5 @@
 import colors from "assets/colors/colors"
-import { StyleSheet,Dimensions } from "react-native"
+import { StyleSheet, Dimensions } from "react-native"
 
 const ICON_SIZE = 22
 const BUTTON_RADIUS = 15
@@ -15,11 +15,13 @@ export default StyleSheet.create({
         borderRadius: BUTTON_RADIUS * 1.5,
         marginRight: 10,
         alignItems: "center",
-        width:windowWidth*0.33
+        width: windowWidth * 0.33
     },
     channelCardImage: {
         width: 60,
-        height: 60
+        height: 60,
+        borderRadius: 50,
+        overflow: "hidden"
     },
     channelCardTitle: {
         color: colors.black,

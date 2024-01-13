@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, FlatList } from 'react-native'
 import style from './style'
 import { example } from 'assets'
 import { useTranslation } from 'react-i18next'
@@ -12,10 +12,13 @@ import IconM from 'react-native-vector-icons/MaterialCommunityIcons'
 //Components
 import { CustomButton } from 'components'
 import { ChannelCard, ProfileImage } from 'components/cards'
+import { channelsList } from 'utils/helper'
 
 export const StatusScreen = () => {
 
     const { t } = useTranslation()
+
+    const renderChannel = ({ item }: any) => <ChannelCard image={item.image} title={item.title} />
     return (
         <View style={style.container}>
             <View style={style.headerContainer}>
@@ -67,8 +70,12 @@ export const StatusScreen = () => {
                 />
             </View>
             <View style={style.channelCardsContainer}>
-                <ChannelCard />
-                <ChannelCard />
+                <FlatList
+                    showsHorizontalScrollIndicator={false}
+                    horizontal
+                    data={channelsList}
+                    renderItem={renderChannel}
+                />
             </View>
             <TouchableOpacity>
                 <Text style={style.exploreButtonText}>

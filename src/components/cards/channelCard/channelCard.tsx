@@ -1,19 +1,25 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import style from './style'
-import { example } from 'assets'
 import { useTranslation } from 'react-i18next' //Multi Language
 import IconA from 'react-native-vector-icons/AntDesign' //Icons
 import { ProfileImage } from '../profileImage/profileImage' //Components
 
-export const ChannelCard = () => {
+interface IChannelCard {
+    title: string
+    image: any
+}
+
+export const ChannelCard: FC<IChannelCard> = ({ title, image }) => {
+
     const { t } = useTranslation()
+    
     return (
         <View style={style.channelCardContainer}>
             <View>
                 <View style={style.channelCardImage}>
                     <ProfileImage
-                        image={example}
+                        image={image}
                     />
                 </View>
                 <View style={style.iconContainer}>
@@ -24,7 +30,7 @@ export const ChannelCard = () => {
                 </View>
             </View>
             <Text numberOfLines={1} style={style.channelCardTitle}>
-                Deneme kanalı
+                {title}
             </Text>
             <TouchableOpacity>
                 <Text style={style.followButton}>
