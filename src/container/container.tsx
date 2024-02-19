@@ -9,7 +9,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { NavigationContainer } from '@react-navigation/native'
 
 //Pages
-import { HomeScreen, WelcomeScreen } from 'screens'
+import { HomeScreen, LoginScreen, WelcomeScreen } from 'screens'
 import { ContactsPage, MessagePage, ProfileInfoPage, SettingsPages } from 'screens/pages'
 import { SettingsAccountPage } from 'screens/pages/settingsPages/settingsInnerPages'
 
@@ -25,12 +25,16 @@ export const Container = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName='WelcomeScreen'
+                initialRouteName='LoginScreen'
                 screenOptions={{ headerShown: false }}
             >
                 <Stack.Screen
                     name='WelcomeScreen'
                     component={WelcomeScreen}
+                />
+                <Stack.Screen
+                    name='LoginScreen'
+                    component={LoginScreen}
                 />
                 <Stack.Screen
                     name='HomeScreen'
