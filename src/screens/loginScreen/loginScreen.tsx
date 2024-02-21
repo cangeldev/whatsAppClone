@@ -3,8 +3,12 @@ import { View, Text, TextInput, TouchableOpacity, StatusBar } from 'react-native
 import style from './style'
 import Icon from 'react-native-vector-icons/Entypo' //Icons
 import colors from 'assets/colors/colors'
+import { useTranslation } from 'react-i18next' //Multi Language
 
 export const LoginScreen = () => {
+
+    const { t } = useTranslation()
+
     return (
         <View style={style.container}>
             <StatusBar
@@ -17,17 +21,17 @@ export const LoginScreen = () => {
                 style={style.icon}
             />
             <Text style={style.headerTitle}>
-                Telefon numaranızı girin
+                {t("enterYourNumber")}
             </Text>
             <Text style={style.headerText}>
-                WhatsApp'ın hesabınızı doğrulaması gerekecek.
+                {t("verifyYourAccount")}
             </Text>
             <Text style={style.headerInfo}>
-                Numaram nedir?
+                {t("whatsMyNumber")}
             </Text>
             <View style={style.selectCountryView}>
                 <Text style={style.selectCountry}>
-                    Türkiye
+                    {t("turkey")}
                 </Text>
                 <Icon
                     name={"triangle-down"}
@@ -42,7 +46,7 @@ export const LoginScreen = () => {
                     </Text>
                 </Text>
                 <TextInput
-                    placeholder='telefon numarası'
+                    placeholder={t("phoneNumber")}
                     placeholderTextColor={colors.grey}
                     style={style.numberInput}
                     autoFocus
@@ -50,11 +54,11 @@ export const LoginScreen = () => {
                 />
             </View>
             <Text style={style.info}>
-                Operatörünüz tarafından ücret uygulanabilir
+                {t("carrierChargesMayApply")}
             </Text>
             <TouchableOpacity>
                 <Text style={style.loginButton}>
-                    İleri
+                    {t("next")}
                 </Text>
             </TouchableOpacity>
         </View>

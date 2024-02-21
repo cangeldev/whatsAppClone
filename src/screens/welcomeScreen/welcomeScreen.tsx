@@ -19,7 +19,7 @@ export const WelcomeScreen = () => {
             const selectedLanguage = radioButtons.find(button => button.id === selectedId)?.value
             await saveLanguage(selectedLanguage)
             i18n.changeLanguage(selectedLanguage)
-            navigation.navigate('HomeScreen')
+            navigation.navigate('LoginScreen')
         } catch (error) {
             console.error('Dil seçme kaydetme hatası:', error)
         }

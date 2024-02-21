@@ -71,6 +71,13 @@ i18n
                     requestInfo: "Request account info",
                     addAccount: "Add account",
                     deleteAccount: "Delete account",
+                    enterYourNumber: "Enter your phone number",
+                    verifyYourAccount: "WhatsApp will need to verify your account.",
+                    whatsMyNumber: "What's my number?",
+                    turkey: "Turkey",
+                    carrierChargesMayApply: "Carrier charges may apply",
+                    next: "Next",
+                    phoneNumber: "phone number"
                 },
             },
             tr: {
@@ -138,6 +145,13 @@ i18n
                     requestInfo: "Hesap bilgilerini talep et",
                     addAccount: "Hesap ekle",
                     deleteAccount: "Hesabı sil",
+                    enterYourNumber: "Telefon numaranızı girin",
+                    verifyYourAccount: "WhatsApp'ın hesabınızı doğrulaması gerekecek.",
+                    whatsMyNumber: "Numaram nedir?",
+                    turkey: "Türkiye",
+                    carrierChargesMayApply: "Operatörünüz tarafından ücret uygulanabilir",
+                    next: "İleri",
+                    phoneNumber: "telefon numarası"
                 },
             },
         },
