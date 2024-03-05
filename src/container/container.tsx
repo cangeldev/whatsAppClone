@@ -25,7 +25,7 @@ export const Container = () => {
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName='WelcomeScreen'
+                initialRouteName='LoginScreen'
                 screenOptions={{ headerShown: false }}
             >
                 <Stack.Screen
