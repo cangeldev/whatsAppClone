@@ -10,7 +10,7 @@ import { NavigationContainer } from '@react-navigation/native'
 
 //Pages
 import { HomeScreen, LoginScreen, WelcomeScreen } from 'screens'
-import { ContactsPage, MessagePage, ProfileInfoPage, SettingsPages } from 'screens/pages'
+import { ContactsPage, MessagePage, ProfileInfoPage, SettingsPages, UserLoginInfoPage } from 'screens/pages'
 import { SettingsAccountPage } from 'screens/pages/settingsPages/settingsInnerPages'
 
 //Icons
@@ -51,6 +51,10 @@ export const Container = () => {
                 <Stack.Screen
                     name='ProfileInfoPages'
                     component={ProfileInfoPage}
+                />
+                 <Stack.Screen
+                    name='UserLoginInfoPage'
+                    component={UserLoginInfoPage}
                 />
                 <Stack.Screen
                     name='ContactsPages'

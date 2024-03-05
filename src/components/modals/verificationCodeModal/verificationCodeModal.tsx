@@ -1,9 +1,10 @@
-import { View, Text, Modal, TextInput ,TouchableOpacity} from 'react-native'
+import { View, Text, Modal, TextInput, TouchableOpacity } from 'react-native'
 import React, { FC } from 'react'
 import style from './style'
 import { useTranslation } from 'react-i18next' //Multi Language
 import colors from 'assets/colors/colors'
 import Icon from 'react-native-vector-icons/Entypo' //Icons
+import { useNavigation } from '@react-navigation/native'
 
 interface IVerificationCodeModal {
     visibleModal: boolean
@@ -14,18 +15,22 @@ interface IVerificationCodeModal {
 export const VerificationCodeModal: FC<IVerificationCodeModal> = ({ visibleModal, closeModal, number }) => {
 
     const { t } = useTranslation()
+    const navigation = useNavigation<any>()
 
+    const handleButton = () => {
+        navigation.navigate('UserLoginInfoPage')
+    }
     return (
         <Modal
             visible={visibleModal}
             onRequestClose={closeModal}
             animationType="slide">
             <View style={style.container}>
-            <Icon
-                name={"dots-three-vertical"}
-                size={18}
-                style={style.icon}
-            />
+                <Icon
+                    name={"dots-three-vertical"}
+                    size={18}
+                    style={style.icon}
+                />
                 <Text style={style.title}>
                     {t("verifyingyournumber")}
                 </Text>
@@ -51,11 +56,12 @@ export const VerificationCodeModal: FC<IVerificationCodeModal> = ({ visibleModal
                 <Text style={style.receiveCodeText}>
                     {t("didntReceiveCode")}
                 </Text>
-                <TouchableOpacity>
-                <Text style={style.loginButton}>
-                    {t("next")}
-                </Text>
-            </TouchableOpacity>
+                <TouchableOpacity
+                    onPress={handleButton}>
+                    <Text style={style.loginButton}>
+                        {t("next")}
+                    </Text>
+                </TouchableOpacity>
             </View>
         </Modal>
     )
