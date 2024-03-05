@@ -77,7 +77,11 @@ i18n
                     turkey: "Turkey",
                     carrierChargesMayApply: "Carrier charges may apply",
                     next: "Next",
-                    phoneNumber: "phone number"
+                    phoneNumber: "phone number",
+                    verifyingyournumber:"Verifying your number",
+                    verifyingInfo:"Waiting to automatically detect an SMS sent to",
+                    wrongNumber:"Wrong number?",
+                    didntReceiveCode:"Didn't receive code?",
                 },
             },
             tr: {
@@ -151,7 +155,11 @@ i18n
                     turkey: "Türkiye",
                     carrierChargesMayApply: "Operatörünüz tarafından ücret uygulanabilir",
                     next: "İleri",
-                    phoneNumber: "telefon numarası"
+                    phoneNumber: "telefon numarası",
+                    verifyingyournumber:"Numaranız doğrulanıyor",
+                    verifyingInfo:"Telefonuza gönderilen SMS'in otomatik olarak algılanması bekleniyor.",
+                    wrongNumber:"Numara yanlış mı?",
+                    didntReceiveCode:"Kodu almadınız mı?",
                 },
             },
         },
