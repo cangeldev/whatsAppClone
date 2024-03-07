@@ -1,10 +1,11 @@
-import { View, Text, Modal, TextInput, TouchableOpacity } from 'react-native'
+import { View, Text, Modal, TextInput } from 'react-native'
 import React, { FC } from 'react'
 import style from './style'
 import { useTranslation } from 'react-i18next' //Multi Language
 import colors from 'assets/colors/colors'
 import Icon from 'react-native-vector-icons/Entypo' //Icons
 import { useNavigation } from '@react-navigation/native'
+import { NextButton } from 'components/nextButton/nextButton'
 
 interface IVerificationCodeModal {
     visibleModal: boolean
@@ -56,12 +57,7 @@ export const VerificationCodeModal: FC<IVerificationCodeModal> = ({ visibleModal
                 <Text style={style.receiveCodeText}>
                     {t("didntReceiveCode")}
                 </Text>
-                <TouchableOpacity
-                    onPress={handleButton}>
-                    <Text style={style.loginButton}>
-                        {t("next")}
-                    </Text>
-                </TouchableOpacity>
+                <NextButton onPress={handleButton}/>
             </View>
         </Modal>
     )

@@ -9,6 +9,7 @@ import colors from 'assets/colors/colors'
 import { useNavigation } from '@react-navigation/native'
 import { ImagePickerModal } from 'components/modals'
 import { ProfileImage } from 'components/cards'
+import { NextButton } from 'components'
 
 export const UserLoginInfoPage = () => {
 
@@ -61,16 +62,12 @@ export const UserLoginInfoPage = () => {
                     size={24}
                     style={style.emojiIcon}
                 />
-                <TouchableOpacity onPress={() => saveUsername(name)} >
-                    <Text>
-                        deneme
-                    </Text>
-                </TouchableOpacity>
             </View>
             <ImagePickerModal
                 closeModal={toggleImagePickerModal}
                 visibleModal={imagePickerModal}
             />
+            <NextButton onPress={() => saveUsername(name)}/>
         </View>
     )
 }

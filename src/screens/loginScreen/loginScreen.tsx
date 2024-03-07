@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
-import { View, Text, TextInput, TouchableOpacity, StatusBar } from 'react-native'
+import { View, Text, TextInput,  StatusBar } from 'react-native'
 import style from './style'
 import Icon from 'react-native-vector-icons/Entypo' //Icons
 import colors from 'assets/colors/colors'
 import { useTranslation } from 'react-i18next' //Multi Language
 import auth from '@react-native-firebase/auth' //Firebase
 import { VerificationCodeModal } from 'components/modals'
+import { NextButton } from 'components'
 
 export const LoginScreen = () => {
 
@@ -112,14 +113,9 @@ export const LoginScreen = () => {
             <Text style={style.info}>
                 {t("carrierChargesMayApply")}
             </Text>
-            <TouchableOpacity
-                // onPress={handleSendCode}
-                onPress={toggleChatModal}
-            >
-                <Text style={style.loginButton}>
-                    {t("next")}
-                </Text>
-            </TouchableOpacity>
+           
+                <NextButton onPress={toggleChatModal}/>
+           
         </View>
     )
 }

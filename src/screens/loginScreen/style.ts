@@ -71,13 +71,5 @@ export default StyleSheet.create({
     info: {
         marginTop: 15,
         flex: 1
-    },
-    loginButton: {
-        color: colors.white,
-        backgroundColor: colors.whatsAppGreen,
-        padding: 10,
-        borderRadius: 25,
-        fontWeight: "600",
-        paddingHorizontal: 25,
     }
 })
