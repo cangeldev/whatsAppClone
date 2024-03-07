@@ -21,14 +21,13 @@ export const ImagePickerModal: FC<IimagePickerModal> = ({ visibleModal, closeMod
         }
     }
 
-
     const openImagePicker = () => {
         const options = {
             mediaType: 'photo',
             includeBase64: false,
             maxHeight: 2000,
             maxWidth: 2000,
-        };
+        }
 
         launchImageLibrary(options, (response) => {
             if (response.didCancel) {
@@ -39,10 +38,10 @@ export const ImagePickerModal: FC<IimagePickerModal> = ({ visibleModal, closeMod
                 let imageUri = response.uri || response.assets?.[0]?.uri
                 saveProfileImage(imageUri)
                 closeModal()
-
             }
-        });
-    };
+        })
+    }
+
     const handleCameraLaunch = () => {
         const options = {
             mediaType: 'photo',
@@ -62,12 +61,12 @@ export const ImagePickerModal: FC<IimagePickerModal> = ({ visibleModal, closeMod
             }
         })
     }
+
     return (
         <Modal
             visible={visibleModal}
             onRequestClose={closeModal}
-            animationType="slide"
-        >
+            animationType="slide">
             <Text>imagePickerModal</Text>
             <Button title="Choose from Device" onPress={openImagePicker} />
             <Button title="Open Camera" onPress={handleCameraLaunch} />

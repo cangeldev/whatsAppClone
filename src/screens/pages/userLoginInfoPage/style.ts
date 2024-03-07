@@ -17,15 +17,15 @@ export default StyleSheet.create({
     },
     title: {
         color: colors.whatsAppGreen,
-        fontSize:18,
-        fontWeight:"700"
+        fontSize: 18,
+        fontWeight: "700"
     },
     infoText: {
         textAlign: "center",
         paddingHorizontal: 20,
-        marginVertical:30,
-        fontSize:15,
-       
+        marginVertical: 30,
+        fontSize: 15,
+
     },
     inputView: {
         flexDirection: "row",
@@ -41,6 +41,12 @@ export default StyleSheet.create({
     emojiIcon: {
         marginTop: 10,
         marginLeft: 3
+    },
+    profileImageView: { 
+        width: 150, 
+        height: 150,
+        overflow:"hidden",
+        borderRadius:100
     }
 
 })
