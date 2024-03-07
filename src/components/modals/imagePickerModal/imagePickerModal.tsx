@@ -1,6 +1,6 @@
 import { Text, Button, Modal } from 'react-native'
 import React, { FC } from 'react'
-import { launchImageLibrary,  } from 'react-native-image-picker'
+import { launchImageLibrary, launchCamera } from 'react-native-image-picker'
 
 import AsyncStorage from '@react-native-async-storage/async-storage' //AsyncStorage
 
@@ -43,7 +43,25 @@ export const ImagePickerModal: FC<IimagePickerModal> = ({ visibleModal, closeMod
             }
         });
     };
-    
+    const handleCameraLaunch = () => {
+        const options = {
+            mediaType: 'photo',
+            includeBase64: false,
+            maxHeight: 2000,
+            maxWidth: 2000,
+        }
+
+        launchCamera(options, response => {
+            if (response.didCancel) {
+                console.log('User cancelled camera')
+            } else if (response.error) {
+                console.log('Camera Error: ', response.error)
+            } else {
+                let imageUri = response.uri || response.assets?.[0]?.uri
+                saveProfileImage(imageUri)
+            }
+        })
+    }
     return (
         <Modal
             visible={visibleModal}
@@ -52,7 +70,7 @@ export const ImagePickerModal: FC<IimagePickerModal> = ({ visibleModal, closeMod
         >
             <Text>imagePickerModal</Text>
             <Button title="Choose from Device" onPress={openImagePicker} />
-           
+            <Button title="Open Camera" onPress={handleCameraLaunch} />
 
         </Modal>
     )
