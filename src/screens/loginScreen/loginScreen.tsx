@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import { View, Text, TextInput,  StatusBar } from 'react-native'
+import { View, Text, TextInput } from 'react-native'
 import style from './style'
 import Icon from 'react-native-vector-icons/Entypo' //Icons
 import colors from 'assets/colors/colors'
 import { useTranslation } from 'react-i18next' //Multi Language
 import auth from '@react-native-firebase/auth' //Firebase
 import { VerificationCodeModal } from 'components/modals'
-import { NextButton } from 'components'
+import { NextButton, StatusBarComponent } from 'components'
 
 export const LoginScreen = () => {
 
@@ -60,15 +60,13 @@ export const LoginScreen = () => {
     }
     return (
         <View style={style.container}>
+            <StatusBarComponent />
             <VerificationCodeModal
                 closeModal={toggleChatModal}
                 visibleModal={verificationModal}
                 number={phoneNumber}
             />
-            <StatusBar
-                barStyle={"dark-content"}
-                backgroundColor={"white"}
-            />
+            
             <Icon
                 name={"dots-three-vertical"}
                 size={18}
@@ -113,9 +111,9 @@ export const LoginScreen = () => {
             <Text style={style.info}>
                 {t("carrierChargesMayApply")}
             </Text>
-           
-                <NextButton onPress={toggleChatModal}/>
-           
+
+            <NextButton onPress={toggleChatModal} />
+
         </View>
     )
 }

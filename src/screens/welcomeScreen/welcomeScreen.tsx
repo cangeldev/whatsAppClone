@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import { View, Text, Image, StatusBar, TouchableOpacity } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import style from './style'
 import { welcomeImg } from 'assets'
 import { radioButtons } from 'utils/helper'
@@ -8,6 +8,7 @@ import { useNavigation } from '@react-navigation/native' //Navigation
 import AsyncStorage from '@react-native-async-storage/async-storage' //AsyncStorage
 import RadioGroup from 'react-native-radio-buttons-group'
 import Icon from 'react-native-vector-icons/AntDesign' //Icons
+import { StatusBarComponent } from 'components'
 
 export const WelcomeScreen = () => {
 
@@ -35,10 +36,7 @@ export const WelcomeScreen = () => {
 
     return (
         <View style={style.container}>
-            <StatusBar
-                backgroundColor={"white"}
-                barStyle={'dark-content'}
-            />
+            <StatusBarComponent />
             <Image
                 source={welcomeImg}
                 style={style.image}

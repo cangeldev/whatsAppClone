@@ -8,7 +8,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage' //AsyncStor
 import colors from 'assets/colors/colors'
 import { useNavigation } from '@react-navigation/native'
 import { ImagePickerModal } from 'components/modals'
-import { NextButton } from 'components'
+import { NextButton, StatusBarComponent } from 'components'
 
 export const UserLoginInfoPage = () => {
 
@@ -51,6 +51,7 @@ export const UserLoginInfoPage = () => {
 
     return (
         <View style={style.container}>
+            <StatusBarComponent />
             <Icon
                 name={"dots-three-vertical"}
                 size={18}

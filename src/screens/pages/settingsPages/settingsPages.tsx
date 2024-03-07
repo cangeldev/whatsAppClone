@@ -1,8 +1,7 @@
 import React from 'react'
-import { View, Text, Image, StatusBar, FlatList, ScrollView } from 'react-native'
+import { View, Text, Image, FlatList, ScrollView } from 'react-native'
 import style from './style'
 import { example, group, meta } from 'assets'
-import colors from 'assets/colors/colors'
 import { SettingsCard, SettingsMenuCard } from 'components/cards' //Components
 import { settingsList } from 'utils/helper'
 import { useTranslation } from 'react-i18next' //Multi Language
@@ -24,9 +23,6 @@ export const SettingsPages = () => {
 
     return (
         <ScrollView style={style.container}>
-            <StatusBar
-                backgroundColor={colors.whatsAppGreen}
-            />
             <View style={style.headerContainer}>
                 <Image
                     source={example}
