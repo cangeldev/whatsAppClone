@@ -20,7 +20,9 @@ export const VerificationCodeModal: FC<IVerificationCodeModal> = ({ visibleModal
 
     const handleButton = () => {
         navigation.navigate('UserLoginInfoPage')
+        closeModal()
     }
+    
     return (
         <Modal
             visible={visibleModal}
@@ -57,7 +59,7 @@ export const VerificationCodeModal: FC<IVerificationCodeModal> = ({ visibleModal
                 <Text style={style.receiveCodeText}>
                     {t("didntReceiveCode")}
                 </Text>
-                <NextButton onPress={handleButton}/>
+                <NextButton onPress={handleButton} />
             </View>
         </Modal>
     )

@@ -1,32 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { FC } from 'react'
 import { Image } from 'react-native'
 import style from './style'
-import AsyncStorage from '@react-native-async-storage/async-storage' //AsyncStorage
 
-export const ProfileImage = () => {
+interface IProfileImage {
+    image: Image
+}
 
-    const [selectedImage, setSelectedImage] = useState()
-
-    useEffect(() => {
-        getProfilePhoto()
-    })   
-
-    const getProfilePhoto = async () => {
-        try {
-            const profileImage = await AsyncStorage.getItem('profileImage')
-            if (profileImage !== null) {
-                setSelectedImage(profileImage as any)
-            } else {
-                console.log('Kullanıcı resmi bulunamadı.')
-            }
-        } catch (error) {
-            console.error('Kullanıcı adını alma hatası:', error)
-        }
-    }
-
+export const ProfileImage: FC<IProfileImage> = ({ image }) => {
     return (
         <Image
-            source={{ uri: selectedImage }}
+            source={image as any}
             style={style.container}
         />
     )

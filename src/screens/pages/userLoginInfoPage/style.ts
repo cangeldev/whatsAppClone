@@ -24,8 +24,7 @@ export default StyleSheet.create({
         textAlign: "center",
         paddingHorizontal: 20,
         marginVertical: 30,
-        fontSize: 15,
-
+        fontSize: 15
     },
     inputView: {
         flexDirection: "row",
@@ -42,11 +41,14 @@ export default StyleSheet.create({
         marginTop: 10,
         marginLeft: 3
     },
-    profileImageView: { 
-        width: 150, 
+    profileImageView: {
+        width: 150,
         height: 150,
-        overflow:"hidden",
-        borderRadius:100
+        overflow: "hidden",
+        borderRadius: 100
+    },
+    profileImage: {
+        width: "100%",
+        height: "100%"
     }
-
 })
