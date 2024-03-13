@@ -84,7 +84,10 @@ i18n
                     didntReceiveCode: "Didn't receive code?",
                     profileInfo: "Profil bilgisiDOLDUR",
                     profileInfoText: "Lütfen adınızı girin ve isteğe bağlı olarak profil fotoğrafınızı ekleyindOLDUR",
-                    writeYourNameHere: "Adınızı buraya yazınDOLDUR"
+                    writeYourNameHere: "Adınızı buraya yazınDOLDUR",
+                    profilePhoto: "Profile photo",
+                    camera: "Camera",
+                    galery: "Galery",
                 },
             },
             tr: {
@@ -165,7 +168,10 @@ i18n
                     didntReceiveCode: "Kodu almadınız mı?",
                     profileInfo: "Profil bilgisi",
                     profileInfoText: "Lütfen adınızı girin ve isteğe bağlı olarak profil fotoğrafınızı ekleyin",
-                    writeYourNameHere: "Adınızı buraya yazın"
+                    writeYourNameHere: "Adınızı buraya yazın",
+                    profilePhoto: "Profil fotoğrafı",
+                    camera: "Kamera",
+                    galery: "Galeri",
                 },
             },
         },

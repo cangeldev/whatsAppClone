@@ -1,8 +1,13 @@
-import { Text, Button, Modal } from 'react-native'
+import { Text, Modal, View, FlatList } from 'react-native'
 import React, { FC } from 'react'
-import { launchImageLibrary, launchCamera } from 'react-native-image-picker'
+import style from './style'
+import { selectImageList } from 'utils/helper'
+import { SelectImageCard } from 'components/cards'
 
+import Icon from 'react-native-vector-icons/FontAwesome5' // Icons
+import { useTranslation } from 'react-i18next' // Multi Language
 import AsyncStorage from '@react-native-async-storage/async-storage' //AsyncStorage
+import { launchImageLibrary, launchCamera } from 'react-native-image-picker'
 
 interface IimagePickerModal {
     visibleModal: boolean
@@ -10,6 +15,15 @@ interface IimagePickerModal {
 }
 
 export const ImagePickerModal: FC<IimagePickerModal> = ({ visibleModal, closeModal }) => {
+
+    const { t } = useTranslation()
+
+    const selectImageRender = ({ item }: any) =>
+        <SelectImageCard
+            icon={item.iconName}
+            title={item.name}
+            onPress={item.void == "openImagePicker" ? openImagePicker : handleCameraLaunch}
+        />
 
     const saveProfileImage = async (profileImage: any) => {
         try {
@@ -64,13 +78,28 @@ export const ImagePickerModal: FC<IimagePickerModal> = ({ visibleModal, closeMod
 
     return (
         <Modal
+            statusBarTranslucent
+            transparent
             visible={visibleModal}
             onRequestClose={closeModal}
             animationType="slide">
-            <Text>imagePickerModal</Text>
-            <Button title="Choose from Device" onPress={openImagePicker} />
-            <Button title="Open Camera" onPress={handleCameraLaunch} />
-
+            <View style={style.container}>
+                <View style={style.innerContainer}>
+                    <Icon
+                        name="minus"
+                        style={style.iconMinus}
+                    />
+                    <Text
+                        style={style.title}>
+                        {t("profilePhoto")}
+                    </Text>
+                    <FlatList
+                        data={selectImageList}
+                        horizontal
+                        renderItem={selectImageRender}
+                    />
+                </View>
+            </View>
         </Modal>
     )
 }

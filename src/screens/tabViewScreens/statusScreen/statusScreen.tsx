@@ -18,7 +18,12 @@ export const StatusScreen = () => {
 
     const { t } = useTranslation()
 
-    const renderChannel = ({ item }: any) => <ChannelCard image={item.image} title={item.title} />
+    const renderChannel = ({ item }: any) =>
+        <ChannelCard
+            image={item.image}
+            title={item.title}
+        />
+
     return (
         <View style={style.container}>
             <View style={style.headerContainer}>

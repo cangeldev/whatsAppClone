@@ -346,3 +346,24 @@ export const radioButtons: RadioButtonProps[] = [
         }
     },
 ]
+
+export const selectImageList = [
+    {
+        id: 1,
+        iconName: "camera",
+        name: "camera",
+        void: "openImagePicker"
+    },
+    {
+        id: 2,
+        iconName: "image",
+        name: "galery",
+        void: "handleCameraLaunch"
+    },
+    {
+        id: 3,
+        iconName: "user-alt",
+        name: "avatar",
+    },
+
+]

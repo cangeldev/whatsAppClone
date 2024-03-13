@@ -88,9 +88,11 @@ export const UserLoginInfoPage = () => {
                 closeModal={toggleImagePickerModal}
                 visibleModal={imagePickerModal}
             />
-            <NextButton
-                onPress={() => saveUsername(name)}
-            />
+            <View style={style.buttonView}>
+                <NextButton
+                    onPress={() => saveUsername(name)}
+                />
+            </View>
         </View>
     )
 }
