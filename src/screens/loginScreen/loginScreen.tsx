@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, TextInput } from 'react-native'
+import { View, Text, TextInput, Alert } from 'react-native'
 import style from './style'
 import Icon from 'react-native-vector-icons/Entypo' //Icons
 import colors from 'assets/colors/colors'
@@ -13,7 +13,7 @@ export const LoginScreen = () => {
     const { t } = useTranslation()
     const [phoneNumber, setPhoneNumber] = useState('') // Telefon numarası 
     const [confirmCode, setConfirmCode] = useState('')  // doğrulama kodu
-    const [verificationId, setVerificationId] = useState('')
+    const [verificationId, setVerificationId] = useState<any | null>(null);
     const [verificationModal, setVerificationModal] = useState(false) // doğrulama kodu giriş modal
 
     const handleSendCode = async () => {
@@ -56,7 +56,13 @@ export const LoginScreen = () => {
         setPhoneNumber(formattedInput)
     }
     const toggleChatModal = () => {
-        setVerificationModal(!verificationModal)
+        if (phoneNumber.length != 13) {
+            Alert.alert(
+                t("loginFailed"),
+                t("loginFailedText")
+            )
+        }
+        else setVerificationModal(!verificationModal)
     }
     return (
         <View style={style.container}>
