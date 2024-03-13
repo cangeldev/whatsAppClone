@@ -352,13 +352,13 @@ export const selectImageList = [
         id: 1,
         iconName: "camera",
         name: "camera",
-        void: "openImagePicker"
+        void: "handleCameraLaunch"
     },
     {
         id: 2,
         iconName: "image",
         name: "galery",
-        void: "handleCameraLaunch"
+        void: "openImagePicker"
     },
     {
         id: 3,
