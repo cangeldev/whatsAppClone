@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Image } from 'react-native'
 import style from './style'
 import AsyncStorage from '@react-native-async-storage/async-storage' //AsyncStorage
-
+import { example } from 'assets'
 
 export const ProfileImage = () => {
 
@@ -25,9 +25,18 @@ export const ProfileImage = () => {
         }
     }
 
+    if (!selectedImage) {
+        return (
+            <Image
+                source={example}
+                style={style.container}
+            />
+        )
+    }
+
     return (
         <Image
-             source={{ uri: selectedImage }}
+            source={{ uri: selectedImage }}
             style={style.container}
         />
     )
