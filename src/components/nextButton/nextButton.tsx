@@ -6,9 +6,10 @@ import style from './style'
 
 interface INextButton {
     onPress?: () => void
+    title?: string
 }
 
-export const NextButton: FC<INextButton> = ({ onPress }) => {
+export const NextButton: FC<INextButton> = ({ onPress, title }) => {
 
     const { t } = useTranslation()
 
@@ -17,7 +18,7 @@ export const NextButton: FC<INextButton> = ({ onPress }) => {
             onPress={onPress}
         >
             <Text style={style.container}>
-                {t("next")}
+                {title != null ? t(title) : t("next")}
             </Text>
         </TouchableOpacity>
     )

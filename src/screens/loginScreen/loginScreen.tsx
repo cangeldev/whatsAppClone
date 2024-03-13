@@ -66,7 +66,6 @@ export const LoginScreen = () => {
                 visibleModal={verificationModal}
                 number={phoneNumber}
             />
-            
             <Icon
                 name={"dots-three-vertical"}
                 size={18}
@@ -111,9 +110,7 @@ export const LoginScreen = () => {
             <Text style={style.info}>
                 {t("carrierChargesMayApply")}
             </Text>
-
             <NextButton onPress={toggleChatModal} />
-
         </View>
     )
 }

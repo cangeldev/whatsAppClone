@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, TouchableOpacity, FlatList } from 'react-native'
+import { View, Text, FlatList } from 'react-native'
 import style from './style'
 import { useTranslation } from 'react-i18next'
 
@@ -9,7 +9,7 @@ import IconA from 'react-native-vector-icons/AntDesign'
 import IconM from 'react-native-vector-icons/MaterialCommunityIcons'
 
 //Components
-import { CustomButton } from 'components'
+import { CustomButton, NextButton } from 'components'
 import { ChannelCard, ProfileImage } from 'components/cards'
 import { channelsList } from 'utils/helper'
 
@@ -79,11 +79,9 @@ export const StatusScreen = () => {
                     renderItem={renderChannel}
                 />
             </View>
-            <TouchableOpacity>
-                <Text style={style.exploreButtonText}>
-                    {t("exploreMore")}
-                </Text>
-            </TouchableOpacity>
+            <View style={style.nextButtonView}>
+                <NextButton title='exploreMore' />
+            </View>
             <IconM
                 name={"pencil"}
                 style={style.editIcon}

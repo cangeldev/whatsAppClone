@@ -51,5 +51,9 @@ export default StyleSheet.create({
     profileImage: {
         width: "100%",
         height: "100%"
+    },
+    buttonView: {
+        flex: 1,
+        justifyContent: "flex-end"
     }
 })

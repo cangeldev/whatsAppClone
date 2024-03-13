@@ -33,8 +33,8 @@ export default StyleSheet.create({
     userImage: {
         width: 45,
         height: 45,
-        overflow:"hidden",
-        borderRadius:25
+        overflow: "hidden",
+        borderRadius: 25
     },
     plusIcon: {
         position: "absolute",
@@ -67,14 +67,9 @@ export default StyleSheet.create({
         right: 18,
         bottom: 18
     },
-    exploreButtonText: {
-        color: colors.white,
-        backgroundColor: colors.whatsAppGreen,
-        padding: 12,
-        borderRadius: 25,
-        fontWeight: "700",
-        marginVertical: 15,
-        alignSelf: "flex-start"
+    nextButtonView: {
+        alignSelf: "flex-start",
+        marginVertical: 15
     },
     editIcon: {
         position: "absolute",
