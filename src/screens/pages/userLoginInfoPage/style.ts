@@ -48,8 +48,8 @@ export default StyleSheet.create({
         borderRadius: 100,
         marginBottom: 25
     },
-    buttonView: {
-        flex: 1,
-        justifyContent: "flex-end"
+    profileImage: {
+        width: "100%",
+        height: "100%"
     }
 })
