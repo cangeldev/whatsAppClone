@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, Image, FlatList, ScrollView } from 'react-native'
 import style from './style'
 import { example, group, meta } from 'assets'
-import { SettingsCard, SettingsMenuCard } from 'components/cards' //Components
+import { ProfileImage, SettingsCard, SettingsMenuCard } from 'components/cards' //Components
 import { settingsList } from 'utils/helper'
 import { useTranslation } from 'react-i18next' //Multi Language
 
@@ -24,10 +24,9 @@ export const SettingsPages = () => {
     return (
         <ScrollView style={style.container}>
             <View style={style.headerContainer}>
-                <Image
-                    source={example}
-                    style={style.profileImage}
-                />
+                <View style={style.profileImage}>
+                    <ProfileImage />
+                </View>
                 <View style={style.textContainer}>
                     <Text style={style.nameText}>
                         Can GEL

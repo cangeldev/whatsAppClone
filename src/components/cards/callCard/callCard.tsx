@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text, Pressable } from 'react-native'
+import { View, Text, Pressable, Image } from 'react-native'
 import style from './style'
 import { example } from 'assets'
 
@@ -24,9 +24,10 @@ export const CallCard = () => {
                 visibleModal={chatModalVisible}
                 closeModal={toggleChatModal}
             />
-            <Pressable onPress={toggleChatModal} style={style.image}>
-                <ProfileImage
-                    image={example}
+            <Pressable onPress={toggleChatModal}>
+                <Image
+                    source={example}
+                    style={style.image}
                 />
             </Pressable>
             <View style={style.infoContainer}>

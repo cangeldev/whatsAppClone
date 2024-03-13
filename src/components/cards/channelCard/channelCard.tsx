@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity } from 'react-native'
 import style from './style'
 import { useTranslation } from 'react-i18next' //Multi Language
 import IconA from 'react-native-vector-icons/AntDesign' //Icons
-import { ProfileImage } from '../profileImage/profileImage' //Components
+import { Image } from 'react-native'
 
 interface IChannelCard {
     title: string
@@ -13,14 +13,12 @@ interface IChannelCard {
 export const ChannelCard: FC<IChannelCard> = ({ title, image }) => {
 
     const { t } = useTranslation()
-    
+
     return (
         <View style={style.channelCardContainer}>
             <View>
                 <View style={style.channelCardImage}>
-                    <ProfileImage
-                        image={image}
-                    />
+                    <Image source={image} style={style.image} />
                 </View>
                 <View style={style.iconContainer}>
                     <IconA

@@ -33,6 +33,8 @@ export default StyleSheet.create({
     userImage: {
         width: 45,
         height: 45,
+        overflow:"hidden",
+        borderRadius:25
     },
     plusIcon: {
         position: "absolute",

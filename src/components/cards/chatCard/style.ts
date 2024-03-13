@@ -8,6 +8,10 @@ export default StyleSheet.create({
         flexDirection: "row",
         marginVertical: 12
     },
+    image: {
+        width: "100%",
+        height: "100%"
+    },
     chatImage: {
         width: 48,
         height: 48,

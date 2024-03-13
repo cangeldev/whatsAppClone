@@ -5,16 +5,18 @@ export default StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: colors.white,
-        paddingHorizontal:10
+        paddingHorizontal: 10
     },
     headerContainer: {
         flexDirection: "row",
         paddingVertical: 10,
-        marginHorizontal:7
+        marginHorizontal: 7
     },
     profileImage: {
         width: 60,
-        height: 60
+        height: 60,
+        overflow: "hidden",
+        borderRadius: 50
     },
     textContainer: {
         marginLeft: 15,

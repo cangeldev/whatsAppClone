@@ -17,6 +17,10 @@ export default StyleSheet.create({
         alignItems: "center",
         width: windowWidth * 0.33
     },
+    image: {
+        width: "100%",
+        height: "100%"
+    },
     channelCardImage: {
         width: 60,
         height: 60,

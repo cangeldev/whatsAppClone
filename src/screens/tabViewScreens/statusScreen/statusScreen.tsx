@@ -1,7 +1,6 @@
 import React from 'react'
 import { View, Text, TouchableOpacity, FlatList } from 'react-native'
 import style from './style'
-import { example } from 'assets'
 import { useTranslation } from 'react-i18next'
 
 //Icons
@@ -18,7 +17,12 @@ export const StatusScreen = () => {
 
     const { t } = useTranslation()
 
-    const renderChannel = ({ item }: any) => <ChannelCard image={item.image} title={item.title} />
+    const renderChannel = ({ item }: any) =>
+        <ChannelCard
+            image={item.image}
+            title={item.title}
+        />
+
     return (
         <View style={style.container}>
             <View style={style.headerContainer}>
@@ -33,9 +37,7 @@ export const StatusScreen = () => {
             <View style={style.statusSection}>
                 <View style={style.userImageContainer}>
                     <View style={style.userImage}>
-                        <ProfileImage
-                            image={example}
-                        />
+                        <ProfileImage />
                     </View>
                     <IconA
                         name={"pluscircle"}

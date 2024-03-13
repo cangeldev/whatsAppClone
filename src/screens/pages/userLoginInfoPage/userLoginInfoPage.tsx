@@ -1,5 +1,5 @@
-import { View, Text, TextInput, Pressable, Image } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import { View, Text, TextInput, Pressable } from 'react-native'
+import React, { useState} from 'react'
 import style from './style'
 import { useTranslation } from 'react-i18next' //Multi Language
 import Icon from 'react-native-vector-icons/Entypo' //Icons
@@ -9,6 +9,7 @@ import colors from 'assets/colors/colors'
 import { useNavigation } from '@react-navigation/native'
 import { ImagePickerModal } from 'components/modals'
 import { NextButton, StatusBarComponent } from 'components'
+import { ProfileImage } from 'components/cards'
 
 export const UserLoginInfoPage = () => {
 
@@ -17,11 +18,6 @@ export const UserLoginInfoPage = () => {
 
     const [imagePickerModal, setImagePickerModal] = useState(false)
     const [name, setName] = useState("")
-    const [selectedImage, setSelectedImage] = useState()
-
-    useEffect(() => {
-        getProfilePhoto()
-    })
 
     const toggleImagePickerModal = () => {
         setImagePickerModal(!imagePickerModal)
@@ -33,19 +29,6 @@ export const UserLoginInfoPage = () => {
             navigation.navigate("HomeScreen")
         } catch (error) {
             console.error('Kullanıcı adını kaydetme hatası:', error)
-        }
-    }
-
-    const getProfilePhoto = async () => {
-        try {
-            const profileImage = await AsyncStorage.getItem('profileImage')
-            if (profileImage !== null) {
-                setSelectedImage(profileImage as any)
-            } else {
-                console.log('Kullanıcı resmi bulunamadı.')
-            }
-        } catch (error) {
-            console.error('Kullanıcı adını alma hatası:', error)
         }
     }
 
@@ -65,10 +48,7 @@ export const UserLoginInfoPage = () => {
             </Text>
             <Pressable onPress={toggleImagePickerModal}>
                 <View style={style.profileImageView}>
-                    <Image
-                        source={{ uri: selectedImage }}
-                        style={style.profileImage}
-                    />
+                    <ProfileImage />
                 </View>
             </Pressable>
             <View style={style.inputView}>
@@ -88,9 +68,11 @@ export const UserLoginInfoPage = () => {
                 closeModal={toggleImagePickerModal}
                 visibleModal={imagePickerModal}
             />
-            <NextButton
-                onPress={() => saveUsername(name)}
-            />
+            <View style={style.buttonView}>
+                <NextButton
+                    onPress={() => saveUsername(name)}
+                />
+            </View>
         </View>
     )
 }

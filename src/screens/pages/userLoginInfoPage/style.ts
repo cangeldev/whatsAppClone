@@ -28,7 +28,7 @@ export default StyleSheet.create({
     },
     inputView: {
         flexDirection: "row",
-        alignItems: "center",
+        alignItems: "center"
     },
     textInput: {
         flex: 1,
@@ -38,17 +38,18 @@ export default StyleSheet.create({
         fontSize: 16
     },
     emojiIcon: {
-        marginTop: 10,
+        marginTop: 12,
         marginLeft: 3
     },
     profileImageView: {
-        width: 150,
-        height: 150,
+        width: 100,
+        height: 100,
         overflow: "hidden",
-        borderRadius: 100
+        borderRadius: 100,
+        marginBottom: 25
     },
-    profileImage: {
-        width: "100%",
-        height: "100%"
+    buttonView: {
+        flex: 1,
+        justifyContent: "flex-end"
     }
 })

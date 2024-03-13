@@ -1,5 +1,5 @@
 import React, { useState, FC } from 'react'
-import { View, Text, Pressable } from 'react-native'
+import { View, Text, Pressable, Image } from 'react-native'
 import style from './style'
 import { example } from 'assets'
 import { useNavigation } from '@react-navigation/native' //Navigation
@@ -7,7 +7,6 @@ import { useTranslation } from 'react-i18next' //Multi Language
 
 //Components
 import { ChatModal } from 'components/modals'
-import { ProfileImage } from '../profileImage/profileImage'
 
 interface IChatCard {
     status?: string
@@ -36,9 +35,7 @@ export const ChatCard: FC<IChatCard> = ({ status }) => {
                 closeModal={toggleChatModal}
             />
             <Pressable onPress={toggleChatModal} style={style.chatImage}>
-                <ProfileImage
-                    image={example}
-                />
+                <Image source={example} style={style.image} />
             </Pressable>
             <View style={style.chatInfoView}>
                 <View style={style.chatInfoInner}>
