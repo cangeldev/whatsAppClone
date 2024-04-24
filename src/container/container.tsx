@@ -17,15 +17,18 @@ import { SettingsAccountPage } from 'screens/pages/settingsPages/settingsInnerPa
 import IconF from 'react-native-vector-icons/Fontisto'
 import IconE from 'react-native-vector-icons/Entypo'
 
+import auth from '@react-native-firebase/auth' //Firebase
 
 export const Container = () => {
+
     const Stack = createStackNavigator()
     const { t } = useTranslation()
+    const user = auth().currentUser
 
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName='WelcomeScreen'
+                initialRouteName={!user ? 'WelcomeScreen' : "HomeScreen"}
                 screenOptions={{ headerShown: false }}
             >
                 <Stack.Screen
@@ -52,7 +55,7 @@ export const Container = () => {
                     name='ProfileInfoPages'
                     component={ProfileInfoPage}
                 />
-                 <Stack.Screen
+                <Stack.Screen
                     name='UserLoginInfoPage'
                     component={UserLoginInfoPage}
                 />

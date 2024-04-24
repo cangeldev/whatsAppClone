@@ -4,10 +4,15 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor:colors.white,
-        padding:25
+        backgroundColor: colors.white,
+        padding: 25
     },
-    separator:{
-        paddingVertical:17  // burdan devam
+    separator: {
+        paddingVertical: 17
+    },
+    buttonView: {
+        width: 100,
+        alignItems: "center",
+        alignSelf: "center"
     }
 })

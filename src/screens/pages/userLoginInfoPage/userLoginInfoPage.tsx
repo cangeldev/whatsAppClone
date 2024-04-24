@@ -1,5 +1,5 @@
-import { View, Text, TextInput, Pressable } from 'react-native'
-import React, { useState} from 'react'
+import { View, Text, TextInput, Pressable, Alert } from 'react-native'
+import React, { useState } from 'react'
 import style from './style'
 import { useTranslation } from 'react-i18next' //Multi Language
 import Icon from 'react-native-vector-icons/Entypo' //Icons
@@ -24,11 +24,19 @@ export const UserLoginInfoPage = () => {
     }
 
     const saveUsername = async (username: string) => {
-        try {
-            await AsyncStorage.setItem('username', username)
-            navigation.navigate("HomeScreen")
-        } catch (error) {
-            console.error('Kullanıcı adını kaydetme hatası:', error)
+        if (username == "") {
+            Alert.alert(
+                t("loginFailed"),
+                t("nameFailedText")
+            )
+        }
+        else {
+            try {
+                await AsyncStorage.setItem('username', username)
+                navigation.navigate("HomeScreen")
+            } catch (error) {
+                console.error('Kullanıcı adını kaydetme hatası:', error)
+            }
         }
     }
 

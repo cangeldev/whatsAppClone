@@ -12,7 +12,6 @@ export const LoginScreen = () => {
 
     const { t } = useTranslation()
     const [phoneNumber, setPhoneNumber] = useState('') // Telefon numarası 
-    const [confirmCode, setConfirmCode] = useState('')  // doğrulama kodu
     const [verificationId, setVerificationId] = useState<any | null>(null);
     const [verificationModal, setVerificationModal] = useState(false) // doğrulama kodu giriş modal
 
@@ -22,15 +21,6 @@ export const LoginScreen = () => {
             setVerificationId(confirmation.verificationId)
         } catch (error) {
             console.error('Phone authentication error:', error)
-        }
-    };
-
-    const handleConfirmCode = async () => {
-        try {
-            const credential = auth.PhoneAuthProvider.credential(verificationId, confirmCode)
-            await auth().signInWithCredential(credential)
-        } catch (error) {
-            console.error('Confirmation code error:', error)
         }
     }
 
@@ -62,12 +52,16 @@ export const LoginScreen = () => {
                 t("loginFailedText")
             )
         }
-        else setVerificationModal(!verificationModal)
+        else {
+            handleSendCode()
+            setVerificationModal(!verificationModal)
+        }
     }
     return (
         <View style={style.container}>
             <StatusBarComponent />
             <VerificationCodeModal
+                verificationId={verificationId}
                 closeModal={toggleChatModal}
                 visibleModal={verificationModal}
                 number={phoneNumber}

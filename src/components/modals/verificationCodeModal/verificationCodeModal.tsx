@@ -1,28 +1,40 @@
-import { View, Text, Modal, TextInput } from 'react-native'
-import React, { FC } from 'react'
+import { View, Text, Modal, TextInput, Alert } from 'react-native'
+import React, { FC, useState } from 'react'
 import style from './style'
 import { useTranslation } from 'react-i18next' //Multi Language
 import colors from 'assets/colors/colors'
 import Icon from 'react-native-vector-icons/Entypo' //Icons
 import { useNavigation } from '@react-navigation/native'
 import { NextButton } from 'components/nextButton/nextButton'
+import auth from '@react-native-firebase/auth' //Firebase
 
 interface IVerificationCodeModal {
     visibleModal: boolean
     closeModal: () => void
     number: string
+    verificationId: string
 }
 
-export const VerificationCodeModal: FC<IVerificationCodeModal> = ({ visibleModal, closeModal, number }) => {
+export const VerificationCodeModal: FC<IVerificationCodeModal> = ({ visibleModal, closeModal, number, verificationId }) => {
 
+    const [confirmCode, setConfirmCode] = useState('')  // doğrulama kodu
     const { t } = useTranslation()
     const navigation = useNavigation<any>()
 
-    const handleButton = () => {
-        navigation.navigate('UserLoginInfoPage')
-        closeModal()
+    const handleConfirmCode = async () => {
+        try {
+            const credential = auth.PhoneAuthProvider.credential(verificationId, confirmCode)
+            await auth().signInWithCredential(credential)
+            navigation.navigate('UserLoginInfoPage')
+            closeModal()
+        } catch (error) {
+            Alert.alert(
+                t("loginFailed"),
+                t("loginFailedText")
+            )
+        }
     }
-    
+
     return (
         <Modal
             visible={visibleModal}
@@ -55,11 +67,14 @@ export const VerificationCodeModal: FC<IVerificationCodeModal> = ({ visibleModal
                     style={style.numberInput}
                     autoFocus
                     keyboardType='number-pad'
+                    onChangeText={setConfirmCode}
                 />
                 <Text style={style.receiveCodeText}>
                     {t("didntReceiveCode")}
                 </Text>
-                <NextButton onPress={handleButton} />
+                <NextButton
+                    onPress={handleConfirmCode}
+                />
             </View>
         </Modal>
     )

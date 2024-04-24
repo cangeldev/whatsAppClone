@@ -88,8 +88,10 @@ i18n
                     profilePhoto: "Profile photo",
                     camera: "Camera",
                     galery: "Galery",
-                    loginFailed:"Login failed",
-                    loginFailedText:"Please enter an available phone number",
+                    loginFailed: "Login failed",
+                    loginFailedText: "Please enter an available phone number",
+                    nameFailedText: "Please enter an available username",
+                    exit: "Exit"
                 },
             },
             tr: {
@@ -174,8 +176,10 @@ i18n
                     profilePhoto: "Profil fotoğrafı",
                     camera: "Kamera",
                     galery: "Galeri",
-                    loginFailed:"Hatalı giriş",
-                    loginFailedText:"Lütfen kullanılabilir  telefon numarası girin",
+                    loginFailed: "Hatalı giriş",
+                    loginFailedText: "Lütfen kullanılabilir  telefon numarası girin",
+                    nameFailedText: "Lütfen kullanılabilir  kullanıcı adı girin",
+                    exit: "Çıkış"
                 },
             },
         },
