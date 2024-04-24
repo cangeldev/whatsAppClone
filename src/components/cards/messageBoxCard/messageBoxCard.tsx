@@ -15,7 +15,9 @@ export const MessageBoxCard: FC<IMessageBoxCard> = ({ info }) => {
     const iconStyle = isTo ? style.toIcon : style.fromIcon
 
     const messageInfoText = isFrom ? (
-        <Text style={{ letterSpacing: -3 }}>✓✓</Text>
+        <Text style={{ letterSpacing: -3 }}>
+            ✓✓
+        </Text>
     ) : null
 
     return (

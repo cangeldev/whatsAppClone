@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { View, FlatList } from 'react-native'
 import style from './style'
@@ -18,6 +17,7 @@ export const SettingsAccountPage = () => {
     <SettingsCard
       icon={item.image}
       title={t(item.title)}
+      navigationPage={item.navigationPage}
     />
   return (
     <View style={style.container}>

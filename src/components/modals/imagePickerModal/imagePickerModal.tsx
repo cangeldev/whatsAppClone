@@ -3,7 +3,6 @@ import React, { FC } from 'react'
 import style from './style'
 import { selectImageList } from 'utils/helper'
 import { SelectImageCard } from 'components/cards'
-
 import Icon from 'react-native-vector-icons/FontAwesome5' // Icons
 import { useTranslation } from 'react-i18next' // Multi Language
 import AsyncStorage from '@react-native-async-storage/async-storage' //AsyncStorage

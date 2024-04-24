@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons' //Icons
 import { useNavigation } from '@react-navigation/native'
 
 interface IProfileInfoCard {
-    title: string,
+    title: string
     iconName: string
     navigatePage: string
 }

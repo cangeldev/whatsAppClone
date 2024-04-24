@@ -1,7 +1,7 @@
 import React from 'react'
 import { View, Text, Image, FlatList, ScrollView } from 'react-native'
 import style from './style'
-import { example, group, meta } from 'assets'
+import { group, meta } from 'assets'
 import { ProfileImage, SettingsCard, SettingsMenuCard } from 'components/cards' //Components
 import { settingsList } from 'utils/helper'
 import { useTranslation } from 'react-i18next' //Multi Language

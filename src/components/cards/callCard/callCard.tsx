@@ -2,10 +2,7 @@ import React, { useState } from 'react'
 import { View, Text, Pressable, Image } from 'react-native'
 import style from './style'
 import { example } from 'assets'
-
-//Components
-import { ProfileImage } from '../profileImage/profileImage'
-import { ChatModal } from 'components/modals'
+import { ChatModal } from 'components/modals' //Components
 
 //Icons
 import IconM from 'react-native-vector-icons/MaterialIcons'

@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { View, Text, Modal, TouchableOpacity, TouchableWithoutFeedback, FlatList } from 'react-native'
+import { View, Text, Modal, TouchableOpacity, TouchableWithoutFeedback, FlatList, Image } from 'react-native'
 import style from './style'
 import { example } from 'assets'
 import { iconButtonList } from 'utils/helper'
@@ -35,11 +35,10 @@ export const ChatModal: FC<IChatModal> = ({ visibleModal, closeModal }) => {
             >
                 <TouchableWithoutFeedback>
                     <View style={style.modalContent}>
-                        <View style={style.image}>
-                            <ProfileImage
-                                image={example}
-                            />
-                        </View>
+                        <Image
+                            source={example}
+                            style={style.image}
+                        />
                         <Text style={style.nameContainer} >
                             Babam
                         </Text>

@@ -1,9 +1,8 @@
 import React, { FC } from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, Image } from 'react-native'
 import style from './style'
 import { useTranslation } from 'react-i18next' //Multi Language
 import IconA from 'react-native-vector-icons/AntDesign' //Icons
-import { Image } from 'react-native'
 
 interface IChannelCard {
     title: string
@@ -18,7 +17,10 @@ export const ChannelCard: FC<IChannelCard> = ({ title, image }) => {
         <View style={style.channelCardContainer}>
             <View>
                 <View style={style.channelCardImage}>
-                    <Image source={image} style={style.image} />
+                    <Image
+                        source={image}
+                        style={style.image}
+                    />
                 </View>
                 <View style={style.iconContainer}>
                     <IconA

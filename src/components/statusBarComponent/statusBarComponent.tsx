@@ -1,6 +1,5 @@
 import { StatusBar } from 'react-native'
 import React, { FC } from 'react'
-import colors from 'assets/colors/colors'
 
 interface IStatusBar {
     bgColor?: string

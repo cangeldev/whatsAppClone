@@ -218,7 +218,8 @@ export const settingsAccountList = [
     {
         id: 8,
         image: trash,
-        title: "deleteAccount"
+        title: "deleteAccount",
+        navigationPage: "WelcomeScreen"
     }
 ]
 

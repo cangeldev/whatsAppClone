@@ -4,9 +4,7 @@ import style from './style'
 import { example } from 'assets'
 import { useNavigation } from '@react-navigation/native' //Navigation
 import { useTranslation } from 'react-i18next' //Multi Language
-
-//Components
-import { ChatModal } from 'components/modals'
+import { ChatModal } from 'components/modals' //Components
 
 interface IChatCard {
     status?: string
@@ -35,7 +33,10 @@ export const ChatCard: FC<IChatCard> = ({ status }) => {
                 closeModal={toggleChatModal}
             />
             <Pressable onPress={toggleChatModal} style={style.chatImage}>
-                <Image source={example} style={style.image} />
+                <Image
+                    source={example}
+                    style={style.image}
+                />
             </Pressable>
             <View style={style.chatInfoView}>
                 <View style={style.chatInfoInner}>

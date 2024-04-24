@@ -1,6 +1,5 @@
-import { Text, TouchableOpacity } from 'react-native'
 import React, { FC } from 'react'
-style
+import { Text, TouchableOpacity } from 'react-native'
 import { useTranslation } from 'react-i18next' //Multi Language
 import style from './style'
 

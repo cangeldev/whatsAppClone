@@ -11,7 +11,7 @@ import IconI from 'react-native-vector-icons/Ionicons'
 export const CustomInput = () => {
 
     const [message, SetMessage] = useState("")
-    
+
     return (
         <View style={style.inputContainer}>
             <TextInput
@@ -38,15 +38,16 @@ export const CustomInput = () => {
                         />
                 }
             </View>
-            {message != "" ?
-                <IconI
-                    name={"send"}
-                    style={style.sendIcon}
-                /> :
-                <IconF
-                    name={"microphone"}
-                    style={style.microphoneIcon}
-                />
+            {
+                message != "" ?
+                    <IconI
+                        name={"send"}
+                        style={style.sendIcon}
+                    /> :
+                    <IconF
+                        name={"microphone"}
+                        style={style.microphoneIcon}
+                    />
             }
         </View>
     )

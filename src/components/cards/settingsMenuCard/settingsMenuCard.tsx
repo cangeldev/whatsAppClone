@@ -1,13 +1,13 @@
 import React, { FC } from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import style from './style'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native' //Navigation
 
 interface ISettingsMenuCard {
     icon: Image
     title: string
     description: string
-    navigationPage: string
+    navigationPage?: string
 }
 
 export const SettingsMenuCard: FC<ISettingsMenuCard> = ({ icon, title, description, navigationPage }) => {
