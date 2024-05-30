@@ -4,12 +4,12 @@ import style from './style'
 import { useTranslation } from 'react-i18next' //Multi Language
 import Icon from 'react-native-vector-icons/Entypo' //Icons
 import IconI from 'react-native-vector-icons/MaterialIcons' //Icons
-import AsyncStorage from '@react-native-async-storage/async-storage' //AsyncStorage
 import colors from 'assets/colors/colors'
 import { useNavigation } from '@react-navigation/native'
 import { ImagePickerModal } from 'components/modals'
 import { NextButton, StatusBarComponent } from 'components'
 import { ProfileImage } from 'components/cards'
+import { saveUsernameAsync } from 'services/asyncStorage/asyncStorage'
 
 export const UserLoginInfoPage = () => {
 
@@ -31,12 +31,7 @@ export const UserLoginInfoPage = () => {
             )
         }
         else {
-            try {
-                await AsyncStorage.setItem('username', username)
-                navigation.navigate("HomeScreen")
-            } catch (error) {
-                console.error('Kullanıcı adını kaydetme hatası:', error)
-            }
+            saveUsernameAsync(username, navigation)
         }
     }
 

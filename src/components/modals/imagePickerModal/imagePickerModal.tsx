@@ -5,8 +5,8 @@ import { selectImageList } from 'utils/helper'
 import { SelectImageCard } from 'components/cards'
 import Icon from 'react-native-vector-icons/FontAwesome5' // Icons
 import { useTranslation } from 'react-i18next' // Multi Language
-import AsyncStorage from '@react-native-async-storage/async-storage' //AsyncStorage
-import { launchImageLibrary, launchCamera } from 'react-native-image-picker'
+import { launchImageLibrary, launchCamera, ImageLibraryOptions, CameraOptions } from 'react-native-image-picker'
+import { saveProfileImage } from 'services/asyncStorage/asyncStorage'
 
 interface IimagePickerModal {
     visibleModal: boolean
@@ -14,28 +14,18 @@ interface IimagePickerModal {
 }
 
 export const ImagePickerModal: FC<IimagePickerModal> = ({ visibleModal, closeModal }) => {
-
     const { t } = useTranslation()
 
-    const selectImageRender = ({ item }: any) =>
+    const selectImageRender = ({ item }: any) => (
         <SelectImageCard
             icon={item.iconName}
             title={item.name}
             onPress={item.void == "openImagePicker" ? openImagePicker : handleCameraLaunch}
         />
-
-    const saveProfileImage = async (profileImage: any) => {
-        try {
-            await AsyncStorage.setItem('profileImage', profileImage)
-            closeModal()
-
-        } catch (error) {
-            console.error('Profil resmi kaydetme hatası:', error)
-        }
-    }
+    )
 
     const openImagePicker = () => {
-        const options = {
+        const options: ImageLibraryOptions = {
             mediaType: 'photo',
             includeBase64: false,
             maxHeight: 2000,
@@ -45,32 +35,35 @@ export const ImagePickerModal: FC<IimagePickerModal> = ({ visibleModal, closeMod
         launchImageLibrary(options, (response) => {
             if (response.didCancel) {
                 console.log('User cancelled image picker')
-            } else if (response.error) {
-                console.log('Image picker error: ', response.error)
+            } else if (response.errorCode) {
+                console.log('Image picker error: ', response.errorMessage)
             } else {
-                let imageUri = response.uri || response.assets?.[0]?.uri
-                saveProfileImage(imageUri)
-                closeModal()
+                let imageUri = response.assets?.[0]?.uri
+                if (imageUri) {
+                    saveProfileImage(imageUri, closeModal)
+                }
             }
         })
     }
 
     const handleCameraLaunch = () => {
-        const options = {
+        const options: CameraOptions = {
             mediaType: 'photo',
             includeBase64: false,
             maxHeight: 2000,
             maxWidth: 2000,
         }
 
-        launchCamera(options, response => {
+        launchCamera(options, (response) => {
             if (response.didCancel) {
                 console.log('User cancelled camera')
-            } else if (response.error) {
-                console.log('Camera Error: ', response.error)
+            } else if (response.errorCode) {
+                console.log('Camera error: ', response.errorMessage)
             } else {
-                let imageUri = response.uri || response.assets?.[0]?.uri
-                saveProfileImage(imageUri)
+                let imageUri = response.assets?.[0]?.uri
+                if (imageUri) {
+                    saveProfileImage(imageUri, closeModal)
+                }
             }
         })
     }
