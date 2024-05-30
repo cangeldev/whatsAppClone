@@ -7,6 +7,7 @@ import { SettingsCard } from 'components/cards' //Components
 import { NextButton } from 'components'
 import auth from '@react-native-firebase/auth' //Firebase
 import { useNavigation } from '@react-navigation/native'
+import { handleSignOut } from 'services/firebase/firebase'
 
 export const SettingsAccountPage = () => {
   const navigation = useNavigation<any>()
@@ -32,12 +33,7 @@ export const SettingsAccountPage = () => {
       <View style={style.buttonView}>
         <NextButton
           title='exit'
-          onPress={() => {
-            auth()
-              .signOut()
-              .then(() => console.log('User signed out!'))
-            navigation.navigate("WelcomeScreen")
-          }}
+          onPress={() => handleSignOut(navigation)}
         />
       </View>
     </View>

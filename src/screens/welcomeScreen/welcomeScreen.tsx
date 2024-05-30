@@ -5,10 +5,10 @@ import { welcomeImg } from 'assets'
 import { radioButtons } from 'utils/helper'
 import i18n from 'utils/i18next'  //Multi Language
 import { useNavigation } from '@react-navigation/native' //Navigation
-import AsyncStorage from '@react-native-async-storage/async-storage' //AsyncStorage
 import RadioGroup from 'react-native-radio-buttons-group'
 import Icon from 'react-native-vector-icons/AntDesign' //Icons
 import { StatusBarComponent } from 'components'
+import { saveLanguage } from 'services/asyncStorage/asyncStorage'
 
 export const WelcomeScreen = () => {
 
@@ -25,14 +25,6 @@ export const WelcomeScreen = () => {
             console.error('Dil seçme kaydetme hatası:', error)
         }
     }, [navigation, selectedId])
-
-    const saveLanguage = async (language: any) => {
-        try {
-            await AsyncStorage.setItem('language', language)
-        } catch (error) {
-            console.error('Dil seçme kaydetme hatası:', error)
-        }
-    }
 
     return (
         <View style={style.container}>

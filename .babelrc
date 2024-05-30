@@ -11,7 +11,8 @@
                     "container": "./src/container",
                     "assets": "./src/assets",
                     "screens": "./src/screens",
-                    "utils": "./src/utils"
+                    "utils": "./src/utils",
+                    "services": "./src/services"
                 }
             }
         ]

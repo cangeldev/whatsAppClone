@@ -18,12 +18,13 @@ import IconF from 'react-native-vector-icons/Fontisto'
 import IconE from 'react-native-vector-icons/Entypo'
 
 import auth from '@react-native-firebase/auth' //Firebase
+import { currentUser } from 'services/firebase/firebase'
 
 export const Container = () => {
 
     const Stack = createStackNavigator()
     const { t } = useTranslation()
-    const user = auth().currentUser
+    const user = currentUser()
 
     return (
         <NavigationContainer>

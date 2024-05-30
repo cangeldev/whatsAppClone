@@ -6,7 +6,7 @@ import colors from 'assets/colors/colors'
 import Icon from 'react-native-vector-icons/Entypo' //Icons
 import { useNavigation } from '@react-navigation/native'
 import { NextButton } from 'components/nextButton/nextButton'
-import auth from '@react-native-firebase/auth' //Firebase
+import { handleConfirmCode } from 'services/firebase/firebase'
 
 interface IVerificationCodeModal {
     visibleModal: boolean
@@ -21,12 +21,9 @@ export const VerificationCodeModal: FC<IVerificationCodeModal> = ({ visibleModal
     const { t } = useTranslation()
     const navigation = useNavigation<any>()
 
-    const handleConfirmCode = async () => {
+    const handleButton = () => {
         try {
-            const credential = auth.PhoneAuthProvider.credential(verificationId, confirmCode)
-            await auth().signInWithCredential(credential)
-            navigation.navigate('UserLoginInfoPage')
-            closeModal()
+            handleConfirmCode(verificationId, confirmCode, navigation, closeModal)
         } catch (error) {
             Alert.alert(
                 t("loginFailed"),
@@ -73,7 +70,7 @@ export const VerificationCodeModal: FC<IVerificationCodeModal> = ({ visibleModal
                     {t("didntReceiveCode")}
                 </Text>
                 <NextButton
-                    onPress={handleConfirmCode}
+                    onPress={handleButton}
                 />
             </View>
         </Modal>
