@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5' // Icons
 import { useTranslation } from 'react-i18next' // Multi Language
 import { launchImageLibrary, launchCamera, ImageLibraryOptions, CameraOptions } from 'react-native-image-picker'
 import { saveProfileImage } from 'services/asyncStorage/asyncStorage'
+import { saveUserProfilePhoto } from 'services/firebase/firebase'
 
 interface IimagePickerModal {
     visibleModal: boolean
@@ -41,6 +42,7 @@ export const ImagePickerModal: FC<IimagePickerModal> = ({ visibleModal, closeMod
                 let imageUri = response.assets?.[0]?.uri
                 if (imageUri) {
                     saveProfileImage(imageUri, closeModal)
+                    saveUserProfilePhoto(imageUri)
                 }
             }
         })
