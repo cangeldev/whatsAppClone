@@ -6,8 +6,8 @@ import { SelectImageCard } from 'components/cards'
 import Icon from 'react-native-vector-icons/FontAwesome5' // Icons
 import { useTranslation } from 'react-i18next' // Multi Language
 import { launchImageLibrary, launchCamera, ImageLibraryOptions, CameraOptions } from 'react-native-image-picker'
-import { saveProfileImage } from 'services/asyncStorage/asyncStorage'
-import { saveUserProfilePhoto } from 'services/firebase/firebase'
+import { useDispatch } from 'react-redux'
+import { setProfileImage } from 'services/features/userSlice'
 
 interface IimagePickerModal {
     visibleModal: boolean
@@ -16,7 +16,7 @@ interface IimagePickerModal {
 
 export const ImagePickerModal: FC<IimagePickerModal> = ({ visibleModal, closeModal }) => {
     const { t } = useTranslation()
-
+    const dispatch = useDispatch()
     const selectImageRender = ({ item }: any) => (
         <SelectImageCard
             icon={item.iconName}
@@ -41,8 +41,8 @@ export const ImagePickerModal: FC<IimagePickerModal> = ({ visibleModal, closeMod
             } else {
                 let imageUri = response.assets?.[0]?.uri
                 if (imageUri) {
-                    saveProfileImage(imageUri, closeModal)
-                    saveUserProfilePhoto(imageUri)
+                    dispatch(setProfileImage(imageUri))
+                    closeModal()
                 }
             }
         })
@@ -64,7 +64,8 @@ export const ImagePickerModal: FC<IimagePickerModal> = ({ visibleModal, closeMod
             } else {
                 let imageUri = response.assets?.[0]?.uri
                 if (imageUri) {
-                    saveProfileImage(imageUri, closeModal)
+                    dispatch(setProfileImage(imageUri))
+                    closeModal()
                 }
             }
         })

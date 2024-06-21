@@ -1,29 +1,36 @@
 import { View, Text, Modal, TextInput, Alert } from 'react-native'
-import React, { FC, useState } from 'react'
+import React, { FC } from 'react'
 import style from './style'
 import { useTranslation } from 'react-i18next' //Multi Language
 import colors from 'assets/colors/colors'
 import Icon from 'react-native-vector-icons/Entypo' //Icons
 import { useNavigation } from '@react-navigation/native'
 import { NextButton } from 'components/nextButton/nextButton'
-import { handleConfirmCode } from 'services/firebase/firebase'
+import { confirmCode } from 'services/firebase/firebase'
+import { FirebaseAuthTypes } from '@react-native-firebase/auth'
+import { RootState } from 'services/features/store'
+import { useDispatch, useSelector } from 'react-redux'
+import { setCode } from 'services/features/userSlice'
 
 interface IVerificationCodeModal {
     visibleModal: boolean
     closeModal: () => void
     number: string
-    verificationId: string
+
+    confirmation: FirebaseAuthTypes.ConfirmationResult | null;
 }
 
-export const VerificationCodeModal: FC<IVerificationCodeModal> = ({ visibleModal, closeModal, number, verificationId }) => {
-
-    const [confirmCode, setConfirmCode] = useState('')  // doğrulama kodu
+export const VerificationCodeModal: FC<IVerificationCodeModal> = ({ visibleModal, closeModal, number, confirmation }) => {
+    const { code } = useSelector((state: RootState) => state.users.UserInfo);
     const { t } = useTranslation()
     const navigation = useNavigation<any>()
-
+    const dispatch = useDispatch();
     const handleButton = () => {
         try {
-            handleConfirmCode(verificationId, confirmCode, navigation, closeModal)
+            confirmCode(confirmation, code, '', null);
+            navigation.navigate("UserLoginInfoPage")
+            closeModal()
+
         } catch (error) {
             Alert.alert(
                 t("loginFailed"),
@@ -64,7 +71,7 @@ export const VerificationCodeModal: FC<IVerificationCodeModal> = ({ visibleModal
                     style={style.numberInput}
                     autoFocus
                     keyboardType='number-pad'
-                    onChangeText={setConfirmCode}
+                    onChangeText={s => dispatch(setCode(s))}
                 />
                 <Text style={style.receiveCodeText}>
                     {t("didntReceiveCode")}

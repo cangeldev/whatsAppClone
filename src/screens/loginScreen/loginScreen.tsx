@@ -6,14 +6,18 @@ import colors from 'assets/colors/colors'
 import { useTranslation } from 'react-i18next'
 import { VerificationCodeModal } from 'components/modals'
 import { NextButton, StatusBarComponent } from 'components'
-import { handleSendCode } from 'services/firebase/firebase'
+import {  signInWithPhoneNumber } from 'services/firebase/firebase'
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from 'services/features/store'
+import { setNumber, setVerificationId } from 'services/features/userSlice'
+import { FirebaseAuthTypes } from '@react-native-firebase/auth'
 
 export const LoginScreen = () => {
-
+    const dispatch = useDispatch();
     const { t } = useTranslation()
-    const [phoneNumber, setPhoneNumber] = useState('') // Telefon numarası 
-    const [verificationId, setVerificationId] = useState<any | null>(null)
     const [verificationModal, setVerificationModal] = useState(false) // doğrulama kodu giriş modal
+    const { phoneNumber } = useSelector((state: RootState) => state.users.UserInfo);
+    const [confirm, setConfirm] = useState<FirebaseAuthTypes.ConfirmationResult | null>(null);
 
     // Telefon numarası girişinde sayıları ayırmak için
     const handleNumberChange = (input: any) => {
@@ -34,7 +38,7 @@ export const LoginScreen = () => {
         }
 
         const formattedInput = formatNumber(input)
-        setPhoneNumber(formattedInput)
+        dispatch(setNumber(formattedInput))
     }
 
     const toggleChatModal = async () => {
@@ -45,9 +49,13 @@ export const LoginScreen = () => {
             )
         } else {
             try {
-                const verificationId = await handleSendCode(phoneNumber)
-                setVerificationId(verificationId)
-                setVerificationModal(!verificationModal)
+                const confirmation = await signInWithPhoneNumber(phoneNumber);
+                if (confirmation) {
+                    setConfirm(confirmation);
+                    dispatch(setVerificationId(confirmation.verificationId));
+                    setVerificationModal(!verificationModal)
+                }
+
             } catch (error) {
                 Alert.alert(
                     t("loginFailed"),
@@ -61,7 +69,7 @@ export const LoginScreen = () => {
         <View style={style.container}>
             <StatusBarComponent />
             <VerificationCodeModal
-                verificationId={verificationId}
+                confirmation={confirm}
                 closeModal={toggleChatModal}
                 visibleModal={verificationModal}
                 number={phoneNumber}
