@@ -11,9 +11,7 @@ export default StyleSheet.create({
         paddingVertical: 10
     },
     title: {
-        fontWeight: "600"
-    },
-    contentView: {
-        paddingTop: 20
+        fontWeight: "600",
+        marginVertical: 10
     }
 })

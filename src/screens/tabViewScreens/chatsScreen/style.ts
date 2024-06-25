@@ -40,5 +40,8 @@ export default StyleSheet.create({
         position: "absolute",
         right: 18,
         bottom: 18
+    },
+    footer: {
+        marginTop: 10
     }
 })

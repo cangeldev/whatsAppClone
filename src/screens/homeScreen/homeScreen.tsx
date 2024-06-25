@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Image, Text, View } from 'react-native'
+import { View } from 'react-native'
 import style from './style'
 import colors from 'assets/colors/colors'
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view' //Tabview
@@ -7,11 +7,9 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons' //Icons
 import { CustomHeader } from 'components' // Components
 import { useTranslation } from 'react-i18next' // Multi Language
 import { CallsScreen, ChatsScreen, StatusScreen } from 'screens/tabViewScreens' //Pages
-import { useSelector } from 'react-redux'
-import { RootState } from 'services/features/store'
 
 export const HomeScreen = () => {
-    const { profileName, profileImage } = useSelector((state: RootState) => state.users.UserInfo)
+
     const { t } = useTranslation()
     const [index, setIndex] = useState(1)
 
@@ -37,8 +35,6 @@ export const HomeScreen = () => {
     return (
         <View style={style.container}>
             <CustomHeader />
-            <Text>{profileName}</Text>
-            <Image source={{ uri: profileImage as any }} style={{ width: 200, height: 200 }} />
             <TabView
                 renderTabBar={props => (
                     <TabBar

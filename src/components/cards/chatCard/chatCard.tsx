@@ -1,16 +1,17 @@
 import React, { useState, FC } from 'react'
 import { View, Text, Pressable, Image } from 'react-native'
 import style from './style'
-import { example } from 'assets'
 import { useNavigation } from '@react-navigation/native' //Navigation
 import { useTranslation } from 'react-i18next' //Multi Language
 import { ChatModal } from 'components/modals' //Components
 
 interface IChatCard {
-    status?: string
+    status?: string,
+    profilePicture: any,
+    username: string
 }
 
-export const ChatCard: FC<IChatCard> = ({ status }) => {
+export const ChatCard: FC<IChatCard> = ({ status, profilePicture, username }) => {
 
     const [chatModalVisible, setChatModalVisible] = useState(false)
     const navigation = useNavigation<any>()
@@ -34,14 +35,14 @@ export const ChatCard: FC<IChatCard> = ({ status }) => {
             />
             <Pressable onPress={toggleChatModal} style={style.chatImage}>
                 <Image
-                    source={example}
+                    source={profilePicture}
                     style={style.image}
                 />
             </Pressable>
             <View style={style.chatInfoView}>
                 <View style={style.chatInfoInner}>
                     <Text style={style.chatName}>
-                        Can
+                        {username}
                     </Text>
                     {
                         status === "date" ?
@@ -53,9 +54,12 @@ export const ChatCard: FC<IChatCard> = ({ status }) => {
                                 </Text> : null
                     }
                 </View>
-                <Text style={style.chatMessage}>
-                    C
-                </Text>
+                {
+                    status == "addContact" ? null :
+                        <Text style={style.chatMessage}>
+                            C
+                        </Text>
+                }
             </View>
         </Pressable>
     )
