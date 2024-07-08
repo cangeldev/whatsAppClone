@@ -21,7 +21,8 @@ export default StyleSheet.create({
     },
     ProfileImage: {
         width: 120,
-        height: 120
+        height: 120,
+        borderRadius:100
     },
     profileContainer: {
         alignItems: "center"

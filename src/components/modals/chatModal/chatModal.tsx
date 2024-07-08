@@ -1,19 +1,17 @@
 import React, { FC } from 'react'
 import { View, Text, Modal, TouchableOpacity, TouchableWithoutFeedback, FlatList, Image } from 'react-native'
 import style from './style'
-import { example } from 'assets'
 import { iconButtonList } from 'utils/helper'
-
-//Components
-import { ProfileImage } from 'components/cards'
-import { IconButton } from 'components/iconButton/iconButton'
+import { IconButton } from 'components/iconButton/iconButton'//Components
 
 interface IChatModal {
     visibleModal: boolean
     closeModal: () => void
+    profilePicture: any,
+    username: string
 }
 
-export const ChatModal: FC<IChatModal> = ({ visibleModal, closeModal }) => {
+export const ChatModal: FC<IChatModal> = ({ visibleModal, closeModal, profilePicture, username }) => {
 
     const renderItem = ({ item }: any) =>
         <IconButton
@@ -36,11 +34,11 @@ export const ChatModal: FC<IChatModal> = ({ visibleModal, closeModal }) => {
                 <TouchableWithoutFeedback>
                     <View style={style.modalContent}>
                         <Image
-                            source={example}
+                            source={profilePicture}
                             style={style.image}
                         />
                         <Text style={style.nameContainer} >
-                            Babam
+                            {username}
                         </Text>
                         <View style={style.dividerLine} />
                         <FlatList

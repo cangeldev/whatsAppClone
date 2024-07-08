@@ -42,10 +42,12 @@ export const confirmCode = async (confirm: FirebaseAuthTypes.ConfirmationResult 
 }
 
 // Function to save user profile to Firestore
-export const saveUserProfile = async (uid: string, profileName: string, profileImageUrl: string | null): Promise<void> => {
+export const saveUserProfile = async (phoneNumber: string, uid: string, profileName: string, profileImageUrl: string | null): Promise<void> => {
   await firestore().collection('users').doc(uid).set({
+    phoneNumber: phoneNumber,
     username: profileName,
     profileImageUrl: profileImageUrl,
+
   })
 }
 
@@ -64,10 +66,30 @@ export const uploadProfileImage = async (uid: string, profileImage: any): Promis
 //Kullanıcıları Listelemek için
 export const fetchUsers = async () => {
   try {
+    const currentUser = auth().currentUser?.uid
     const usersCollection = await firestore().collection('users').get()
-    const usersList = usersCollection.docs.map(doc => doc.data())
-    return (usersList)
+    const usersList = usersCollection.docs
+      .map(doc => ({ ...doc.data(), uid: doc.id }))
+      .filter(user => user.uid !== currentUser)
+    return usersList
   } catch (error) {
     console.error('Error fetching users:', error)
   }
 }
+
+
+//Eskisi
+/*export const fetchUsers = async () => {
+  try {
+    const currentUser = auth().currentUser?.uid
+    console.log(currentUser)
+    const usersCollection = await firestore().collection('users').get();
+    const usersList = usersCollection.docs
+      .map(doc => doc.data())
+      .filter(user => user.uid !== currentUser); // UID'yi dışla
+    return usersList;
+  } catch (error) {
+    console.error('Error fetching users:', error)
+  }
+}
+  */

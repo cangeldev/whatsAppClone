@@ -18,7 +18,7 @@ export const ChatCard: FC<IChatCard> = ({ status, profilePicture, username }) =>
     const { t } = useTranslation()
 
     const toogleButton = () => {
-        navigation.navigate("MessagePages")
+        navigation.navigate("MessagePages", { profilePicture, username })
     }
 
     const toggleChatModal = () => {
@@ -30,6 +30,8 @@ export const ChatCard: FC<IChatCard> = ({ status, profilePicture, username }) =>
             onPress={toogleButton}
             style={style.chatContainer}>
             <ChatModal
+                profilePicture={profilePicture}
+                username={username}
                 visibleModal={chatModalVisible}
                 closeModal={toggleChatModal}
             />
