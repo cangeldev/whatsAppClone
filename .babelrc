@@ -12,7 +12,8 @@
                     "assets": "./src/assets",
                     "screens": "./src/screens",
                     "utils": "./src/utils",
-                    "services": "./src/services"
+                    "services": "./src/services",
+                    "locales": "./src/locales"
                 }
             }
         ]
