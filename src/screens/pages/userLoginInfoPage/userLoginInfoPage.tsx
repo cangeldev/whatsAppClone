@@ -1,5 +1,5 @@
 import { View, Text, TextInput, Pressable, Alert } from 'react-native'
-import React, { useState} from 'react'
+import React, { useState } from 'react'
 import style from './style'
 import { useTranslation } from 'react-i18next' //Multi Language
 import Icon from 'react-native-vector-icons/Entypo' //Icons
@@ -18,20 +18,20 @@ export const UserLoginInfoPage = () => {
     const dispatch = useDispatch()
     const { t } = useTranslation()
     const navigation = useNavigation<any>()
-    const profileImage = useSelector((state: RootState) => state.users.UserInfo.profileImage);
+    const profileImage = useSelector((state: RootState) => state.users.UserInfo.profileImage)
     const [imagePickerModal, setImagePickerModal] = useState(false)
     const [name, setName] = useState("")
-
+    const phoneNumber = useSelector((state: RootState) => state.users.UserInfo.phoneNumber)
     const toggleImagePickerModal = () => {
         setImagePickerModal(!imagePickerModal)
     }
 
-    const saveUserProfileToFirebase = async (username: string, profileImage: string) => {
+    const saveUserProfileToFirebase = async (phoneNumber: string, username: string, profileImage: string) => {
         try {
             const user = currentUser();
             if (user) {
                 const profileImageUrl = await uploadProfileImage(user.uid, { uri: profileImage });
-                await saveUserProfile(user.uid, username, profileImageUrl);
+                await saveUserProfile(phoneNumber, user.uid, username, profileImageUrl);
             }
         } catch (error) {
             console.error(error);
@@ -52,7 +52,7 @@ export const UserLoginInfoPage = () => {
             )
         }
         else {
-            await saveUserProfileToFirebase(username, profileImage);
+            await saveUserProfileToFirebase(phoneNumber, username, profileImage);
             dispatch(setProfileName(username))
             navigation.navigate("HomeScreen")
         }

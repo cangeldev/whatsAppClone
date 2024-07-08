@@ -16,7 +16,8 @@ export default StyleSheet.create({
         width: 38,
         height: 38,
         borderRadius: 25,
-        marginHorizontal: 10
+        marginHorizontal: 10,
+        resizeMode:"stretch"
     },
     headerTitle: {
         fontSize: 20,

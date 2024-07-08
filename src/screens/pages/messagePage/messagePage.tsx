@@ -1,13 +1,13 @@
 import React, { useRef } from 'react'
-import { View, Text, StatusBar, ImageBackground, ScrollView, TouchableOpacity } from 'react-native'
+import { View, Text, StatusBar, ImageBackground, ScrollView, TouchableOpacity, Image } from 'react-native'
 import style from './style'
 import colors from 'assets/colors/colors'
-import { example, messageBackground } from 'assets'//Images
-import { useNavigation } from '@react-navigation/native' //Navigation
+import { messageBackground } from 'assets'//Images
+import { useNavigation, useRoute } from '@react-navigation/native' //Navigation
 
 //Components
 import { CustomInput } from 'components'
-import { MessageBoxCard, ProfileImage } from 'components/cards'
+import { MessageBoxCard } from 'components/cards'
 
 //Icons
 import IconF from 'react-native-vector-icons/FontAwesome5'
@@ -17,10 +17,12 @@ import IconE from 'react-native-vector-icons/Entypo'
 export const MessagePage = () => {
 
     const navigation = useNavigation<any>()
+    const route = useRoute()
+    const { profilePicture, username }: any = route.params
     const scrollViewRef = useRef<ScrollView>(null)
 
     const goProfileInfo = () => {
-        navigation.navigate("ProfileInfoPages")
+        navigation.navigate("ProfileInfoPages", { profilePicture, username })
     }
 
     return (
@@ -37,16 +39,15 @@ export const MessagePage = () => {
                     backgroundColor={colors.whatsAppGreen}
                     barStyle={'light-content'}
                 />
-                <View style={style.image}>
-                    <ProfileImage
-                        image={example}
-                    />
-                </View>
+                <Image
+                    source={profilePicture}
+                    style={style.image}
+                />
                 <TouchableOpacity
                     onPress={goProfileInfo}
                     style={style.headerTitleButton}>
                     <Text style={style.headerTitle}>
-                        Can
+                        {username}
                     </Text>
                 </TouchableOpacity>
                 <View style={style.iconContainer}>
@@ -66,26 +67,6 @@ export const MessagePage = () => {
             </View >
             <ScrollView onContentSizeChange={() => scrollViewRef.current?.scrollToEnd()}
                 ref={scrollViewRef} style={style.contentView}>
-                <MessageBoxCard info='to' />
-                <MessageBoxCard info='from' />
-                <MessageBoxCard info='to' />
-                <MessageBoxCard info='from' />
-                <MessageBoxCard info='to' />
-                <MessageBoxCard info='from' />
-                <MessageBoxCard info='to' />
-                <MessageBoxCard info='to' />
-                <MessageBoxCard info='from' />
-                <MessageBoxCard info='to' />
-                <MessageBoxCard info='from' />
-                <MessageBoxCard info='from' />
-                <MessageBoxCard info='to' />
-                <MessageBoxCard info='from' />
-                <MessageBoxCard info='to' />
-                <MessageBoxCard info='from' />
-                <MessageBoxCard info='to' />
-                <MessageBoxCard info='from' />
-                <MessageBoxCard info='to' />
-                <MessageBoxCard info='from' />
                 <MessageBoxCard info='to' />
                 <MessageBoxCard info='from' />
             </ScrollView>

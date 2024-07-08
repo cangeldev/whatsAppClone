@@ -1,12 +1,12 @@
 import React from 'react'
-import { View, Text, StatusBar, ScrollView, FlatList } from 'react-native'
+import { View, Text, StatusBar, ScrollView, FlatList, Image } from 'react-native'
 import colors from 'assets/colors/colors'
 import style from './style'
-import { example, negative, noEntry } from 'assets'
+import { negative, noEntry } from 'assets'
 import { profileInfoList, profileSettingList } from 'utils/helper'
-import { useNavigation } from '@react-navigation/native' //Navigation
+import { useNavigation, useRoute } from '@react-navigation/native' //Navigation
 import { useTranslation } from 'react-i18next' //Multi Language
-import { ProfileImage, ProfileInfoCard, ProfileSettingsCard } from 'components/cards' //Components
+import { ProfileInfoCard, ProfileSettingsCard } from 'components/cards' //Components
 
 //Icons
 import IconM from 'react-native-vector-icons/MaterialIcons'
@@ -16,6 +16,8 @@ export const ProfileInfoPage = () => {
 
     const navigation = useNavigation()
     const { t } = useTranslation()
+    const route = useRoute()
+    const { profilePicture, username }: any = route.params
     const renderProfileInfo =
         ({ item }: any) =>
             <ProfileInfoCard
@@ -47,13 +49,12 @@ export const ProfileInfoPage = () => {
                         onPress={navigation.goBack}
                     />
                     <View style={style.profileContainer}>
-                        <View style={style.ProfileImage}>
-                            <ProfileImage
-                                image={example}
-                            />
-                        </View>
+                        <Image
+                            source={profilePicture}
+                            style={style.ProfileImage}
+                        />
                         <Text style={style.profileName}>
-                            Can GEL
+                            {username}
                         </Text>
                         <Text style={style.profileNumber}>
                             +90 535 237 71 92
