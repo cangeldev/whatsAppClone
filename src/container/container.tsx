@@ -3,6 +3,7 @@ import { Text, View } from 'react-native'
 import style from './style'
 import colors from 'assets/colors/colors'
 import { useTranslation } from 'react-i18next' //Multi Language
+import { currentUser } from 'services/firebase/firebase' //Firebase
 
 //Navigation
 import { createStackNavigator } from '@react-navigation/stack'
@@ -16,8 +17,6 @@ import { SettingsAccountPage } from 'screens/pages/settingsPages/settingsInnerPa
 //Icons
 import IconF from 'react-native-vector-icons/Fontisto'
 import IconE from 'react-native-vector-icons/Entypo'
-
-import { currentUser } from 'services/firebase/firebase'
 
 export const Container = () => {
 

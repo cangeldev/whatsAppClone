@@ -1,9 +1,9 @@
 import React from 'react'
 import { Image } from 'react-native'
 import style from './style'
-import { example } from 'assets'
-import { useSelector } from 'react-redux'
-import { RootState } from 'services/features/store'
+import { example } from 'assets' //Images
+import { useSelector } from 'react-redux' //Redux Toolkit
+import { RootState } from 'services/features/store' //Redux Toolkit
 
 export const ProfileImage = () => {
     const profileImage = useSelector((state: RootState) => state.users.UserInfo.profileImage)

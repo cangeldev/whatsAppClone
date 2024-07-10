@@ -1,27 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import { View, TextInput, Image } from 'react-native'
 import style from './style'
 import { attach } from 'assets'
 
-//Icons
+// Icons
 import IconF from 'react-native-vector-icons/FontAwesome5'
 import IconM from 'react-native-vector-icons/MaterialIcons'
 import IconI from 'react-native-vector-icons/Ionicons'
 
 export const CustomInput = () => {
+    const [message, setMessage] = useState('')
 
-    const [message, SetMessage] = useState("")
+    const handleChangeText = useCallback((text: any) => {
+        setMessage(text)
+    }, [])
 
     return (
         <View style={style.inputContainer}>
             <TextInput
-                placeholder='Mesaj'
+                placeholder="Mesaj"
                 style={style.messageInput}
-                multiline={true}
-                onChangeText={(text: any) => SetMessage(text)}
+                multiline
+                onChangeText={handleChangeText}
             />
             <IconM
-                name={"insert-emoticon"}
+                name="insert-emoticon"
                 style={style.inputEmojiIcon}
             />
             <View style={style.inputIconContainer}>
@@ -29,26 +32,24 @@ export const CustomInput = () => {
                     source={attach}
                     style={style.attachIcon}
                 />
-                {
-                    message != "" ?
-                        null :
-                        <IconM
-                            name={"camera-alt"}
-                            style={style.inputIcon}
-                        />
-                }
-            </View>
-            {
-                message != "" ?
-                    <IconI
-                        name={"send"}
-                        style={style.sendIcon}
-                    /> :
-                    <IconF
-                        name={"microphone"}
-                        style={style.microphoneIcon}
+                {message === '' && (
+                    <IconM
+                        name="camera-alt"
+                        style={style.inputIcon}
                     />
-            }
+                )}
+            </View>
+            {message !== '' ? (
+                <IconI
+                    name="send"
+                    style={style.sendIcon}
+                />
+            ) : (
+                <IconF
+                    name="microphone"
+                    style={style.microphoneIcon}
+                />
+            )}
         </View>
     )
 }

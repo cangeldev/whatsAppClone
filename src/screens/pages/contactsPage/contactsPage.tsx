@@ -4,7 +4,7 @@ import style from './style'
 import { iconaddContactList } from 'utils/helper'
 import { AddContactsCard, ChatCard } from 'components/cards' //Components
 import { useTranslation } from 'react-i18next' //Multi Language
-import { fetchUsers } from 'services/firebase/firebase'
+import { fetchUsers } from 'services/firebase/firebase' //Firebase
 import { example } from 'assets'
 
 export const ContactsPage = () => {

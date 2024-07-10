@@ -1,18 +1,24 @@
 import { View, Text, TextInput, Pressable, Alert } from 'react-native'
 import React, { useState } from 'react'
 import style from './style'
-import { useTranslation } from 'react-i18next' //Multi Language
-import Icon from 'react-native-vector-icons/Entypo' //Icons
-import IconI from 'react-native-vector-icons/MaterialIcons' //Icons
 import colors from 'assets/colors/colors'
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native' //Navigation
+import { useTranslation } from 'react-i18next' //Multi Language
+import { currentUser, saveUserProfile, uploadProfileImage } from 'services/firebase/firebase' //Firebase
+
+//Icons
+import Icon from 'react-native-vector-icons/Entypo'
+import IconI from 'react-native-vector-icons/MaterialIcons' //Icons
+
+//Components
 import { ImagePickerModal } from 'components/modals'
 import { NextButton, StatusBarComponent } from 'components'
 import { ProfileImage } from 'components/cards'
+
+//Redux Toolkit
 import { useDispatch, useSelector } from 'react-redux'
 import { setProfileName } from 'services/features/userSlice'
 import { RootState } from 'services/features/store'
-import { currentUser, saveUserProfile, uploadProfileImage } from 'services/firebase/firebase'
 
 export const UserLoginInfoPage = () => {
     const dispatch = useDispatch()
@@ -28,15 +34,15 @@ export const UserLoginInfoPage = () => {
 
     const saveUserProfileToFirebase = async (phoneNumber: string, username: string, profileImage: string) => {
         try {
-            const user = currentUser();
+            const user = currentUser()
             if (user) {
-                const profileImageUrl = await uploadProfileImage(user.uid, { uri: profileImage });
-                await saveUserProfile(phoneNumber, user.uid, username, profileImageUrl);
+                const profileImageUrl = await uploadProfileImage(user.uid, { uri: profileImage })
+                await saveUserProfile(phoneNumber, user.uid, username, profileImageUrl)
             }
         } catch (error) {
-            console.error(error);
+            console.error(error)
         }
-    };
+    }
 
     const saveUsername = async (username: string) => {
         if (username == "") {
@@ -52,7 +58,7 @@ export const UserLoginInfoPage = () => {
             )
         }
         else {
-            await saveUserProfileToFirebase(phoneNumber, username, profileImage);
+            await saveUserProfileToFirebase(phoneNumber, username, profileImage)
             dispatch(setProfileName(username))
             navigation.navigate("HomeScreen")
         }

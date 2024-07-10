@@ -4,30 +4,29 @@ import style from './style'
 import { useTranslation } from 'react-i18next' //Multi Language
 import colors from 'assets/colors/colors'
 import Icon from 'react-native-vector-icons/Entypo' //Icons
-import { useNavigation } from '@react-navigation/native'
+import { useNavigation } from '@react-navigation/native' //Navigation
 import { NextButton } from 'components/nextButton/nextButton'
-import { confirmCode } from 'services/firebase/firebase'
-import { FirebaseAuthTypes } from '@react-native-firebase/auth'
-import { RootState } from 'services/features/store'
-import { useDispatch, useSelector } from 'react-redux'
-import { setCode } from 'services/features/userSlice'
+import { confirmCode } from 'services/firebase/firebase' //Firebase
+import { FirebaseAuthTypes } from '@react-native-firebase/auth' //Firebase
+import { RootState } from 'services/features/store' //Redux Toolkit
+import { useDispatch, useSelector } from 'react-redux' //Redux Toolkit
+import { setCode } from 'services/features/userSlice' //Redux Toolkit
 
 interface IVerificationCodeModal {
     visibleModal: boolean
     closeModal: () => void
     number: string
-
-    confirmation: FirebaseAuthTypes.ConfirmationResult | null;
+    confirmation: FirebaseAuthTypes.ConfirmationResult | null
 }
 
 export const VerificationCodeModal: FC<IVerificationCodeModal> = ({ visibleModal, closeModal, number, confirmation }) => {
     const { code } = useSelector((state: RootState) => state.users.UserInfo);
     const { t } = useTranslation()
     const navigation = useNavigation<any>()
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
     const handleButton = () => {
         try {
-            confirmCode(confirmation, code, '', null);
+            confirmCode(confirmation, code, '', null)
             navigation.navigate("UserLoginInfoPage")
             closeModal()
 

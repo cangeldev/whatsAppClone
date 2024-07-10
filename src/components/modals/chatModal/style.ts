@@ -1,5 +1,5 @@
-import colors from "assets/colors/colors";
-import { StyleSheet } from "react-native";
+import colors from "assets/colors/colors"
+import { StyleSheet } from "react-native"
 
 export default StyleSheet.create({
     modalBackground: {
@@ -14,7 +14,7 @@ export default StyleSheet.create({
     image: {
         width: "100%",
         height: 260,
-        resizeMode: "stretch"
+        resizeMode: "stretch",
     },
     dividerLine: {
         borderBottomWidth: 0.2,
@@ -30,10 +30,10 @@ export default StyleSheet.create({
         width: "100%"
     },
     iconList: {
-        paddingVertical: 10
+        paddingVertical: 10,
     },
     iconListContainer: {
         flexGrow: 1,
         justifyContent: "space-around"
     }
-});
+})

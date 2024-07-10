@@ -6,18 +6,18 @@ import colors from 'assets/colors/colors'
 import { useTranslation } from 'react-i18next'
 import { VerificationCodeModal } from 'components/modals'
 import { NextButton, StatusBarComponent } from 'components'
-import {  signInWithPhoneNumber } from 'services/firebase/firebase'
-import { useDispatch, useSelector } from 'react-redux';
+import { signInWithPhoneNumber } from 'services/firebase/firebase'
+import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from 'services/features/store'
 import { setNumber, setVerificationId } from 'services/features/userSlice'
 import { FirebaseAuthTypes } from '@react-native-firebase/auth'
 
 export const LoginScreen = () => {
-    const dispatch = useDispatch();
+    const dispatch = useDispatch()
     const { t } = useTranslation()
     const [verificationModal, setVerificationModal] = useState(false) // doğrulama kodu giriş modal
-    const { phoneNumber } = useSelector((state: RootState) => state.users.UserInfo);
-    const [confirm, setConfirm] = useState<FirebaseAuthTypes.ConfirmationResult | null>(null);
+    const { phoneNumber } = useSelector((state: RootState) => state.users.UserInfo)
+    const [confirm, setConfirm] = useState<FirebaseAuthTypes.ConfirmationResult | null>(null)
 
     // Telefon numarası girişinde sayıları ayırmak için
     const handleNumberChange = (input: any) => {
@@ -49,10 +49,10 @@ export const LoginScreen = () => {
             )
         } else {
             try {
-                const confirmation = await signInWithPhoneNumber(phoneNumber);
+                const confirmation = await signInWithPhoneNumber(phoneNumber)
                 if (confirmation) {
-                    setConfirm(confirmation);
-                    dispatch(setVerificationId(confirmation.verificationId));
+                    setConfirm(confirmation)
+                    dispatch(setVerificationId(confirmation.verificationId))
                     setVerificationModal(!verificationModal)
                 }
 

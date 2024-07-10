@@ -3,11 +3,12 @@ import { View, FlatList } from 'react-native'
 import style from './style'
 import { settingsAccountList } from 'utils/helper'
 import { useTranslation } from 'react-i18next' //Multi Language
-import { SettingsCard } from 'components/cards' //Components
+import { useNavigation } from '@react-navigation/native' //Navigation
+import { handleSignOut } from 'services/firebase/firebase' //Firebase
+
+//Components
+import { SettingsCard } from 'components/cards' 
 import { NextButton } from 'components'
-import auth from '@react-native-firebase/auth' //Firebase
-import { useNavigation } from '@react-navigation/native'
-import { handleSignOut } from 'services/firebase/firebase'
 
 export const SettingsAccountPage = () => {
   const navigation = useNavigation<any>()

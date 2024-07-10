@@ -42,7 +42,8 @@ export default StyleSheet.create({
         borderBottomColor: colors.grey,
         marginVertical: 20,
         paddingVertical: -2,
-        paddingHorizontal: 15
+        paddingHorizontal: 15,
+        textAlign: "center"
     },
     receiveCodeText: {
         color: colors.whatsAppGreen,

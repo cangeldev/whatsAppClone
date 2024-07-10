@@ -5,7 +5,6 @@ const ICON_SIZE = 22
 const BUTTON_RADIUS = 15
 const BORDER_WIDTH = 0.8
 const windowWidth = Dimensions.get('window').width
-const windowHeight = Dimensions.get('window').height
 
 export default StyleSheet.create({
     channelCardContainer: {

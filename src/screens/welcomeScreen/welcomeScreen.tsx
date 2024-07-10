@@ -7,8 +7,8 @@ import i18n from 'utils/i18next'  //Multi Language
 import { useNavigation } from '@react-navigation/native' //Navigation
 import RadioGroup from 'react-native-radio-buttons-group'
 import Icon from 'react-native-vector-icons/AntDesign' //Icons
-import { StatusBarComponent } from 'components'
-import { saveLanguage } from 'services/asyncStorage/asyncStorage'
+import { StatusBarComponent } from 'components' //Components
+import { saveLanguage } from 'services/asyncStorage/asyncStorage' //AsyncStorage
 
 export const WelcomeScreen = () => {
 

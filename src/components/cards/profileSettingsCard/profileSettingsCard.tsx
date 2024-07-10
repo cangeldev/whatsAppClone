@@ -1,6 +1,6 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useState, useMemo } from 'react'
 import { View, Text, Image, Switch, ImageSourcePropType } from 'react-native'
-import style from './style'
+import styles from './style'
 import colors from 'assets/colors/colors'
 
 interface IProfileSettingsCard {
@@ -22,20 +22,20 @@ export const ProfileSettingsCard: FC<IProfileSettingsCard> = ({
 
     const toggleSwitch = () => setIsEnabled(prevState => !prevState)
 
-    const switchStyle = {
-        ...style.switch,
-        ...(isEnabled ? style.switchEnabled : style.switchDisabled)
-    }
+    const switchStyle = useMemo(() => ({
+        ...styles.switch,
+        ...(isEnabled ? styles.switchEnabled : styles.switchDisabled)
+    }), [isEnabled])
 
-    const iconStyle = red ? [style.icon, { tintColor: colors.red }] : style.icon
-    const titleStyle = red ? [style.titleText, { color: colors.red }] : style.titleText
+    const iconStyle = useMemo(() => red ? [styles.icon, { tintColor: colors.red }] : styles.icon, [red])
+    const titleStyle = useMemo(() => red ? [styles.titleText, { color: colors.red }] : styles.titleText, [red])
 
     return (
-        <View style={style.container}>
+        <View style={styles.container}>
             <Image source={icon} style={iconStyle} />
-            <View style={{ flex: 1 }}>
+            <View style={styles.textContainer}>
                 <Text style={titleStyle}>{title}</Text>
-                {description !== null ? <Text>{description}</Text> : null}
+                {description && <Text>{description}</Text>}
             </View>
             {switchStatus && (
                 <View style={switchStyle}>
@@ -45,7 +45,7 @@ export const ProfileSettingsCard: FC<IProfileSettingsCard> = ({
                         thumbColor={isEnabled ? colors.white : '#83919a'}
                         trackColor={{
                             false: '#f1f2f6',
-                            true: isEnabled ? colors.whatsAppGreen : '#f1f2f6'
+                            true: colors.whatsAppGreen
                         }}
                     />
                 </View>

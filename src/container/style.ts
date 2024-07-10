@@ -1,5 +1,5 @@
-import colors from "assets/colors/colors";
-import { StyleSheet } from "react-native";
+import colors from "assets/colors/colors"
+import { StyleSheet } from "react-native"
 
 export default StyleSheet.create({
     contactsPagesContainer: {
@@ -15,7 +15,7 @@ export default StyleSheet.create({
         fontSize: 15,
         marginLeft: -15
     },
-    settingsNavigatorTitleStyle:{
+    settingsNavigatorTitleStyle: {
         color: colors.white,
         fontSize: 23,
         marginLeft: -15

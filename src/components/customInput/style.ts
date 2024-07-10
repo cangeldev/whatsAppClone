@@ -1,12 +1,12 @@
-import colors from "assets/colors/colors"
-import { StyleSheet } from "react-native"
+import colors from 'assets/colors/colors'
+import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
     inputContainer: {
-        position: "absolute",
+        position: 'absolute',
         bottom: 5,
-        flexDirection: "row",
-        alignItems: "center",
+        flexDirection: 'row',
+        alignItems: 'center',
         paddingHorizontal: 5
     },
     messageInput: {
@@ -19,8 +19,8 @@ export default StyleSheet.create({
         minHeight: 45
     },
     inputIconContainer: {
-        flexDirection: "row",
-        position: "absolute",
+        flexDirection: 'row',
+        position: 'absolute',
         right: 45
     },
     microphoneIcon: {
@@ -44,9 +44,10 @@ export default StyleSheet.create({
     inputEmojiIcon: {
         fontSize: 25,
         color: colors.grey,
-        position: "absolute",
+        position: 'absolute',
         left: 12
-    }, inputIcon: {
+    },
+    inputIcon: {
         fontSize: 21,
         color: colors.grey,
         marginRight: 20

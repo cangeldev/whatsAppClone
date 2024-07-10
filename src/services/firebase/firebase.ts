@@ -1,6 +1,6 @@
-import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
-import firestore from '@react-native-firebase/firestore';
-import storage from '@react-native-firebase/storage';
+import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth'
+import firestore from '@react-native-firebase/firestore'
+import storage from '@react-native-firebase/storage'
 
 export const currentUser = (): FirebaseAuthTypes.User | null => {
   return auth().currentUser
@@ -76,20 +76,3 @@ export const fetchUsers = async () => {
     console.error('Error fetching users:', error)
   }
 }
-
-
-//Eskisi
-/*export const fetchUsers = async () => {
-  try {
-    const currentUser = auth().currentUser?.uid
-    console.log(currentUser)
-    const usersCollection = await firestore().collection('users').get();
-    const usersList = usersCollection.docs
-      .map(doc => doc.data())
-      .filter(user => user.uid !== currentUser); // UID'yi dışla
-    return usersList;
-  } catch (error) {
-    console.error('Error fetching users:', error)
-  }
-}
-  */

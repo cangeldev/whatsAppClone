@@ -1,23 +1,24 @@
-import React, { FC } from 'react'
+import React, { FC, useCallback } from 'react'
 import { View, Text, Modal, TouchableOpacity, TouchableWithoutFeedback, FlatList, Image } from 'react-native'
 import style from './style'
-import { iconButtonList } from 'utils/helper'
-import { IconButton } from 'components/iconButton/iconButton'//Components
+import { iconButtonList } from 'utils/helper' 
+import { IconButton } from 'components/iconButton/iconButton' //Components
 
 interface IChatModal {
     visibleModal: boolean
     closeModal: () => void
-    profilePicture: any,
+    profilePicture: any
     username: string
 }
 
-export const ChatModal: FC<IChatModal> = ({ visibleModal, closeModal, profilePicture, username }) => {
+export const ChatModal: FC<IChatModal> = React.memo(({ visibleModal, closeModal, profilePicture, username }) => {
 
-    const renderItem = ({ item }: any) =>
+    const renderItem = useCallback(({ item }: { item: { iconName: string; navigatePage: string } }) => (
         <IconButton
             icon={item.iconName}
             navigatePage={item.navigatePage}
         />
+    ), [])
 
     return (
         <Modal
@@ -37,7 +38,7 @@ export const ChatModal: FC<IChatModal> = ({ visibleModal, closeModal, profilePic
                             source={profilePicture}
                             style={style.image}
                         />
-                        <Text style={style.nameContainer} >
+                        <Text style={style.nameContainer}>
                             {username}
                         </Text>
                         <View style={style.dividerLine} />
@@ -45,6 +46,7 @@ export const ChatModal: FC<IChatModal> = ({ visibleModal, closeModal, profilePic
                             horizontal
                             data={iconButtonList}
                             renderItem={renderItem}
+                            keyExtractor={(item, index) => index.toString()}
                             style={style.iconList}
                             contentContainerStyle={style.iconListContainer}
                         />
@@ -53,4 +55,4 @@ export const ChatModal: FC<IChatModal> = ({ visibleModal, closeModal, profilePic
             </TouchableOpacity>
         </Modal>
     )
-}
+})
