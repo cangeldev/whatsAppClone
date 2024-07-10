@@ -8,17 +8,18 @@ import style from './style'
 interface IChatCard {
     status?: string,
     profilePicture: any,
-    username: string
+    username: string,
+    phoneNumber?: any
 }
 
-export const ChatCard: FC<IChatCard> = ({ status, profilePicture, username }) => {
+export const ChatCard: FC<IChatCard> = ({ status, profilePicture, username, phoneNumber }) => {
     const [chatModalVisible, setChatModalVisible] = useState(false)
     const navigation = useNavigation<any>()
     const { t } = useTranslation()
 
     const toggleButton = useCallback(() => {
-        navigation.navigate("MessagePages", { profilePicture, username })
-    }, [navigation, profilePicture, username])
+        navigation.navigate("MessagePages", { profilePicture, username, phoneNumber })
+    }, [navigation, profilePicture, username, phoneNumber])
 
     const toggleChatModal = useCallback(() => {
         setChatModalVisible(!chatModalVisible)

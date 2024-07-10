@@ -28,6 +28,7 @@ export const ChatsScreen = () => {
         <ChatCard
             profilePicture={{ uri: item.profileImageUrl }}
             username={item.username}
+            phoneNumber={item.phoneNumber}
         />
 
     const toogleButton = () => {

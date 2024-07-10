@@ -17,7 +17,7 @@ export const ProfileInfoPage = () => {
     const navigation = useNavigation()
     const { t } = useTranslation()
     const route = useRoute()
-    const { profilePicture, username }: any = route.params
+    const { profilePicture, username,phoneNumber }: any = route.params
     const renderProfileInfo =
         ({ item }: any) =>
             <ProfileInfoCard
@@ -57,7 +57,7 @@ export const ProfileInfoPage = () => {
                             {username}
                         </Text>
                         <Text style={style.profileNumber}>
-                            +90 535 237 71 92
+                            +90 {phoneNumber}
                         </Text>
                     </View>
                     <IconE

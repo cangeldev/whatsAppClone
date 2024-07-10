@@ -18,11 +18,11 @@ export const MessagePage = () => {
 
     const navigation = useNavigation<any>()
     const route = useRoute()
-    const { profilePicture, username }: any = route.params
+    const { profilePicture, username, phoneNumber }: any = route.params
     const scrollViewRef = useRef<ScrollView>(null)
 
     const goProfileInfo = () => {
-        navigation.navigate("ProfileInfoPages", { profilePicture, username })
+        navigation.navigate("ProfileInfoPages", { profilePicture, username, phoneNumber })
     }
 
     return (
