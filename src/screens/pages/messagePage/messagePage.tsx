@@ -102,7 +102,8 @@ export const MessagePage = () => {
                 </View>
             </View>
             <FlatList
-                data={messages}
+                inverted
+                data={[...messages].reverse()}
                 renderItem={renderItem}
                 keyExtractor={item => item.id}
             />
