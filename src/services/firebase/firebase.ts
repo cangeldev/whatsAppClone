@@ -82,6 +82,29 @@ export const fetchUsers = async () => {
   }
 }
 
+export const getUserData = async (type: string) => {
+
+  try {
+    const userUID = auth().currentUser?.uid
+    const userRef = firestore().doc(`users/${userUID}`)
+    const userSnapshot = await userRef.get()
+    if (userSnapshot.exists) {
+      const userData = userSnapshot.data()
+      if (type === "username") {
+        return userData?.username
+      }
+      else
+        return userData?.profileImageUrl
+    }
+    else {
+      console.log('User document does not exist.')
+      return null
+    }
+  } catch (error) {
+    console.error('Error fetching user data:', error)
+    return null
+  }
+}
 
 // Mesaj gönderme
 export const sendMessage = async (chatId: any, message: any, senderId: any) => {

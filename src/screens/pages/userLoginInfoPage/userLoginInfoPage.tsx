@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Pressable, Alert } from 'react-native'
+import { View, Text, TextInput, Pressable, Alert, Image } from 'react-native'
 import React, { useState } from 'react'
 import style from './style'
 import colors from 'assets/colors/colors'
@@ -13,12 +13,12 @@ import IconI from 'react-native-vector-icons/MaterialIcons' //Icons
 //Components
 import { ImagePickerModal } from 'components/modals'
 import { NextButton, StatusBarComponent } from 'components'
-import { ProfileImage } from 'components/cards'
 
 //Redux Toolkit
 import { useDispatch, useSelector } from 'react-redux'
 import { setProfileName } from 'services/features/userSlice'
 import { RootState } from 'services/features/store'
+import { example } from 'assets'
 
 export const UserLoginInfoPage = () => {
     const dispatch = useDispatch()
@@ -80,7 +80,9 @@ export const UserLoginInfoPage = () => {
             </Text>
             <Pressable onPress={toggleImagePickerModal}>
                 <View style={style.profileImageView}>
-                    <ProfileImage />
+                    <Image
+                        source={profileImage ? { uri: profileImage } : example}
+                        style={style.profileImage} />
                 </View>
             </Pressable>
             <View style={style.inputView}>

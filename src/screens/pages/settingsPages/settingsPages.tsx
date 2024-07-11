@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { View, Text, Image, FlatList, ScrollView } from 'react-native'
 import style from './style'
 import { group, meta } from 'assets'
@@ -9,10 +9,21 @@ import { useTranslation } from 'react-i18next' //Multi Language
 //Icons
 import IconF from 'react-native-vector-icons/FontAwesome'
 import IconE from 'react-native-vector-icons/AntDesign'
+import { getUserData } from 'services/firebase/firebase'
 
 export const SettingsPages = () => {
 
     const { t } = useTranslation()
+    const [username, setUsername] = useState()
+
+    useEffect(() => {
+        const getUsers = async () => {
+            const fetchedUsersInfo = await getUserData("username")
+            setUsername(fetchedUsersInfo)
+        }
+        getUsers()
+    }, [])
+
     const render = ({ item }: any) =>
         <SettingsMenuCard
             icon={item.image}
@@ -29,7 +40,7 @@ export const SettingsPages = () => {
                 </View>
                 <View style={style.textContainer}>
                     <Text style={style.nameText}>
-                        Can GEL
+                        {username}
                     </Text>
                     <Text>
                         Deneme Metni
