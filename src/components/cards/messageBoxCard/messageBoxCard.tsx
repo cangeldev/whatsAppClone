@@ -4,13 +4,12 @@ import style from './style'
 import IconM from 'react-native-vector-icons/MaterialIcons' // Icons
 
 interface IMessageBoxCard {
-    info: 'to' | 'from'
+    info: 'to' | 'from',
+    message: string
 }
-
-const MESSAGE_TEXT = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus possimus nobis, nis!"
 const MESSAGE_TIME = "15.02"
 
-export const MessageBoxCard: FC<IMessageBoxCard> = React.memo(({ info }) => {
+export const MessageBoxCard: FC<IMessageBoxCard> = React.memo(({ info, message }) => {
 
     const isTo = info === "to"
     const isFrom = info === "from"
@@ -24,7 +23,7 @@ export const MessageBoxCard: FC<IMessageBoxCard> = React.memo(({ info }) => {
                 style={[style.baseIcon, iconStyle]}
             />
             <Text style={style.message}>
-                {MESSAGE_TEXT}
+                {message}
             </Text>
             <Text style={style.messageInfo}>
                 {MESSAGE_TIME} {isFrom && <Text style={{ letterSpacing: -3 }}>✓✓</Text>}
