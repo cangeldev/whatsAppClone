@@ -3,8 +3,7 @@ import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
     inputContainer: {
-        position: 'absolute',
-        bottom: 5,
+        paddingVertical: 5,
         flexDirection: 'row',
         alignItems: 'center',
         paddingHorizontal: 5
