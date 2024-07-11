@@ -6,10 +6,11 @@ import IconM from 'react-native-vector-icons/MaterialIcons' // Icons
 interface IMessageBoxCard {
     info: 'to' | 'from',
     message: string
+    createdAt: string
 }
 const MESSAGE_TIME = "15.02"
 
-export const MessageBoxCard: FC<IMessageBoxCard> = React.memo(({ info, message }) => {
+export const MessageBoxCard: FC<IMessageBoxCard> = React.memo(({ info, message, createdAt }) => {
 
     const isTo = info === "to"
     const isFrom = info === "from"
@@ -26,7 +27,7 @@ export const MessageBoxCard: FC<IMessageBoxCard> = React.memo(({ info, message }
                 {message}
             </Text>
             <Text style={style.messageInfo}>
-                {MESSAGE_TIME} {isFrom && <Text style={{ letterSpacing: -3 }}>✓✓</Text>}
+                {createdAt} {isFrom && <Text style={{ letterSpacing: -3 }}>✓✓</Text>}
             </Text>
         </View>
     )

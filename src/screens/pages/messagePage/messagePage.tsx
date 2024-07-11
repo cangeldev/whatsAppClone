@@ -56,7 +56,7 @@ export const MessagePage = () => {
     }
 
     const renderItem = ({ item }: any) => (
-        <MessageBoxCard info={fromNumber === item.senderId ? 'from' : 'to'} message={item.text} />
+        <MessageBoxCard createdAt={item.createdAt ? new Date(item.createdAt.seconds * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : ''} info={fromNumber === item.senderId ? 'from' : 'to'} message={item.text} />
     )
 
     const handleInputChange = (inputText: string) => {
