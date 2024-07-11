@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Text, View } from 'react-native'
 import style from './style'
 import colors from 'assets/colors/colors'
 import { useTranslation } from 'react-i18next' //Multi Language
-import { currentUser } from 'services/firebase/firebase' //Firebase
+import { currentUser, fetchUsers } from 'services/firebase/firebase' //Firebase
 
 //Navigation
 import { createStackNavigator } from '@react-navigation/stack'
@@ -22,6 +22,15 @@ export const Container = () => {
 
     const Stack = createStackNavigator()
     const user = currentUser()
+    const [users, setUsers] = useState([])
+
+    useEffect(() => {
+        const getUsers = async () => {
+            const fetchedUsersInfo = await fetchUsers()
+            setUsers(fetchedUsersInfo)
+        }
+        getUsers()
+    }, [])
 
     return (
         <NavigationContainer>
@@ -83,7 +92,7 @@ export const Container = () => {
                                 <Text style={style.contactsPagesTitle}>
                                     Kişi seç{"\n"}
                                     <Text style={{ fontSize: 12 }}>
-                                        145 kişi
+                                        {users.length} kişi
                                     </Text>
                                 </Text>
                             </View>)
