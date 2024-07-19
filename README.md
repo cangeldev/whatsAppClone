@@ -1,79 +1,86 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# WhatsApp Clone
 
-# Getting Started
+This is a WhatsApp clone built with React Native and TypeScript. The app uses Firebase for phone number authentication, Firestore Database for storing user information, and Firebase Storage for profile pictures. It also utilizes Redux Toolkit for state management, AsyncStorage for local data persistence, and i18next for internationalization.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+(Deficiencies, errors and internal pages of the application will continue to be added in the future.)
 
-## Step 1: Start the Metro Server
+## Features
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+- Phone number authentication using Firebase Authentication
+- Real-time messaging
+- Profile picture upload and update
+- User information storage in Firestore
+- Local data persistence with AsyncStorage
+- State management with Redux Toolkit
+- Internationalization with i18next
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Technologies Used
 
-```bash
-# using npm
-npm start
+- **React Native**
+- **TypeScript**
+- **Redux Toolkit**
+- **AsyncStorage**
+- **i18next**
+- **Firebase Authentication**
+- **Firestore Database**
+- **Firebase Storage**
 
-# OR using Yarn
-yarn start
-```
+## Screen Recorder
 
-## Step 2: Start your Application
+https://github.com/user-attachments/assets/e0fa2333-d813-453f-aa0d-10617cb848e8
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+## Getting Started
 
-### For Android
+### Prerequisites
 
-```bash
-# using npm
-npm run android
+- Node.js
+- npm or yarn
+- Firebase project setup
 
-# OR using Yarn
-yarn android
-```
+### Installation
 
-### For iOS
+1. Clone the repository:
+   ```sh
+   https://github.com/cangeldev/whatsAppClone.git
+   cd whatsAppClone
+2. Clone the repository:
+   ```sh
+   npm install
+   # or
+   yarn install
+3. Configure Firebase:
 
-```bash
-# using npm
-npm run ios
+- **Create a Firebase project at [Firebase Console](https://console.firebase.google.com/).**
+- **Enable phone authentication.**
+- **Set up Firestore Database and Firebase Storage.**
+- **Download the `google-services.json` file and place it in your `android/app` directory.**
+- **Download the `GoogleService-Info.plist` file and place it in your `ios/` directory.**
 
-# OR using Yarn
-yarn ios
-```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+4. Clone the repository:
+    ```sh
+   npm run android
+   # or
+   npm run ios
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+## Usage
 
-## Step 3: Modifying your App
+1. Open the app on your device or emulator.
+2. Register with your phone number.
+3. Set up your profile by adding a profile picture.
+4. Start messaging other users in real-time.
 
-Now that you have successfully run the app, let's modify it.
+## Project Structure
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+- `src/`: Contains all the source code.
+  - `assets/`: İcons and images.
+  - `components/`: Reusable components.
+  - `screens/`: Application screens.
+  - `services/firebase`: Firebase configuration and functions.
+  - `services/redux/`: Redux setup and slices.
+  - `services/asyncstorage/`: AsyncStorage configuration and functions.
+  - `utils/i18n/`: Internationalization setup and translations.
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
 
-## Congratulations! :tada:
 
-You've successfully run and modified your React Native App. :partying_face:
 
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
